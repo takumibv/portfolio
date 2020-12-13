@@ -3,5 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "takumibv <everybody.say.hey.yo@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel src/*.html -d public --port 3000",
+    "build": "parcel build src/index.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.30.0",
+    "tailwindcss": "^2.0.2"
+  }
 }
