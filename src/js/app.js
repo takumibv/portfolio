@@ -1,6 +1,11 @@
 import { gsap } from "gsap";
+import Rellax from "rellax";
 
 console.log("gsap", gsap);
+
+new Rellax('.js-rellax', {
+  // center: true
+});
 
 // const tl = gsap.timeline({
 //   scrollTrigger: {

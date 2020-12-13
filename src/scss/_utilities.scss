@@ -1,0 +1,45 @@
+/**
+* =======
+* Utility
+* =======
+**/
+
+.u-mx-auto {
+  margin: 0 auto;
+}
+
+.u-mt-16 {
+  margin-top: 16px !important;
+}
+
+.u-mt-32 {
+  margin-top: 32px !important;
+}
+
+.u-d-none {
+  display: none !important;
+}
+
+.u-pc {
+  @include breakpoint-sp () {
+      display: none;
+  }
+}
+
+.u-sp {
+  @include breakpoint-pc () {
+      display: none;
+  }
+}
+
+.u-font-size-0 {
+  font-size: 0 !important;
+}
+
+.u-text-left {
+  text-align: left !important;
+}
+
+.u-text-center {
+  text-align: center !important;
+}

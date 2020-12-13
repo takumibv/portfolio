@@ -5,11 +5,13 @@
   "author": "takumibv <everybody.say.hey.yo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/*.html -d docs --port 3000",
+    "start": "parcel src/index.html -d docs --port 3000",
     "build": "parcel build src/index.html"
   },
   "devDependencies": {
+    "gsap": "^3.5.1",
     "parcel-bundler": "^1.12.4",
+    "rellax": "^1.12.1",
     "sass": "^1.30.0",
     "tailwindcss": "^2.0.2"
   }

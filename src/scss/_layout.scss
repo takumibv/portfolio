@@ -5,9 +5,13 @@
   max-width: 640px;
 
   @include breakpoint-pc () {
-      width: $container-width-pc;
-      max-width: none;
+    width: $container-width-pc;
+    max-width: none;
   }
+}
+
+.container--sm {
+  min-width: 640px;
 }
 
 /**
@@ -77,6 +81,50 @@
   }
 }
 
+/**
+* Main
+**/
+.l-main {
+  position: relative;
+}
+
+.l-main__scroll-down {
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 46px);
+
+  img {
+    width: 46px;
+  }
+}
+
+/**
+* Layout
+**/
+
+.l-top {
+  display: flex;
+}
+
+.l-top__left {
+  margin-right: 24px;
+  width: 33.3333333%;
+
+  @include breakpoint-sp () {
+    display: none;
+  }
+}
+
+.l-top__left-sticky {
+  position: sticky;
+  top: 0;
+  margin-top: 40px;
+  padding: 40px 0;
+}
+
+.l-top__right {
+  width: 66.666666667%;
+}
 
 /**
 * Grid
