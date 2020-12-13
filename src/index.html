@@ -6,22 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="https://use.typekit.net/avl8fnj.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="scss/main.scss">
+
+  <title>トップ</title>
 </head>
 
 <body>
   <div class="l-header">
-    <div class="l-header__logo">
-      <a href="./index.html">
-        <img src='assets/images/icon.png' alt='' srcset=''>
-      </a>
+    <div class="container">
+      <div class="l-header__inner">
+        <div class="l-header__logo">
+          <a href="/">
+            <img src="assets/images/icon.png" alt="" srcset="">
+          </a>
+        </div>
+        <ul class="l-header__nav">
+          <li class="l-header__nav-item l-header__nav-item--active"><a href="#about">ABOUT</a></li>
+          <li class="l-header__nav-item"><a href="./works.html">WORKS</a></li>
+          <li class="l-header__nav-item"><a href="https://qiita.com/takumibv">BLOG</a></li>
+          <li class="l-header__nav-item"><a href="./contact.html">CONTACT</a></li>
+        </ul>
+      </div>
     </div>
-    <ul class="l-header__nav">
-      <li class="l-header__nav-item"><a href='#about'>ABOUT</a></li>
-      <li class="l-header__nav-item"><a href='./works.html'>WORKS</a></li>
-      <li class="l-header__nav-item"><a href='https://qiita.com/takumibv'>BLOG</a></li>
-      <li class="l-header__nav-item"><a href='./contact.html'>CONTACT</a></li>
-    </ul>
+  </div>
+  <div id="hero" class="hero js-parallax" data-depth="0.20">
+    <h1 class="hero__main-title saying js-parallax" data-depth="0.20">
+      “the only way to be truly satisfied is to do what you believe is great work.”
+    </h1>
+    <h2 class="hero__main-name saying js-parallax" data-depth="0.20">
+      Steve Jobs
+    </h2>
+    <p class="hero__main-jp js-parallax" data-depth="0.20">『心の底から満足する唯一の方法は、素晴らしいと信じる仕事をすること。』</p>
   </div>
   hello world
   こんにちは

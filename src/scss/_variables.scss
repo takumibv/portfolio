@@ -8,6 +8,11 @@ $color-secondary-weak: #FAC3BE;
 $color-text-black: #555;
 $color-text-link: #7299AD;
 
+// タイポグラフィ
+$font-saying: athelas, serif;
+$font-eng: lato, sans-serif;
+$font-jp: "Source Han Sans JP", sans-serif;
+
 // レイアウト
 $container-width-pc: 960px;
 $container-width-sp: 320px;
@@ -16,3 +21,6 @@ $breakpoint-sp: $container-width-pc;
 
 // シャドウ
 $shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+
+// アニメーション
+$transition-base: 0.2s ease-out;

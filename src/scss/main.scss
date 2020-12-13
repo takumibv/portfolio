@@ -1,5 +1,16 @@
 
 @import "./variables";
 @import "./mixin";
+@import "./reset";
 @import "./base";
+
+/**
+* Layout
+**/
+@import "./layout";
+
+/**
+*
+**/
 @import "./headline";
+@import "./hero";

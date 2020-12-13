@@ -15,8 +15,66 @@
 **/
 
 .l-header {
-  height: 48px;
   background: #fff;
+  box-shadow: $shadow;
+  display: flex;
+  justify-content: center;
+}
+
+.l-header__inner {
+  height: 48px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.l-header__logo {
+  a {
+    padding: 8px;
+    display: block;
+    width: 48px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.l-header__nav {
+  display: flex;
+  
+}
+
+.l-header__nav-item {
+  a {
+    color: $color-text-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+    padding: 0 16px;
+    height: 100%;
+    min-width: 96px;
+    text-decoration: none;
+    font-family: $font-eng;
+    font-size: 18px;
+    font-weight: 100;
+    transition: background-color $transition-base;
+
+    &:hover {
+      background: $color-base;
+    }
+  }
+}
+
+.l-header__nav-item--active {
+  a {
+    border-bottom: 2px solid $color-primary;
+  }
 }
 
 

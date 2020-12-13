@@ -1,19 +1,19 @@
 
 .saying {
-  font-family: athelas, serif;
+  font-family: $font-saying;
   font-weight: 400;
   font-style: normal;
 }
 
 .headline {
-  font-family: lato, sans-serif;
+  font-family: $font-eng;
   font-weight: 100;
   font-size: 32px;
   color: #707070;
 }
 
 .sub-headline {
-  font-family: "Source Han Sans JP";
+  font-family: $font-jp;
   font-weight: 500;
   font-size: 16px;
   text-align: left;

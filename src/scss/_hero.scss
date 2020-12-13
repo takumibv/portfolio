@@ -1,0 +1,31 @@
+
+.hero {
+  padding: 24px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("/assets/images/bg-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: -1;
+}
+
+.hero__main-title {
+  font-size: 27px;
+  text-align: center;
+}
+
+.hero__main-name {
+  margin-top: 4px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.hero__main-jp {
+  margin-top: 16px;
+  font-size: 16px;
+  text-align: center;
+}
