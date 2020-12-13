@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.html -d docs --port 3000",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html -d docs --public-url /portfolio"
   },
   "devDependencies": {
     "gsap": "^3.5.1",
