@@ -1,13 +1,14 @@
 .container {
   margin: auto;
-  padding: 0 10px;
-  width: 80%;
+  padding: 0 20px;
+  width: 100%;
   min-width: $container-width-sp;
   max-width: 640px;
 
   @include breakpoint-pc () {
     width: $container-width-pc;
     max-width: none;
+    padding: 0;
   }
 }
 

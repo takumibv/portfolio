@@ -220,8 +220,8 @@ a:hover {
 **/
 .container {
   margin: auto;
-  padding: 0 10px;
-  width: 80%;
+  padding: 0 20px;
+  width: 100%;
   min-width: 320px;
   max-width: 640px;
 }
@@ -229,6 +229,7 @@ a:hover {
   .container {
     width: 960px;
     max-width: none;
+    padding: 0;
   }
 }
 
