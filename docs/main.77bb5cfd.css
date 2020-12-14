@@ -235,10 +235,15 @@ a:hover {
 * header
 **/
 .l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: #fff;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
+  z-index: 99;
 }
 
 .l-header__inner {
@@ -292,6 +297,7 @@ a:hover {
 **/
 .l-main {
   position: relative;
+  padding-bottom: 160px;
 }
 
 .l-main__scroll-down {
@@ -304,7 +310,7 @@ a:hover {
 }
 
 /**
-* Layout
+* Top
 **/
 .l-top {
   display: flex;
@@ -323,12 +329,45 @@ a:hover {
 .l-top__left-sticky {
   position: sticky;
   top: 0;
-  margin-top: 40px;
-  padding: 40px 0;
+  padding: 80px 0 40px;
 }
 
 .l-top__right {
   width: 66.666666667%;
+}
+
+/**
+* footer
+**/
+.l-footer {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.l-footer__bg {
+  position: absolute;
+  top: -100vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("/bg-hero.b5101ab7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.l-footer__left {
+  float: left;
+  padding-top: 40px;
+}
+.l-footer__left img {
+  width: 60px;
+}
+
+.l-footer__right {
+  padding: 60px 0;
 }
 
 /**
@@ -489,6 +528,71 @@ a:hover {
 /**
 * component
 **/
+.career-item {
+  display: flex;
+}
+
+.career-item--expand .career-item__left::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: unset;
+  border-radius: 0;
+  left: 16px;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0) 0%, #fff 100%);
+}
+
+.career-item__left {
+  width: 64px;
+  position: relative;
+}
+.career-item__left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 26px;
+  width: 4px;
+  background: #EAFFF3;
+}
+.career-item__left::after {
+  content: "";
+  position: absolute;
+  background: #EAFFF3;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  left: 16px;
+  top: 16px;
+}
+
+.career-item__right {
+  flex: 1;
+  padding: 16px 0;
+}
+
+.career-item__title {
+  line-height: 1.5;
+  display: inline-block;
+}
+
+.career-item__period {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.career-item__text {
+  margin-top: 16px;
+}
+
+.career-item__expand-link {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .saying {
   font-family: athelas, serif;
   font-weight: 400;
@@ -544,6 +648,7 @@ a:hover {
 
 .hero {
   padding: 24px;
+  margin-top: 48px;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -611,6 +716,51 @@ a:hover {
   justify-content: space-between;
 }
 
+.profile__pop {
+  position: relative;
+  margin-top: 16px;
+  background: #F5F5F5;
+  padding: 16px;
+  border-radius: 8px;
+}
+.profile__pop::before {
+  position: absolute;
+  content: "";
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 16px solid #F5F5F5;
+  top: -16px;
+  left: calc(50% - 16px);
+}
+
+.skills {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-item--orange .skill-item__graph-indicator {
+  background: #FAC3BE;
+}
+
+.skill-item__graph {
+  position: relative;
+  height: 180px;
+  width: 8px;
+  margin: auto;
+}
+
+.skill-item__graph-indicator {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #72AD8C;
+  transition: heignt 0.2s ease-out;
+}
+
+.skill-item__icon {
+  margin-top: 8px;
+}
+
 .section {
   padding: 80px 0;
 }
@@ -630,8 +780,40 @@ a:hover {
 }
 
 .work-item {
-  background: red;
-  height: 32px;
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+}
+.work-item:hover .work-item__overlay {
+  opacity: 1;
+}
+.work-item:hover .work-item__overlay-name {
+  transform: translateY(0);
+}
+.work-item img {
+  width: 100%;
+}
+
+.work-item__overlay {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
+  padding: 16px;
+  display: flex;
+  align-items: flex-end;
+  transition: opacity 0.2s ease-out;
+}
+
+.work-item__overlay-name {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  transition: transform 0.2s ease-out;
+  transform: translateY(20px);
 }
 
 /**
@@ -641,6 +823,10 @@ a:hover {
 **/
 .u-mx-auto {
   margin: 0 auto;
+}
+
+.u-pb-0 {
+  padding-bottom: 0 !important;
 }
 
 .u-mt-16 {

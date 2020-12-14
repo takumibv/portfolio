@@ -1,5 +1,42 @@
 
 .work-item {
-  background: red;
-  height: 32px;
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+
+  &:hover {
+    .work-item__overlay {
+      opacity: 1;
+    }
+    
+    .work-item__overlay-name {
+      transform: translateY(0);
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.work-item__overlay {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
+  padding: 16px;
+  display: flex;
+  align-items: flex-end;
+  transition: opacity $transition-base;
+}
+
+.work-item__overlay-name {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  transition: transform $transition-base;
+  transform: translateY(20px);
 }

@@ -19,10 +19,15 @@
 **/
 
 .l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: #fff;
   box-shadow: $shadow;
   display: flex;
   justify-content: center;
+  z-index: 99;
 }
 
 .l-header__inner {
@@ -86,6 +91,7 @@
 **/
 .l-main {
   position: relative;
+  padding-bottom: 160px;
 }
 
 .l-main__scroll-down {
@@ -99,7 +105,7 @@
 }
 
 /**
-* Layout
+* Top
 **/
 
 .l-top {
@@ -118,12 +124,46 @@
 .l-top__left-sticky {
   position: sticky;
   top: 0;
-  margin-top: 40px;
-  padding: 40px 0;
+  padding: 80px 0 40px;
 }
 
 .l-top__right {
   width: 66.666666667%;
+}
+
+/**
+* footer
+**/
+.l-footer {
+  display: flex; 
+  position: relative;
+  overflow: hidden;
+}
+
+.l-footer__bg {
+  position: absolute;
+  top: -100vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("/assets/images/bg-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.l-footer__left {
+  float: left;
+  padding-top: 40px;
+
+  img {
+    width: 60px;
+  }
+}
+
+.l-footer__right {
+  padding: 60px 0;
 }
 
 /**

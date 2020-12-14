@@ -1,0 +1,76 @@
+
+.career {
+
+}
+
+.career-item {
+  display: flex;
+}
+
+.career-item--expand {
+  .career-item__left::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: unset;
+    border-radius: 0;
+    left: 16px;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0) 0%, #fff 100%);
+
+  }
+}
+
+.career-item__left {
+  width: 64px;
+  position: relative;
+
+  // ライン
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 26px;
+    width: 4px;
+    background: $color-primary-weak;
+  }
+
+  // 丸
+  &::after {
+    content: "";
+    position: absolute;
+    background: $color-primary-weak;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    left: 16px;
+    top: 16px;
+  }
+}
+
+.career-item__right {
+  flex: 1;
+  padding: 16px 0;
+}
+
+.career-item__title {
+  line-height: 1.5;
+  display: inline-block;
+}
+
+.career-item__period {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.career-item__text {
+  margin-top: 16px;
+}
+
+.career-item__expand-link {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 1.5;
+}
