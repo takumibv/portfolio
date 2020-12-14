@@ -68,6 +68,7 @@
 .career-item__period {
   float: right;
   margin-top: 4px;
+  color: #aaa;
 
   @include breakpoint-pc () {
     display: inline-block;
