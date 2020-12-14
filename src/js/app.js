@@ -15,18 +15,24 @@ window.onload = function () {
     // center: true
   });
 
-  document.querySelector(".js-scroll").addEventListener("click", (e) => {
+  document.querySelector(".js-scroll")?.addEventListener("click", (e) => {
     e.preventDefault();
     const target_href = e.target.getAttribute("href");
     const target = document.querySelector(target_href);
 
-    console.log(target, target.getBoundingClientRect().top, target.offsetTop);
+    const navHeader = document.querySelector(".l-header__burger--open");
+    if (navHeader) {
+      navHeader.classList.remove("l-header__burger--open");
+    }
+
     gsap.to(window, {
       scrollTo: target.offsetTop - 28, // headerの高さ
       duration: 1,
       ease: "power4.out",
     });
   });
+
+  // ScrollTop
 
   // navリストの更新
   window.addEventListener("scroll", (e) => {
@@ -37,6 +43,24 @@ window.onload = function () {
       classList.add("l-header__nav-item--active");
     } else if (window.scrollY < about_el.offsetTop - 48 && classList.contains("l-header__nav-item--active")) {
       classList.remove("l-header__nav-item--active");
+    }
+  });
+
+  // navリストの開閉
+  // js-toggle-nav
+  document.querySelector(".js-toggle-nav")?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const target = e.target.closest(".l-header__burger");
+    console.log("target", target);
+    if (!target) return;
+
+    const classList = target.classList;
+
+    if (classList.contains("l-header__burger--open")) {
+      classList.remove("l-header__burger--open");
+    } else {
+      classList.add("l-header__burger--open");
     }
   });
 
@@ -84,7 +108,7 @@ window.onload = function () {
 
   // 経歴の開閉
   const career_toggle_button = document.querySelector(".js-toggle-career-collapse");
-  career_toggle_button.addEventListener("click", (e) => {
+  career_toggle_button?.addEventListener("click", (e) => {
     e.preventDefault();
     const button = e.target.closest(".js-toggle-career-collapse");
     const target = document.querySelector(button.dataset.target);
@@ -105,6 +129,11 @@ window.onload = function () {
         duration: 0.3,
         ease: "power2.inOut"
       });
+      // 開いた場所でスクロールを固定する
+      gsap.to(window, {
+        scrollTo: window.scrollY,
+        duration: 0.3,
+      })
     }
   });
 }

@@ -7895,16 +7895,22 @@ _gsap.gsap.registerPlugin(_ScrollTrigger.default);
 _gsap.gsap.registerPlugin(_ScrollToPlugin.default);
 
 window.onload = function () {
+  var _document$querySelect, _document$querySelect2;
+
   // ロード完了
   document.getElementById("loading").classList.add("l-loading--completed"); // パララックス
 
   new _rellax.default('.js-rellax', {// center: true
   });
-  document.querySelector(".js-scroll").addEventListener("click", function (e) {
+  (_document$querySelect = document.querySelector(".js-scroll")) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.addEventListener("click", function (e) {
     e.preventDefault();
     var target_href = e.target.getAttribute("href");
     var target = document.querySelector(target_href);
-    console.log(target, target.getBoundingClientRect().top, target.offsetTop);
+    var navHeader = document.querySelector(".l-header__burger--open");
+
+    if (navHeader) {
+      navHeader.classList.remove("l-header__burger--open");
+    }
 
     _gsap.gsap.to(window, {
       scrollTo: target.offsetTop - 28,
@@ -7912,7 +7918,8 @@ window.onload = function () {
       duration: 1,
       ease: "power4.out"
     });
-  }); // navリストの更新
+  }); // ScrollTop
+  // navリストの更新
 
   window.addEventListener("scroll", function (e) {
     var about_el = document.getElementById("about");
@@ -7923,6 +7930,21 @@ window.onload = function () {
       classList.add("l-header__nav-item--active");
     } else if (window.scrollY < about_el.offsetTop - 48 && classList.contains("l-header__nav-item--active")) {
       classList.remove("l-header__nav-item--active");
+    }
+  }); // navリストの開閉
+  // js-toggle-nav
+
+  (_document$querySelect2 = document.querySelector(".js-toggle-nav")) === null || _document$querySelect2 === void 0 ? void 0 : _document$querySelect2.addEventListener("click", function (e) {
+    e.preventDefault();
+    var target = e.target.closest(".l-header__burger");
+    console.log("target", target);
+    if (!target) return;
+    var classList = target.classList;
+
+    if (classList.contains("l-header__burger--open")) {
+      classList.remove("l-header__burger--open");
+    } else {
+      classList.add("l-header__burger--open");
     }
   }); // テキストアニメーション
 
@@ -7981,7 +8003,7 @@ window.onload = function () {
 
 
   var career_toggle_button = document.querySelector(".js-toggle-career-collapse");
-  career_toggle_button.addEventListener("click", function (e) {
+  career_toggle_button === null || career_toggle_button === void 0 ? void 0 : career_toggle_button.addEventListener("click", function (e) {
     e.preventDefault();
     var button = e.target.closest(".js-toggle-career-collapse");
     var target = document.querySelector(button.dataset.target);
@@ -8002,6 +8024,12 @@ window.onload = function () {
         height: "auto",
         duration: 0.3,
         ease: "power2.inOut"
+      }); // 開いた場所でスクロールを固定する
+
+
+      _gsap.gsap.to(window, {
+        scrollTo: window.scrollY,
+        duration: 0.3
       });
     }
   });
@@ -8034,7 +8062,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64298" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53291" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

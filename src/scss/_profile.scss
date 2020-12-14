@@ -51,8 +51,12 @@
 .sns-links {
   margin: 16px auto 24px;
   display: flex;
-  width: 172px;
   justify-content: space-between;
+  width: 230px;
+
+  @include breakpoint-pc () {
+    width: 172px;
+  }
 }
 
 .sns-links-item {

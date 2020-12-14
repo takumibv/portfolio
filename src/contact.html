@@ -6,32 +6,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="https://use.typekit.net/avl8fnj.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="~/scss/main.scss">
+
+  <title>トップ</title>
 </head>
 
 <body>
-  <div class="l-header">
-    <div class="l-header__logo">
-      <a href="./index.html">
-        <img src='assets/images/icon.png' alt='' srcset=''>
-      </a>
-    </div>
-    <ul class="l-header__nav">
-      <li class="l-header__nav-item"><a href='#about'>ABOUT</a></li>
-      <li class="l-header__nav-item"><a href='./works.html'>WORKS</a></li>
-      <li class="l-header__nav-item"><a href='https://qiita.com/takumibv'>BLOG</a></li>
-      <li class="l-header__nav-item"><a href='./contact.html'>CONTACT</a></li>
-    </ul>
+  <div id="loading" class="l-loading">
+    <p class="headline">Loading...</p>
   </div>
-  hello world
-  こんにちは
-  <h1 class="saying">
-    “the only way to be truly satisfied is to do what you believe is great work.”
-  </h1>
-  <h2 class="saying">
-    Steve Jobs
-  </h2>
-  <p>『心の底から満足する唯一の方法は、素晴らしいと信じる仕事をすること。』</p>
+  <div class="l-header">
+    <div class="container">
+      <div class="l-header__inner">
+        <div class="l-header__logo">
+          <a href="/">
+            <img src="assets/images/icon.png" alt="" srcset="">
+          </a>
+        </div>
+        <div class="l-header__burger">
+          <a href="#" class="l-header__burger-button js-toggle-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+        <ul class="l-header__nav">
+          <li class="u-sp l-header__nav-item"><a href="./index.html">HOME</a>
+          </li>
+          <li class="u-pc l-header__nav-item"><a href="./index.html#about">ABOUT</a></li>
+          <li class="l-header__nav-item"><a href="./works.html">WORKS</a></li>
+          <li class="l-header__nav-item"><a href="https://qiita.com/takumibv">BLOG</a></li>
+          <li class="l-header__nav-item l-header__nav-item--active"><a href="./contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <main id="about" class="l-main l-main--child">
+    <form action='post'>
+      <section class="section u-pb-0">
+        <div class="container u-mx-auto">
+          <h3 class="section__title">CONTACT</h3>
+        </div>
+        <div class="container u-mx-auto">
+          <div class="row u-py-16">
+            <div class="four columns">
+              <h4 class="sub-headline u-mb-8">お名前</h4>
+              <input type="text" class="input-text" name="name" required>
+            </div>
+          </div>
+          <div class="row u-py-16">
+            <div class="four columns">
+              <h4 class="sub-headline u-mb-8">メールアドレス</h4>
+              <input type="email" class="input-text" name="email" required>
+            </div>
+          </div>
+          <div class="row u-py-16">
+            <div class="twelve columns">
+              <h4 class="sub-headline u-mb-8">お問い合わせ内容</h4>
+              <textarea class="input-textarea" name="content" cols="10" rows="8" required></textarea>
+            </div>
+          </div>
+          <div class="u-py-16">
+            <input class='button' type="submit" value="送信">
+          </div>
+        </div>
+      </section>
+    </form>
+  </main>
+  <div class="container container--sm u-mx-auto">
+    <div class="profile">
+      <div class="profile__icon">
+        <img src="assets/images/profile.JPG" alt="" srcset="">
+      </div>
+      <p class="profile__name">Takumibv</p>
+      <div class="sns-links">
+        <a href="" class="sns-links-item"><img src="assets/images/icon-twitter.png" alt="" srcset=""></a>
+        <a href="" class="sns-links-item"><img src="assets/images/icon-github.png" alt="" srcset=""></a>
+        <a href="" class="sns-links-item"><img src="assets/images/icon-qiita.png" alt="" srcset=""></a>
+      </div>
+    </div>
+  </div>
+  <footer class="l-footer">
+    <div class="l-footer__bg js-rellax" data-rellax-speed="-3" data-rellax-percentage="0.5"></div>
+    <div class="container u-mx-auto clearfix">
+      <div class="l-footer__left">
+        <img src="assets/images/icon_text.png" alt="" srcset="">
+      </div>
+      <div class="l-footer__right">
+        <p class="text u-text-center">Takumi, All Right Reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
     (function (d) {

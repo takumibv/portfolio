@@ -20,7 +20,6 @@
 }
 
 .work-item__overlay {
-  opacity: 0;
   position: absolute;
   left: 0;
   right: 0;
@@ -31,6 +30,10 @@
   display: flex;
   align-items: flex-end;
   transition: opacity $transition-base;
+
+  @include breakpoint-pc () {
+    opacity: 0;
+  }
 }
 
 .work-item__overlay-name {
@@ -38,5 +41,8 @@
   font-size: 16px;
   font-weight: 300;
   transition: transform $transition-base;
-  transform: translateY(20px);
+  
+  @include breakpoint-pc () {
+    transform: translateY(20px);
+  }
 }

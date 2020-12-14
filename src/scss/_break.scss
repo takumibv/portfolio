@@ -2,6 +2,13 @@
 .break {
   position: relative;
   overflow: hidden;
+
+  @include breakpoint-sp () {
+    &.section {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
 }
 
 .break__bg {
@@ -20,5 +27,6 @@
 .break__text {
   color: #fff;
   text-align: center;
+  line-height: 1.5;
   font-weight: 400;
 }

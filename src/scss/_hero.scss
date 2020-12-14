@@ -32,18 +32,33 @@
 }
 
 .hero__main-title {
-  font-size: 27px;
+  font-size: 20px;
+  line-height: 1.5;
   text-align: center;
+
+  @include breakpoint-pc () {
+    font-size: 27px;
+  }
 }
 
 .hero__main-name {
   margin-top: 4px;
-  font-size: 20px;
+  font-size: 16px;
+  line-height: 1.5;
   text-align: center;
+
+  @include breakpoint-pc () {
+    font-size: 20px;
+  }
 }
 
 .hero__main-jp {
   margin-top: 16px;
-  font-size: 16px;
+  font-size: 13px;
+  line-height: 1.5;
   text-align: center;
+
+  @include breakpoint-pc () {
+    font-size: 16px;
+  }
 }

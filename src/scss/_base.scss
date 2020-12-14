@@ -15,7 +15,10 @@ body {
 
 a {
   color: $color-text-link;
-  text-decoration: none;
+
+  @include breakpoint-pc () {
+    text-decoration: none;
+  }
 
   &:hover {
     text-decoration: underline;

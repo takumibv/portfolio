@@ -1,4 +1,5 @@
 .container {
+  margin: auto;
   padding: 0 10px;
   width: 80%;
   min-width: $container-width-sp;
@@ -11,7 +12,10 @@
 }
 
 .container--sm {
-  min-width: 640px;
+  @include breakpoint-pc () {
+    min-width: 640px;
+    width: 640px;
+  }
 }
 
 /**
@@ -61,6 +65,9 @@
 }
 
 .l-header__logo {
+  position: relative;
+  z-index: 111;
+
   a {
     padding: 8px;
     display: block;
@@ -77,8 +84,25 @@
 }
 
 .l-header__nav {
-  display: flex;
-  
+  @include breakpoint-pc () {
+    display: flex;
+    position: relative;
+  }
+
+  @include breakpoint-sp () {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 80px 16px 0;
+    pointer-events: none;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  }
 }
 
 .l-header__nav-item {
@@ -97,6 +121,11 @@
     font-size: 18px;
     font-weight: 100;
     transition: background-color $transition-base;
+
+    @include breakpoint-sp () {
+      margin: 16px 0;
+      padding: 16px 16px;
+    }
 
     &::after {
       content: "";
@@ -121,6 +150,66 @@
     &::after {
       transform: scaleX(1);
     }
+  }
+}
+
+.l-header__burger {
+  padding: 8px;
+  position: relative;
+  z-index: 111;
+
+  @include breakpoint-pc () {
+    display: none;
+  }
+}
+
+.l-header__burger-button {
+  display: block;
+  width: 32px;
+  height: 32px;
+  position: relative;
+
+  span {
+    position: absolute;
+    width: 24px;
+    height: 1px;
+    background: #555;
+    left: 4px;
+    transition: transform $transition-base;
+
+    &:nth-child(1) {
+      top: 8px;
+    }
+
+    &:nth-child(2) {
+      top: 16px;
+    }
+
+    &:nth-child(3) {
+      top: 24px;
+    }
+  }
+}
+
+.l-header__burger--open {
+  span {
+    &:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    &:nth-child(2) {
+      transform: rotate(90deg) scale(0);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-45deg)  translate(6px, -6px);
+    }
+  }
+
+  + .l-header__nav {
+    pointer-events: initial;
+    transform: scaleY(1);
+    opacity: 1;
   }
 }
 
@@ -159,11 +248,12 @@
 }
 
 .l-top__left {
+  display: none;
   margin-right: 24px;
   width: 33.3333333%;
 
-  @include breakpoint-sp () {
-    display: none;
+  @include breakpoint-pc () {
+    display: block;
   }
 }
 
@@ -174,7 +264,9 @@
 }
 
 .l-top__right {
-  width: 66.666666667%;
+  @include breakpoint-pc () {
+    width: 66.666666667%;
+  }
 }
 
 /**

@@ -1,11 +1,20 @@
 
 .skills {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include breakpoint-pc () {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
 }
 
 .skill-item {
+  width: 25%;
 
+  @include breakpoint-pc () {
+    width: unset;
+  }
 }
 
 .skill-item--orange {
@@ -15,10 +24,15 @@
 }
 
 .skill-item__graph {
+  display: none;
   position: relative;
   height: 180px;
   width: 8px;
   margin: auto;
+
+  @include breakpoint-pc () {
+    display: block;
+  }
 }
 
 .skill-item__graph-indicator {
