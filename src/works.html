@@ -6,32 +6,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="https://use.typekit.net/avl8fnj.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="~/scss/main.scss">
+
+  <title>トップ</title>
 </head>
 
 <body>
-  <div class="l-header">
-    <div class="l-header__logo">
-      <a href="./index.html">
-        <img src='assets/images/icon.png' alt='' srcset=''>
-      </a>
-    </div>
-    <ul class="l-header__nav">
-      <li class="l-header__nav-item"><a href='#about'>ABOUT</a></li>
-      <li class="l-header__nav-item"><a href='./works.html'>WORKS</a></li>
-      <li class="l-header__nav-item"><a href='https://qiita.com/takumibv'>BLOG</a></li>
-      <li class="l-header__nav-item"><a href='./contact.html'>CONTACT</a></li>
-    </ul>
+  <div id='loading' class="l-loading">
+    <p class="headline">Loading...</p>
   </div>
-  hello world
-  こんにちは
-  <h1 class="saying">
-    “the only way to be truly satisfied is to do what you believe is great work.”
-  </h1>
-  <h2 class="saying">
-    Steve Jobs
-  </h2>
-  <p>『心の底から満足する唯一の方法は、素晴らしいと信じる仕事をすること。』</p>
+  <div class="l-header">
+    <div class="container">
+      <div class="l-header__inner">
+        <div class="l-header__logo">
+          <a href="/">
+            <img src="assets/images/icon.png" alt="" srcset="">
+          </a>
+        </div>
+        <ul class="l-header__nav">
+          <li class="l-header__nav-item"><a href="./index.html#about">ABOUT</a></li>
+          <li class="l-header__nav-item l-header__nav-item--active"><a href="./works.html">WORKS</a></li>
+          <li class="l-header__nav-item"><a href="https://qiita.com/takumibv">BLOG</a></li>
+          <li class="l-header__nav-item"><a href="./contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <main id="about" class="l-main l-main--child">
+    <section class="section">
+      <div class='container u-mx-auto'>
+        <h3 class="section__title">WORKS</h3>
+      </div>
+      <div class='container u-mx-auto'>
+        <div class="row u-py-40">
+          <div class="five columns">
+            <img class="u-w-full" src="assets/images/work_memo.png" alt="" srcset="">
+          </div>
+          <div class='six columns offset-by-one'>
+            <div class="u-mt-16">
+              <h4 class="sub-headline">どこでもメモ</h4>
+              <p class="u-mt-16 text">
+                制作期間: 2015.04 - 2016.01<br>
+                規模: 個人開発<br>
+                担当: 企画、デザイン、実装
+              </p>
+              <p class="u-mt-16 text">
+                テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='u-bg-base'>
+        <div class='container u-mx-auto'>
+          <div class="row u-py-40">
+            <div class='six columns u-pc'>
+              <div class="u-mt-16">
+                <h4 class="sub-headline">Titech Portal Login</h4>
+                <p class="u-mt-16 text">
+                  制作期間: 2015.04 - 2016.01<br>
+                  規模: 個人開発<br>
+                  担当: 企画、デザイン、実装
+                </p>
+                <p class="u-mt-16 text">
+                  テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                </p>
+              </div>
+            </div>
+            <div class="five columns offset-by-one">
+              <img class="u-w-full" src="assets/images/work_titech.png" alt="" srcset="">
+            </div>
+            <div class='six columns u-sp'>
+              <div class="u-mt-16">
+                <h4 class="sub-headline">Titech Portal Login</h4>
+                <p class="u-mt-16 text">
+                  制作期間: 2015.04 - 2016.01<br>
+                  規模: 個人開発<br>
+                  担当: 企画、デザイン、実装
+                </p>
+                <p class="u-mt-16 text">
+                  テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='container u-mx-auto'>
+        <div class="row u-py-40">
+          <div class="five columns">
+            <img class="u-w-full" src="assets/images/work_autoscale.png" alt="" srcset="">
+          </div>
+          <div class='six columns offset-by-one'>
+            <div class="u-mt-16">
+              <h4 class="sub-headline">SocialDog</h4>
+              <p class="u-mt-16 text">
+                制作期間: 2015.04 - 2016.01<br>
+                規模: 個人開発<br>
+                担当: 企画、デザイン、実装
+              </p>
+              <p class="u-mt-16 text">
+                テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+  <div class="sns-links u-sp">
+    <a href="" class="sns-links-item"><img src="assets/images/icon-twitter.png" alt="" srcset=""></a>
+    <a href="" class="sns-links-item"><img src="assets/images/icon-github.png" alt="" srcset=""></a>
+    <a href="" class="sns-links-item"><img src="assets/images/icon-qiita.png" alt="" srcset=""></a>
+    <a href="" class="sns-links-item"><img src="assets/images/icon-mail.png" alt="" srcset=""></a>
+  </div>
+  <footer class="l-footer">
+    <div class="l-footer__bg js-rellax" data-rellax-speed="-3" data-rellax-percentage="0.5"></div>
+    <div class='container u-mx-auto clearfix'>
+      <div class='l-footer__left'>
+        <img src='assets/images/icon_text.png' alt='' srcset=''>
+      </div>
+      <div class='l-footer__right'>
+        <p class='text u-text-center'>Takumi, All Right Reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
     (function (d) {

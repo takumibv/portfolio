@@ -69,8 +69,43 @@
   margin-top: 16px;
 }
 
+.career-item__expand-text {
+  display: none;
+}
+
 .career-item__expand-link {
   font-weight: 300;
   font-size: 13px;
   line-height: 1.5;
+
+  img {
+    transition: transform $transition-base;
+  }
+}
+
+.career-collapse {
+  height: 0;
+  overflow: hidden;
+}
+
+.career-collapse--open {
+  // height: auto;
+
+  + .career-item--expand {
+    .career-item__expand-link img {
+      transform: rotate(180deg);
+    }
+
+    .career-item__left::after {
+      content: "";
+    }
+
+    .career-item__expand-text {
+      display: inline;
+    }
+
+    .career-item__collapse-text {
+      display: none;
+    }
+  }
 }

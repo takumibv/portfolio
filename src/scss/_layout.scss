@@ -15,6 +15,29 @@
 }
 
 /**
+* Loading
+**/
+.l-loading {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity $transition-base;
+}
+
+.l-loading--completed {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/**
 * header
 **/
 
@@ -60,6 +83,7 @@
 
 .l-header__nav-item {
   a {
+    position: relative;
     color: $color-text-black;
     display: flex;
     align-items: center;
@@ -74,6 +98,18 @@
     font-weight: 100;
     transition: background-color $transition-base;
 
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: $color-primary;
+      transform: scaleX(0);
+      transition: transform $transition-base;
+    }
+
     &:hover {
       background: $color-base;
     }
@@ -82,7 +118,9 @@
 
 .l-header__nav-item--active {
   a {
-    border-bottom: 2px solid $color-primary;
+    &::after {
+      transform: scaleX(1);
+    }
   }
 }
 
@@ -91,7 +129,11 @@
 **/
 .l-main {
   position: relative;
-  padding-bottom: 160px;
+  padding-bottom: 40px;
+
+  @include breakpoint-pc () {
+    padding-bottom: 160px;
+  }
 }
 
 .l-main__scroll-down {
@@ -102,6 +144,10 @@
   img {
     width: 46px;
   }
+}
+
+.l-main--child {
+  padding-top: 48px;
 }
 
 /**
@@ -213,7 +259,7 @@
 
   /* Offsets */
   .offset-by-one.column,
-  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-one.columns          { margin-left: calc( 8.3333333333% - 10px); }
   .offset-by-two.column,
   .offset-by-two.columns          { margin-left: 17.3333333333%; }
   .offset-by-three.column,

@@ -23,6 +23,14 @@
   z-index: -1;
 }
 
+.hero__main-title,
+.hero__main-name,
+.hero__main-jp {
+  span {
+    display: inline-block;
+  }
+}
+
 .hero__main-title {
   font-size: 27px;
   text-align: center;

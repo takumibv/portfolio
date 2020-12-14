@@ -26,7 +26,8 @@
   bottom: 0;
   width: 100%;
   background: $color-primary;
-  transition: heignt $transition-base;
+  transform-origin: bottom;
+  transform: scaleY(0);
 }
 
 .skill-item__icon {

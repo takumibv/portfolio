@@ -26,17 +26,6 @@
   color: #707070;
 }
 
-.profile__links {
-  margin: 16px auto 24px;
-  display: flex;
-  width: 172px;
-  justify-content: space-between;
-}
-
-.profile__links-item {
-
-}
-
 .profile__text {
 
 }
@@ -56,5 +45,18 @@
     border-bottom: 16px solid $color-base;
     top: -16px;
     left: calc(50% - 16px);
+  }
+}
+
+.sns-links {
+  margin: 16px auto 24px;
+  display: flex;
+  width: 172px;
+  justify-content: space-between;
+}
+
+.sns-links-item {
+  &:hover {
+    opacity: 0.8;
   }
 }

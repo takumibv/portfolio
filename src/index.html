@@ -12,6 +12,9 @@
 </head>
 
 <body>
+  <div id='loading' class="l-loading">
+    <p class="headline">Loading...</p>
+  </div>
   <div class="l-header">
     <div class="container">
       <div class="l-header__inner">
@@ -21,7 +24,8 @@
           </a>
         </div>
         <ul class="l-header__nav">
-          <li class="l-header__nav-item l-header__nav-item--active"><a href="#about">ABOUT</a></li>
+          <li class="l-header__nav-item js-nav-about l-header__nav-item--active"><a href="#about"
+              class="js-scroll">ABOUT</a></li>
           <li class="l-header__nav-item"><a href="./works.html">WORKS</a></li>
           <li class="l-header__nav-item"><a href="https://qiita.com/takumibv">BLOG</a></li>
           <li class="l-header__nav-item"><a href="./contact.html">CONTACT</a></li>
@@ -31,30 +35,30 @@
   </div>
   <div class="hero">
     <div class="hero__bg js-rellax" data-rellax-speed="-5"></div>
-    <h1 class="hero__main-title saying">
+    <h1 class="hero__main-title saying js-text-animation">
       “the only way to be truly satisfied is to do what you believe is great work.”
     </h1>
-    <h2 class="hero__main-name saying">
+    <h2 class="hero__main-name saying js-text-animation">
       Steve Jobs
     </h2>
-    <p class="hero__main-jp">『心の底から満足する唯一の方法は、素晴らしいと信じる仕事をすること。』</p>
+    <p class="hero__main-jp js-text-animation">『心の底から満足する唯一の方法は、素晴らしいと信じる仕事をすること。』</p>
   </div>
-  <main class="l-main">
+  <main id="about" class="l-main">
     <div class="l-main__scroll-down">
       <img src="assets/images/scroll_green.png" alt="" srcset="">
     </div>
-    <section id="about" class="section">
+    <section class="section">
       <div class="container container--sm u-mx-auto">
         <div class="profile">
           <div class="profile__icon">
             <img src="assets/images/profile.JPG" alt="" srcset="">
           </div>
           <p class="profile__name">Takumibv</p>
-          <div class="profile__links">
-            <a href="" class="profile__links-item"><img src="assets/images/icon-twitter.png" alt="" srcset=""></a>
-            <a href="" class="profile__links-item"><img src="assets/images/icon-github.png" alt="" srcset=""></a>
-            <a href="" class="profile__links-item"><img src="assets/images/icon-qiita.png" alt="" srcset=""></a>
-            <a href="" class="profile__links-item"><img src="assets/images/icon-mail.png" alt="" srcset=""></a>
+          <div class="sns-links">
+            <a href="" class="sns-links-item"><img src="assets/images/icon-twitter.png" alt="" srcset=""></a>
+            <a href="" class="sns-links-item"><img src="assets/images/icon-github.png" alt="" srcset=""></a>
+            <a href="" class="sns-links-item"><img src="assets/images/icon-qiita.png" alt="" srcset=""></a>
+            <a href="" class="sns-links-item"><img src="assets/images/icon-mail.png" alt="" srcset=""></a>
           </div>
           <p class="profile__text text">
             東京都在住。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。コンタクトの導線リンクをここに貼ります。
@@ -75,11 +79,11 @@
                 <img src="assets/images/profile.JPG" alt="" srcset="">
               </div>
               <p class="profile__name">Takumibv</p>
-              <div class="profile__links">
-                <a href="" class="profile__links-item"><img src="assets/images/icon-twitter.png" alt="" srcset=""></a>
-                <a href="" class="profile__links-item"><img src="assets/images/icon-github.png" alt="" srcset=""></a>
-                <a href="" class="profile__links-item"><img src="assets/images/icon-qiita.png" alt="" srcset=""></a>
-                <a href="" class="profile__links-item"><img src="assets/images/icon-mail.png" alt="" srcset=""></a>
+              <div class="sns-links">
+                <a href="" class="sns-links-item"><img src="assets/images/icon-twitter.png" alt="" srcset=""></a>
+                <a href="" class="sns-links-item"><img src="assets/images/icon-github.png" alt="" srcset=""></a>
+                <a href="" class="sns-links-item"><img src="assets/images/icon-qiita.png" alt="" srcset=""></a>
+                <a href="" class="sns-links-item"><img src="assets/images/icon-mail.png" alt="" srcset=""></a>
               </div>
               <p id="js-profile__pop" class="profile__pop text">
                 一言で要約したコメントがここに入ります。スクロールすると表示エリアによってコメントが切り替わります。
@@ -125,7 +129,7 @@
             <div class="skills">
               <div class="skill-item">
                 <div class="skill-item__graph">
-                  <div class="skill-item__graph-indicator" style="height: 80%"></div>
+                  <div class="skill-item__graph-indicator js-graph-indicator" style="height: 80%"></div>
                 </div>
                 <div class="skill-item__icon">
                   <img src="assets/images/skill-react.png" alt="" srcset="">
@@ -133,7 +137,7 @@
               </div>
               <div class="skill-item">
                 <div class="skill-item__graph">
-                  <div class="skill-item__graph-indicator" style="height: 75%"></div>
+                  <div class="skill-item__graph-indicator js-graph-indicator" style="height: 75%"></div>
                 </div>
                 <div class="skill-item__icon">
                   <img src="assets/images/skill-vue.png" alt="" srcset="">
@@ -141,7 +145,7 @@
               </div>
               <div class="skill-item">
                 <div class="skill-item__graph">
-                  <div class="skill-item__graph-indicator" style="height: 78%"></div>
+                  <div class="skill-item__graph-indicator js-graph-indicator" style="height: 78%"></div>
                 </div>
                 <div class="skill-item__icon">
                   <img src="assets/images/skill-js.png" alt="" srcset="">
@@ -149,7 +153,7 @@
               </div>
               <div class="skill-item">
                 <div class="skill-item__graph">
-                  <div class="skill-item__graph-indicator" style="height: 75%"></div>
+                  <div class="skill-item__graph-indicator js-graph-indicator" style="height: 75%"></div>
                 </div>
                 <div class="skill-item__icon">
                   <img src="assets/images/skill-html.png" alt="" srcset="">
@@ -157,7 +161,7 @@
               </div>
               <div class="skill-item">
                 <div class="skill-item__graph">
-                  <div class="skill-item__graph-indicator" style="height: 85%"></div>
+                  <div class="skill-item__graph-indicator js-graph-indicator" style="height: 85%"></div>
                 </div>
                 <div class="skill-item__icon">
                   <img src="assets/images/skill-css.png" alt="" srcset="">
@@ -165,7 +169,7 @@
               </div>
               <div class="skill-item">
                 <div class="skill-item__graph">
-                  <div class="skill-item__graph-indicator" style="height: 65%"></div>
+                  <div class="skill-item__graph-indicator js-graph-indicator" style="height: 65%"></div>
                 </div>
                 <div class="skill-item__icon">
                   <img src="assets/images/skill-java.png" alt="" srcset="">
@@ -173,7 +177,7 @@
               </div>
               <div class="skill-item">
                 <div class="skill-item__graph">
-                  <div class="skill-item__graph-indicator" style="height: 50%"></div>
+                  <div class="skill-item__graph-indicator js-graph-indicator" style="height: 50%"></div>
                 </div>
                 <div class="skill-item__icon">
                   <img src="assets/images/skill-php.png" alt="" srcset="">
@@ -181,7 +185,7 @@
               </div>
               <div class="skill-item skill-item--orange">
                 <div class="skill-item__graph">
-                  <div class="skill-item__graph-indicator" style="height: 45%"></div>
+                  <div class="skill-item__graph-indicator js-graph-indicator" style="height: 45%"></div>
                 </div>
                 <div class="skill-item__icon">
                   <img src="assets/images/skill-ps.png" alt="" srcset="">
@@ -189,7 +193,7 @@
               </div>
               <div class="skill-item skill-item--orange">
                 <div class="skill-item__graph">
-                  <div class="skill-item__graph-indicator" style="height: 70%"></div>
+                  <div class="skill-item__graph-indicator js-graph-indicator" style="height: 70%"></div>
                 </div>
                 <div class="skill-item__icon">
                   <img src="assets/images/skill-ai.png" alt="" srcset="">
@@ -241,21 +245,51 @@
                   </div>
                 </div>
               </div>
+              <div id="career-collapse" class='career-collapse'>
+                <div class='career'>
+                  <div class='career-item'>
+                    <div class='career-item__left'></div>
+                    <div class='career-item__right'>
+                      <div class='career-item__title sub-headline'>ソフトバンク株式会社</div>
+                      <div class='career-item__period text'>2019/04 -</div>
+                      <div class='career-item__text text'>
+                        テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                      </div>
+                    </div>
+                  </div>
+                  <div class='career-item'>
+                    <div class='career-item__left'></div>
+                    <div class='career-item__right'>
+                      <div class='career-item__title sub-headline'>東京工業大学</div>
+                      <div class='career-item__period text'>2013/04 - 2019/03</div>
+                      <div class='career-item__text text'>
+                        テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。テキストがここに入ります。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class='career-item career-item--expand'>
                 <div class='career-item__left'></div>
                 <div class='career-item__right'>
-                  <a href='#' class='career-item__expand-link'>
-                    過去の経歴を見る
+                  <a href='#' class='career-item__expand-link js-toggle-career-collapse' data-target="#career-collapse">
+                    <span class="career-item__collapse-text">過去の経歴を見る</span>
+                    <span class="career-item__expand-text">経歴を閉じる</span>
                     <img src='assets/images/icon-arrow-down.svg' alt='' srcset=''>
                   </a>
                 </div>
               </div>
-            </div>
           </section>
         </div>
       </div>
     </div>
   </main>
+  <div class="sns-links u-sp">
+    <a href="" class="sns-links-item"><img src="assets/images/icon-twitter.png" alt="" srcset=""></a>
+    <a href="" class="sns-links-item"><img src="assets/images/icon-github.png" alt="" srcset=""></a>
+    <a href="" class="sns-links-item"><img src="assets/images/icon-qiita.png" alt="" srcset=""></a>
+    <a href="" class="sns-links-item"><img src="assets/images/icon-mail.png" alt="" srcset=""></a>
+  </div>
   <footer class="l-footer">
     <div class="l-footer__bg js-rellax" data-rellax-speed="-3" data-rellax-percentage="0.5"></div>
     <div class='container u-mx-auto clearfix'>
