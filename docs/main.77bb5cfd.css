@@ -692,6 +692,9 @@ a:hover {
 }
 
 .button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Source Han Sans JP", sans-serif;
   width: 120px;
   color: #fff;
@@ -699,20 +702,53 @@ a:hover {
   background: #72AD8C;
   font-size: 16px;
   border: none;
+  border-style: none;
   border-radius: 0;
   transition: background-color 0.2s ease-out;
   cursor: pointer;
+}
+.button:hover {
+  text-decoration: none;
 }
 @media (max-width: 960px) {
   .button {
     width: 100%;
     max-width: 200px;
     margin: auto;
-    display: block;
+    display: flex;
   }
 }
 .button:hover {
   background: #579572;
+}
+
+.button-link {
+  display: inline-block;
+  font-family: "Source Han Sans JP", sans-serif;
+  font-weight: 100;
+  position: relative;
+  font-size: 15px;
+}
+@media (max-width: 960px) {
+  .button-link {
+    text-decoration: underline;
+  }
+}
+.button-link::after {
+  position: absolute;
+  content: "";
+  right: -24px;
+  top: 2px;
+  width: 13px;
+  height: 13px;
+  transform: rotate(-90deg);
+  background-image: url(/icon-arrow-down.72862563.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.button-link:hover {
+  text-decoration: none;
+  opacity: 0.8;
 }
 
 .career-item {
@@ -951,6 +987,10 @@ a:hover {
   font-weight: 100;
   font-size: 32px;
   color: #333;
+}
+
+.profile__text {
+  line-height: 2;
 }
 
 .profile__pop {

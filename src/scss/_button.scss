@@ -1,5 +1,8 @@
 
 .button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   font-family: $font-jp;
   width: 120px;
   color: #fff;
@@ -7,18 +10,53 @@
   background: $color-primary;
   font-size: 16px;
   border: none;
+  border-style: none;
   border-radius: 0;
   transition: background-color $transition-base;
   cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   @include breakpoint-sp () {
     width: 100%;
     max-width: 200px;
     margin: auto;
-    display: block;
+    display: flex;
   }
 
   &:hover {
     background: darken($color-primary, 10)
+  }
+}
+
+.button-link {
+  display: inline-block;
+  font-family: $font-jp;
+  font-weight: 100;
+  position: relative;
+  font-size: 15px;
+
+  @include breakpoint-sp () {
+    text-decoration: underline;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    right: -24px;
+    top: 2px;
+    width: 13px;
+    height: 13px;
+    transform: rotate(-90deg);
+    background-image: url(/assets/images/icon-arrow-down.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.8;
   }
 }
