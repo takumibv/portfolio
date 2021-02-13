@@ -7937,7 +7937,6 @@ window.onload = function () {
   (_document$querySelect2 = document.querySelector(".js-toggle-nav")) === null || _document$querySelect2 === void 0 ? void 0 : _document$querySelect2.addEventListener("click", function (e) {
     e.preventDefault();
     var target = e.target.closest(".l-header__burger");
-    console.log("target", target);
     if (!target) return;
     var classList = target.classList;
 
@@ -7959,7 +7958,6 @@ window.onload = function () {
       text.appendChild(el);
     });
   });
-  console.log(document.querySelectorAll(".js-text-animation span"));
 
   _gsap.gsap.from(".js-text-animation span", {
     delay: 0.3,
@@ -7999,7 +7997,49 @@ window.onload = function () {
       toggleActions: "restart none none reverse" // スクロールイベントで発火するアニメーションの種
 
     }
-  }); // 経歴の開閉
+  }); // アイコン角丸のアニメーション
+  // iconのborder-radius群
+
+
+  var radiusArray = ["50%", "30% 70% 70% 30% / 30% 30% 70% 70%", "58% 42% 75% 25% / 76% 46% 54% 24%", "50% 50% 33% 67% / 55% 27% 73% 45%", "33% 67% 58% 42% / 63% 68% 32% 37%", "63% 68% 32% 37% / 33% 67% 58% 42%", "33% 67% 58% 42% / 55% 27% 73% 45%", "50% 50% 33% 67% / 50% 50% 33% 67%"];
+  var previousIndex = 0;
+
+  var createBorderRadius = function createBorderRadius() {
+    // const randomBorderRadius = () => Math.floor(Math.random() * 80) + 10;
+    // return `${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}%/${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}%`;
+    var randomIndex = function randomIndex() {
+      while (true) {
+        // 前回と違う値を選択する
+        var newIndex = Math.floor(Math.random() * radiusArray.length);
+
+        if (previousIndex !== newIndex) {
+          previousIndex = newIndex;
+          return newIndex;
+        }
+      }
+    };
+
+    return radiusArray[randomIndex()];
+  };
+
+  var borderRadiusValue = createBorderRadius();
+
+  _gsap.gsap.to(".js-icon-animation", {
+    // defaults: { ease: "power4.out" }, // tweenのデフォルトの値
+    repeat: -1,
+    duration: 3,
+    repeatRefresh: true,
+    ease: "none",
+    borderRadius: function borderRadius(index) {
+      if (index === 0) {
+        // 1ページ内に js-icon-animation が複数ある場合に２重で更新されることを防ぐ
+        borderRadiusValue = createBorderRadius();
+      }
+
+      return borderRadiusValue;
+    }
+  }); // アイコン角丸のアニメーション ここまで
+  // 経歴の開閉
 
 
   var career_toggle_button = document.querySelector(".js-toggle-career-collapse");
@@ -8062,7 +8102,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57665" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50317" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

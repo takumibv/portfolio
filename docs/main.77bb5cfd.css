@@ -783,18 +783,18 @@ a:hover {
   top: 0;
   bottom: 0;
   left: 26px;
-  width: 4px;
+  width: 2px;
   background: #e1f5e9;
 }
 .career-item__left::after {
   content: "";
   position: absolute;
   background: #e1f5e9;
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  left: 16px;
-  top: 16px;
+  left: 19px;
+  top: 20px;
 }
 
 .career-item__right {
@@ -980,6 +980,14 @@ a:hover {
   height: 120px;
 }
 
+@keyframes icon_radius_animation {
+  50% {
+    border-radius: 54% 51% 78% 41%/72% 49% 57% 50%;
+  }
+  75% {
+    border-radius: 90% 69% 100% 70%/68% 80% 53% 73%;
+  }
+}
 .profile__name {
   margin-top: 16px;
   text-align: center;

@@ -52,7 +52,7 @@ window.onload = function () {
     e.preventDefault();
 
     const target = e.target.closest(".l-header__burger");
-    console.log("target", target);
+
     if (!target) return;
 
     const classList = target.classList;
@@ -76,7 +76,7 @@ window.onload = function () {
       text.appendChild(el);
     })
   });
-  console.log(document.querySelectorAll(".js-text-animation span"));
+
   gsap.from(".js-text-animation span", {
     delay: 0.3,
     y: 30,
@@ -105,6 +105,52 @@ window.onload = function () {
       toggleActions: "restart none none reverse", // スクロールイベントで発火するアニメーションの種
     }
   });
+
+  // アイコン角丸のアニメーション
+  // iconのborder-radius群
+  const radiusArray = [
+    "50%",
+    "30% 70% 70% 30% / 30% 30% 70% 70%",
+    "58% 42% 75% 25% / 76% 46% 54% 24%",
+    "50% 50% 33% 67% / 55% 27% 73% 45%",
+    "33% 67% 58% 42% / 63% 68% 32% 37%",
+    "63% 68% 32% 37% / 33% 67% 58% 42%",
+    "33% 67% 58% 42% / 55% 27% 73% 45%",
+    "50% 50% 33% 67% / 50% 50% 33% 67%"
+  ]
+  let previousIndex = 0;
+  const createBorderRadius = () => {
+    // const randomBorderRadius = () => Math.floor(Math.random() * 80) + 10;
+    // return `${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}%/${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}%`;
+    const randomIndex = () => {
+      while (true) {
+        // 前回と違う値を選択する
+        const newIndex = Math.floor(Math.random() * radiusArray.length);
+        if (previousIndex !== newIndex) {
+          previousIndex = newIndex;
+          return newIndex;
+        }
+      }
+    }
+    return radiusArray[randomIndex()];
+  };
+
+  let borderRadiusValue = createBorderRadius();
+  gsap.to(".js-icon-animation", {
+    // defaults: { ease: "power4.out" }, // tweenのデフォルトの値
+    repeat: -1,
+    duration: 3,
+    repeatRefresh: true,
+    ease: "none",
+    borderRadius: (index) => {
+      if (index === 0) {
+        // 1ページ内に js-icon-animation が複数ある場合に２重で更新されることを防ぐ
+        borderRadiusValue = createBorderRadius();
+      }
+      return borderRadiusValue;
+    }
+  });
+  // アイコン角丸のアニメーション ここまで
 
   // 経歴の開閉
   const career_toggle_button = document.querySelector(".js-toggle-career-collapse");
