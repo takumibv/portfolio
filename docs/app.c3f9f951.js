@@ -7895,28 +7895,30 @@ _gsap.gsap.registerPlugin(_ScrollTrigger.default);
 _gsap.gsap.registerPlugin(_ScrollToPlugin.default);
 
 window.onload = function () {
-  var _document$querySelect, _document$querySelect2;
+  var _document$querySelect;
 
   // ロード完了
   document.getElementById("loading").classList.add("l-loading--completed"); // パララックス
 
   new _rellax.default('.js-rellax', {// center: true
   });
-  (_document$querySelect = document.querySelector(".js-scroll")) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.addEventListener("click", function (e) {
-    e.preventDefault();
-    var target_href = e.target.getAttribute("href");
-    var target = document.querySelector(target_href);
-    var navHeader = document.querySelector(".l-header__burger--open");
+  document.querySelectorAll(".js-scroll").forEach(function (scroll) {
+    scroll.addEventListener("click", function (e) {
+      e.preventDefault();
+      var target_href = scroll.getAttribute("href");
+      var target = document.querySelector(target_href);
+      var navHeader = document.querySelector(".l-header__burger--open");
 
-    if (navHeader) {
-      navHeader.classList.remove("l-header__burger--open");
-    }
+      if (navHeader) {
+        navHeader.classList.remove("l-header__burger--open");
+      }
 
-    _gsap.gsap.to(window, {
-      scrollTo: target.offsetTop - 28,
-      // headerの高さ
-      duration: 1,
-      ease: "power4.out"
+      _gsap.gsap.to(window, {
+        scrollTo: target.offsetTop - 28,
+        // headerの高さ
+        duration: 1,
+        ease: "power4.out"
+      });
     });
   }); // ScrollTop
   // navリストの更新
@@ -7934,7 +7936,7 @@ window.onload = function () {
   }); // navリストの開閉
   // js-toggle-nav
 
-  (_document$querySelect2 = document.querySelector(".js-toggle-nav")) === null || _document$querySelect2 === void 0 ? void 0 : _document$querySelect2.addEventListener("click", function (e) {
+  (_document$querySelect = document.querySelector(".js-toggle-nav")) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.addEventListener("click", function (e) {
     e.preventDefault();
     var target = e.target.closest(".l-header__burger");
     if (!target) return;
@@ -8001,45 +8003,74 @@ window.onload = function () {
   // iconのborder-radius群
 
 
-  var radiusArray = ["50%", "30% 70% 70% 30% / 30% 30% 70% 70%", "58% 42% 75% 25% / 76% 46% 54% 24%", "50% 50% 33% 67% / 55% 27% 73% 45%", "33% 67% 58% 42% / 63% 68% 32% 37%", "63% 68% 32% 37% / 33% 67% 58% 42%", "33% 67% 58% 42% / 55% 27% 73% 45%", "50% 50% 33% 67% / 50% 50% 33% 67%"];
-  var previousIndex = 0;
+  var radiusArray = ["85%", "80% 50% 50% 67%", "50% 45% 67% 55%", "50% 67% 33% 67%", "67% 55% 58% 42%", "80% 50% 50% 50%", "80% 50% 80% 50%", "80% 90% 80% 50%", "67% 90% 43% 50%", "90% 55% 50% 60%", "90% 80%", "30% 75%", "40% 85%", "75% 35%", "85% 40%"];
 
-  var createBorderRadius = function createBorderRadius() {
-    // const randomBorderRadius = () => Math.floor(Math.random() * 80) + 10;
-    // return `${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}%/${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}%`;
-    var randomIndex = function randomIndex() {
-      while (true) {
-        // 前回と違う値を選択する
-        var newIndex = Math.floor(Math.random() * radiusArray.length);
+  _gsap.gsap.utils.toArray(".js-icon-animation").forEach(function (section) {
+    var previousIndex = 0;
 
-        if (previousIndex !== newIndex) {
-          previousIndex = newIndex;
-          return newIndex;
+    var createBorderRadius = function createBorderRadius() {
+      var randomIndex = function randomIndex() {
+        while (true) {
+          // 前回と違う値を選択する
+          var newIndex = Math.floor(Math.random() * radiusArray.length);
+
+          if (previousIndex !== newIndex) {
+            // console.log(newIndex);
+            previousIndex = newIndex;
+            return newIndex;
+          }
         }
-      }
+      };
+
+      var newindex = randomIndex();
+      console.log("next: ", radiusArray[newindex]);
+      return radiusArray[newindex];
     };
 
-    return radiusArray[randomIndex()];
-  };
+    _gsap.gsap.to(section, {
+      repeat: -1,
+      duration: 1.5,
+      repeatRefresh: true,
+      yoyo: true,
+      ease: "back.inOut(4)",
+      borderRadius: createBorderRadius
+    });
 
-  var borderRadiusValue = createBorderRadius();
+    var hover_animation = _gsap.gsap.to(section, {
+      repeat: 1,
+      duration: 0.5,
+      borderRadius: "50%",
+      ease: "back.out(1)",
+      rotate: "15deg",
+      scale: 1.3,
+      yoyo: true,
+      paused: true
+    });
 
-  _gsap.gsap.to(".js-icon-animation", {
-    // defaults: { ease: "power4.out" }, // tweenのデフォルトの値
-    repeat: -1,
-    duration: 3,
-    repeatRefresh: true,
-    ease: "none",
-    borderRadius: function borderRadius(index) {
-      if (index === 0) {
-        // 1ページ内に js-icon-animation が複数ある場合に２重で更新されることを防ぐ
-        borderRadiusValue = createBorderRadius();
-      }
-
-      return borderRadiusValue;
-    }
+    section.addEventListener("mouseenter", function () {
+      hover_animation.restart();
+    });
   }); // アイコン角丸のアニメーション ここまで
-  // 経歴の開閉
+
+
+  _gsap.gsap.utils.toArray(".js-profile__pop").forEach(function (section) {
+    _gsap.gsap.from(section, {
+      display: "none",
+      y: 50,
+      opacity: 0,
+      scrollTrigger: {
+        // markers: true, // マーカーを表示するか（開発用）
+        trigger: section.dataset.target,
+        // この要素と交差するとイベントが発火
+        start: "top 50%",
+        // ウィンドウのどの位置を発火の基準点にするか
+        end: "bottom 50%",
+        // ウィンドウのどの位置をイベントの終了点にするか
+        toggleActions: "restart reverse restart reverse" // スクロールイベントで発火するアニメーションの種
+
+      }
+    });
+  }); // 経歴の開閉
 
 
   var career_toggle_button = document.querySelector(".js-toggle-career-collapse");

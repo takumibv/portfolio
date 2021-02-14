@@ -1001,8 +1001,15 @@ a:hover {
   line-height: 2;
 }
 
-.profile__pop {
+.profile__pop-area {
   position: relative;
+}
+
+.profile__pop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   margin-top: 16px;
   background: #F5F5F5;
   padding: 16px;

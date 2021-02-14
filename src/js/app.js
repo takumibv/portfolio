@@ -15,20 +15,22 @@ window.onload = function () {
     // center: true
   });
 
-  document.querySelector(".js-scroll")?.addEventListener("click", (e) => {
-    e.preventDefault();
-    const target_href = e.target.getAttribute("href");
-    const target = document.querySelector(target_href);
+  document.querySelectorAll(".js-scroll").forEach((scroll) => {
+    scroll.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target_href = scroll.getAttribute("href");
+      const target = document.querySelector(target_href);
 
-    const navHeader = document.querySelector(".l-header__burger--open");
-    if (navHeader) {
-      navHeader.classList.remove("l-header__burger--open");
-    }
+      const navHeader = document.querySelector(".l-header__burger--open");
+      if (navHeader) {
+        navHeader.classList.remove("l-header__burger--open");
+      }
 
-    gsap.to(window, {
-      scrollTo: target.offsetTop - 28, // headerの高さ
-      duration: 1,
-      ease: "power4.out",
+      gsap.to(window, {
+        scrollTo: target.offsetTop - 28, // headerの高さ
+        duration: 1,
+        ease: "power4.out",
+      });
     });
   });
 
@@ -109,48 +111,82 @@ window.onload = function () {
   // アイコン角丸のアニメーション
   // iconのborder-radius群
   const radiusArray = [
-    "50%",
-    "30% 70% 70% 30% / 30% 30% 70% 70%",
-    "58% 42% 75% 25% / 76% 46% 54% 24%",
-    "50% 50% 33% 67% / 55% 27% 73% 45%",
-    "33% 67% 58% 42% / 63% 68% 32% 37%",
-    "63% 68% 32% 37% / 33% 67% 58% 42%",
-    "33% 67% 58% 42% / 55% 27% 73% 45%",
-    "50% 50% 33% 67% / 50% 50% 33% 67%"
+    "85%",
+    "80% 50% 50% 67%",
+    "50% 45% 67% 55%",
+    "50% 67% 33% 67%",
+    "67% 55% 58% 42%",
+    "80% 50% 50% 50%",
+    "80% 50% 80% 50%",
+    "80% 90% 80% 50%",
+    "67% 90% 43% 50%",
+    "90% 55% 50% 60%",
+    "90% 80%",
+    "30% 75%",
+    "40% 85%",
+    "75% 35%",
+    "85% 40%",
   ]
-  let previousIndex = 0;
-  const createBorderRadius = () => {
-    // const randomBorderRadius = () => Math.floor(Math.random() * 80) + 10;
-    // return `${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}%/${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}% ${randomBorderRadius()}%`;
-    const randomIndex = () => {
-      while (true) {
-        // 前回と違う値を選択する
-        const newIndex = Math.floor(Math.random() * radiusArray.length);
-        if (previousIndex !== newIndex) {
-          previousIndex = newIndex;
-          return newIndex;
+
+  gsap.utils.toArray(".js-icon-animation").forEach(function (section) {
+    let previousIndex = 0;
+    const createBorderRadius = () => {
+      const randomIndex = () => {
+        while (true) {
+          // 前回と違う値を選択する
+          const newIndex = Math.floor(Math.random() * radiusArray.length);
+          if (previousIndex !== newIndex) {
+            // console.log(newIndex);
+            previousIndex = newIndex;
+            return newIndex;
+          }
         }
       }
-    }
-    return radiusArray[randomIndex()];
-  };
+      const newindex = randomIndex();
+      console.log("next: ", radiusArray[newindex]);
+      return radiusArray[newindex];
+    };
 
-  let borderRadiusValue = createBorderRadius();
-  gsap.to(".js-icon-animation", {
-    // defaults: { ease: "power4.out" }, // tweenのデフォルトの値
-    repeat: -1,
-    duration: 3,
-    repeatRefresh: true,
-    ease: "none",
-    borderRadius: (index) => {
-      if (index === 0) {
-        // 1ページ内に js-icon-animation が複数ある場合に２重で更新されることを防ぐ
-        borderRadiusValue = createBorderRadius();
-      }
-      return borderRadiusValue;
-    }
+    gsap.to(section, {
+      repeat: -1,
+      duration: 1.5,
+      repeatRefresh: true,
+      yoyo: true,
+      ease: "back.inOut(4)",
+      borderRadius: createBorderRadius,
+    });
+
+    const hover_animation = gsap.to(section, {
+      repeat: 1,
+      duration: 0.5,
+      borderRadius: "50%",
+      ease: "back.out(1)",
+      rotate: "15deg",
+      scale: 1.3,
+      yoyo: true,
+      paused: true,
+    });
+
+    section.addEventListener("mouseenter", () => {
+      hover_animation.restart();
+    });
   });
   // アイコン角丸のアニメーション ここまで
+
+  gsap.utils.toArray(".js-profile__pop").forEach(function (section) {
+    gsap.from(section, {
+      display: "none",
+      y: 50,
+      opacity: 0,
+      scrollTrigger: {
+        // markers: true, // マーカーを表示するか（開発用）
+        trigger: section.dataset.target, // この要素と交差するとイベントが発火
+        start: "top 50%", // ウィンドウのどの位置を発火の基準点にするか
+        end: "bottom 50%", // ウィンドウのどの位置をイベントの終了点にするか
+        toggleActions: "restart reverse restart reverse", // スクロールイベントで発火するアニメーションの種
+      }
+    })
+  });
 
   // 経歴の開閉
   const career_toggle_button = document.querySelector(".js-toggle-career-collapse");

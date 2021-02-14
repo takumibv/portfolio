@@ -54,9 +54,9 @@
     <p class="hero__main-jp js-text-animation">『心の底から満足する唯一の方法は、素晴らしいと信じる仕事をすること。』</p>
   </div>
   <main id="about" class="l-main">
-    <div class="l-main__scroll-down">
+    <a class="l-main__scroll-down js-scroll" href="#about">
       <img src="assets/images/scroll_green.png" alt="">
-    </div>
+    </a>
     <section class="section">
       <div class="container container--sm u-mx-auto">
         <div class="profile">
@@ -110,14 +110,28 @@
                     src="assets/images/icon-qiita.png" alt=""></a>
                 <a href="./contact.html" class="sns-links-item"><img src="assets/images/icon-mail.png" alt=""></a>
               </div>
-              <p id="js-profile__pop" class="profile__pop text">
-                一言で要約したコメントがここに入ります。スクロールすると表示エリアによってコメントが切り替わります。
-              </p>
+              <div class="profile__pop-area">
+                <p class="profile__pop text js-profile__pop" data-target="#works">
+                  Webのフロントエンド開発やChromeの拡張機能の開発がメインでした！
+                </p>
+                <p class="profile__pop text js-profile__pop" data-target="#skills">
+                  強みはReactとCSS。
+                  <br>
+                  Adobeのデザインツールも経験あり。
+                </p>
+                <!-- <p class="profile__pop text js-profile__pop" data-target="#interest">
+                  interest 一言で要約したコメントがここに入ります。スクロールすると表示エリアによってコメントが切り替わります。
+                </p> -->
+                <!-- <p class="profile__pop text js-profile__pop" data-target="#career">
+                  career 一言で要約したコメントがここに入ります。スクロールすると表示エリアによってコメントが切り替わります。
+                </p> -->
+              </div>
+
             </div>
           </div>
         </div>
         <div class="l-top__right">
-          <section class="section u-pb-0">
+          <section id="works" class="section u-pb-0">
             <h3 class="section__title">WORKS</h3>
             <a href="./works.html" class="section__title-link">すべて見る</a>
             <div class="row">
@@ -151,7 +165,7 @@
               </div>
             </div>
           </section>
-          <section class="section u-pb-0">
+          <section id="skills" class="section u-pb-0">
             <h3 class="section__title">SKILLS</h3>
             <div class="skills">
               <div class="skill-item">
@@ -228,7 +242,7 @@
               </div>
             </div>
           </section>
-          <section class="section u-pb-0">
+          <section id="interest" class="section u-pb-0">
             <h3 class="section__title">INTEREST</h3>
             <div class="u-mt-32">
               <h4 class="sub-headline">フロントエンド開発 with デザイナー</h4>
@@ -249,7 +263,7 @@
               </p>
             </div>
           </section>
-          <section class="section u-pb-0">
+          <section id="career" class="section u-pb-0">
             <h3 class="section__title">CAREER</h3>
             <div class="career">
               <div class="career-item">
