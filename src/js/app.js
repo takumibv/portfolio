@@ -111,21 +111,32 @@ window.onload = function () {
   // アイコン角丸のアニメーション
   // iconのborder-radius群
   const radiusArray = [
-    "85%",
-    "80% 50% 50% 67%",
-    "50% 45% 67% 55%",
-    "50% 67% 33% 67%",
-    "67% 55% 58% 42%",
-    "80% 50% 50% 50%",
-    "80% 50% 80% 50%",
-    "80% 90% 80% 50%",
-    "67% 90% 43% 50%",
-    "90% 55% 50% 60%",
+    // "85%",
+    // "80% 50% 50% 67%",
+    // "50% 45% 67% 55%",
+    // "50% 67% 33% 67%",
+    // "67% 55% 58% 42%",
+    // "80% 50% 50% 50%",
+    // "80% 50% 80% 50%",
+    // "80% 90% 80% 50%",
+    // "67% 90% 43% 50%",
+    // "90% 55% 50% 60%",
     "90% 80%",
+    "60% 30%",
+    "30% 60%",
+    "40% 50% 50% 50%",
+    "50% 40% 50% 50%",
+    "50% 50% 40% 50%",
+    "50% 50% 50% 40%",
+    "80% 50% 50% 50%",
+    "50% 80% 50% 50%",
+    "50% 50% 80% 50%",
+    "50% 50% 50% 80%",
     "30% 75%",
-    "40% 85%",
-    "75% 35%",
-    "85% 40%",
+    "30% 85%",
+    "75% 50%",
+    "50% 75%",
+    "85% 30%",
   ]
 
   gsap.utils.toArray(".js-icon-animation").forEach(function (section) {
@@ -136,14 +147,12 @@ window.onload = function () {
           // 前回と違う値を選択する
           const newIndex = Math.floor(Math.random() * radiusArray.length);
           if (previousIndex !== newIndex) {
-            // console.log(newIndex);
             previousIndex = newIndex;
             return newIndex;
           }
         }
       }
       const newindex = randomIndex();
-      console.log("next: ", radiusArray[newindex]);
       return radiusArray[newindex];
     };
 
