@@ -974,20 +974,14 @@ a:hover {
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   margin: auto;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .profile__icon img {
   width: 120px;
   height: 120px;
 }
 
-@keyframes icon_radius_animation {
-  50% {
-    border-radius: 54% 51% 78% 41%/72% 49% 57% 50%;
-  }
-  75% {
-    border-radius: 90% 69% 100% 70%/68% 80% 53% 73%;
-  }
-}
 .profile__name {
   margin-top: 16px;
   text-align: center;

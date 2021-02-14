@@ -7978,11 +7978,6 @@ window.onload = function () {
 
   _gsap.gsap.to(".js-graph-indicator", {
     scaleY: 1,
-    defaults: {
-      duration: 0.5,
-      ease: "power4.out"
-    },
-    // tweenのデフォルトの値
     stagger: {
       from: "random",
       //ランダムに
@@ -8045,18 +8040,26 @@ window.onload = function () {
     });
 
     var hover_animation = _gsap.gsap.to(section, {
-      repeat: 1,
-      duration: 0.5,
-      borderRadius: "50%",
-      ease: "back.out(1)",
-      rotate: "15deg",
-      scale: 1.3,
-      yoyo: true,
+      duration: 0.3,
+      scale: 1.1,
+      paused: true
+    });
+
+    var click_animation = _gsap.gsap.to(section, {
+      duration: 0.6,
+      ease: "back.out(2)",
+      rotate: "360deg",
       paused: true
     });
 
     section.addEventListener("mouseenter", function () {
-      hover_animation.restart();
+      hover_animation.play();
+    });
+    section.addEventListener("mouseleave", function () {
+      hover_animation.reverse();
+    });
+    section.addEventListener("click", function () {
+      click_animation.restart();
     });
   }); // アイコン角丸のアニメーション ここまで
 
@@ -8141,7 +8144,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53561" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56754" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

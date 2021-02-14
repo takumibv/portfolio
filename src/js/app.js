@@ -94,7 +94,6 @@ window.onload = function () {
   // グラフのアニメーション
   gsap.to(".js-graph-indicator", {
     scaleY: 1,
-    defaults: { duration: 0.5, ease: "power4.out" }, // tweenのデフォルトの値
     stagger: {
       from: "random", //ランダムに
       amount: 0.3 // 0.3秒おきに
@@ -166,18 +165,27 @@ window.onload = function () {
     });
 
     const hover_animation = gsap.to(section, {
-      repeat: 1,
-      duration: 0.5,
-      borderRadius: "50%",
-      ease: "back.out(1)",
-      rotate: "15deg",
-      scale: 1.3,
-      yoyo: true,
+      duration: 0.3,
+      scale: 1.1,
+      paused: true,
+    });
+
+    const click_animation = gsap.to(section, {
+      duration: 0.6,
+      ease: "back.out(2)",
+      rotate: "360deg",
       paused: true,
     });
 
     section.addEventListener("mouseenter", () => {
-      hover_animation.restart();
+      hover_animation.play();
+    });
+    section.addEventListener("mouseleave", () => {
+      hover_animation.reverse();
+    });
+
+    section.addEventListener("click", () => {
+      click_animation.restart();
     });
   });
   // アイコン角丸のアニメーション ここまで
