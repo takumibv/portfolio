@@ -219,6 +219,7 @@ a:hover {
 * Layout
 **/
 .container {
+  position: relative;
   margin: auto;
   padding: 0 20px;
   width: 100%;
@@ -336,7 +337,7 @@ a:hover {
   text-decoration: none;
   font-family: lato, sans-serif;
   font-size: 18px;
-  font-weight: 100;
+  font-weight: 200;
   transition: background-color 0.2s ease-out;
 }
 @media (max-width: 960px) {
@@ -692,6 +693,8 @@ a:hover {
 }
 
 .button {
+  position: relative;
+  box-sizing: border-box;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -706,6 +709,9 @@ a:hover {
   border-radius: 0;
   transition: background-color 0.2s ease-out;
   cursor: pointer;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
 }
 .button:hover {
   text-decoration: none;
@@ -967,14 +973,33 @@ a:hover {
   background: #F5F5F5;
 }
 
+.profile {
+  position: relative;
+  padding-top: 136px;
+}
+.profile::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 150px;
+  background: linear-gradient(145deg, #f0f0f0, #fff);
+  box-shadow: 6px 6px 8px #ddd, -6px -6px 8px #f4f4f4;
+  top: 50px;
+  left: calc(50% - 10px);
+}
+
 .profile__icon {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  margin: auto;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  left: calc(50% - 60px);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .profile__icon img {
@@ -983,7 +1008,6 @@ a:hover {
 }
 
 .profile__name {
-  margin-top: 16px;
   text-align: center;
   font-family: lato, sans-serif;
   font-weight: 100;
@@ -1161,6 +1185,10 @@ a:hover {
   padding-bottom: 0 !important;
 }
 
+.u-pt-24 {
+  padding-top: 24px !important;
+}
+
 .u-py-16 {
   padding-top: 16px !important;
   padding-bottom: 16px !important;
@@ -1207,6 +1235,10 @@ a:hover {
   width: 100% !important;
 }
 
+.u-bg-white {
+  background: #fff;
+}
+
 .u-bg-base {
   background: #F5F5F5;
 }
@@ -1221,6 +1253,14 @@ a:hover {
   .u-sp {
     display: none;
   }
+}
+
+.u-z-index-1 {
+  z-index: 1;
+}
+
+.u-overflow-hidden {
+  overflow: hidden;
 }
 
 .u-font-size-0 {

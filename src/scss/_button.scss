@@ -1,5 +1,7 @@
 
 .button {
+  position: relative;
+  box-sizing: border-box;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +16,9 @@
   border-radius: 0;
   transition: background-color $transition-base;
   cursor: pointer;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
 
   &:hover {
     text-decoration: none;

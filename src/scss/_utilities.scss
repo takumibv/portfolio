@@ -12,6 +12,10 @@
   padding-bottom: 0 !important;
 }
 
+.u-pt-24 {
+  padding-top: 24px !important;
+}
+
 .u-py-16 {
   padding-top: 16px !important;
   padding-bottom: 16px !important;
@@ -58,6 +62,10 @@
   width: 100% !important;
 }
 
+.u-bg-white {
+  background: #fff;
+}
+
 .u-bg-base {
   background: $color-base;
 }
@@ -72,6 +80,14 @@
   @include breakpoint-pc () {
       display: none;
   }
+}
+
+.u-z-index-1 {
+  z-index: 1;
+}
+
+.u-overflow-hidden {
+  overflow: hidden;
 }
 
 .u-font-size-0 {

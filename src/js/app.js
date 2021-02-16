@@ -140,6 +140,9 @@ window.onload = function () {
 
   gsap.utils.toArray(".js-icon-animation").forEach(function (section) {
     let previousIndex = 0;
+    let clickCount = 0;
+    let isRunningFall = false;
+
     const createBorderRadius = () => {
       const randomIndex = () => {
         while (true) {
@@ -155,7 +158,8 @@ window.onload = function () {
       return radiusArray[newindex];
     };
 
-    gsap.to(section, {
+    // アイコンがぷよぷよするアニメーション
+    const jelly_animation = gsap.to(section, {
       repeat: -1,
       duration: 1.5,
       repeatRefresh: true,
@@ -177,6 +181,31 @@ window.onload = function () {
       paused: true,
     });
 
+    const fall_animation = gsap
+      .timeline({
+        paused: true,
+
+      })
+      .to(section, {
+        duration: 2,
+        ease: "back.out(2)",
+        rotate: "1440deg",
+      })
+      .to(section, {
+        duration: 1.5,
+        y: "150vh",
+        ease: "sine.in",
+      }, "-=1.5")
+      .set(section, {
+        scale: 0,
+        y: 0,
+      }, "+=0.5")
+      .to(section, {
+        duration: 1,
+        scale: 1,
+        ease: "back.out(2)",
+      });
+
     section.addEventListener("mouseenter", () => {
       hover_animation.play();
     });
@@ -185,7 +214,20 @@ window.onload = function () {
     });
 
     section.addEventListener("click", () => {
-      click_animation.restart();
+      if (isRunningFall) return;
+
+      clickCount++;
+
+      if (clickCount < 5) {
+        click_animation.restart();
+      } else {
+        isRunningFall = true;
+        fall_animation.restart();
+        setTimeout(() => {
+          isRunningFall = false;
+        }, 3500);
+        clickCount = 0;
+      }
     });
   });
   // アイコン角丸のアニメーション ここまで

@@ -8012,6 +8012,8 @@ window.onload = function () {
 
   _gsap.gsap.utils.toArray(".js-icon-animation").forEach(function (section) {
     var previousIndex = 0;
+    var clickCount = 0;
+    var isRunningFall = false;
 
     var createBorderRadius = function createBorderRadius() {
       var randomIndex = function randomIndex() {
@@ -8028,9 +8030,10 @@ window.onload = function () {
 
       var newindex = randomIndex();
       return radiusArray[newindex];
-    };
+    }; // アイコンがぷよぷよするアニメーション
 
-    _gsap.gsap.to(section, {
+
+    var jelly_animation = _gsap.gsap.to(section, {
       repeat: -1,
       duration: 1.5,
       repeatRefresh: true,
@@ -8052,6 +8055,25 @@ window.onload = function () {
       paused: true
     });
 
+    var fall_animation = _gsap.gsap.timeline({
+      paused: true
+    }).to(section, {
+      duration: 2,
+      ease: "back.out(2)",
+      rotate: "1440deg"
+    }).to(section, {
+      duration: 1.5,
+      y: "150vh",
+      ease: "sine.in"
+    }, "-=1.5").set(section, {
+      scale: 0,
+      y: 0
+    }, "+=0.5").to(section, {
+      duration: 1,
+      scale: 1,
+      ease: "back.out(2)"
+    });
+
     section.addEventListener("mouseenter", function () {
       hover_animation.play();
     });
@@ -8059,7 +8081,19 @@ window.onload = function () {
       hover_animation.reverse();
     });
     section.addEventListener("click", function () {
-      click_animation.restart();
+      if (isRunningFall) return;
+      clickCount++;
+
+      if (clickCount < 5) {
+        click_animation.restart();
+      } else {
+        isRunningFall = true;
+        fall_animation.restart();
+        setTimeout(function () {
+          isRunningFall = false;
+        }, 3500);
+        clickCount = 0;
+      }
     });
   }); // アイコン角丸のアニメーション ここまで
 
@@ -8144,7 +8178,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56754" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53564" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
