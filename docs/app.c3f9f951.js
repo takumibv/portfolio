@@ -7916,7 +7916,7 @@ window.onload = function () {
       _gsap.gsap.to(window, {
         scrollTo: target.offsetTop - 28,
         // headerの高さ
-        duration: 1,
+        duration: 0.5,
         ease: "power4.out"
       });
     });
@@ -8050,7 +8050,8 @@ window.onload = function () {
 
     var click_animation = _gsap.gsap.to(section, {
       duration: 0.6,
-      ease: "back.out(2)",
+      // ease: "back.out(1)",
+      ease: "power4.out",
       rotate: "360deg",
       paused: true
     });
@@ -8085,8 +8086,10 @@ window.onload = function () {
       clickCount++;
 
       if (clickCount < 5) {
+        ga("send", "event", location.href, "click", "rotate", 1);
         click_animation.restart();
       } else {
+        ga("send", "event", location.href, "click", "fall", 1);
         isRunningFall = true;
         fall_animation.restart();
         setTimeout(function () {
@@ -8178,7 +8181,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60556" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51018" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

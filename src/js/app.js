@@ -28,7 +28,7 @@ window.onload = function () {
 
       gsap.to(window, {
         scrollTo: target.offsetTop - 28, // headerの高さ
-        duration: 1,
+        duration: 0.5,
         ease: "power4.out",
       });
     });
@@ -176,7 +176,8 @@ window.onload = function () {
 
     const click_animation = gsap.to(section, {
       duration: 0.6,
-      ease: "back.out(2)",
+      // ease: "back.out(1)",
+      ease: "power4.out",
       rotate: "360deg",
       paused: true,
     });
@@ -219,8 +220,10 @@ window.onload = function () {
       clickCount++;
 
       if (clickCount < 5) {
+        ga("send", "event", location.href, "click", "rotate", 1);
         click_animation.restart();
       } else {
+        ga("send", "event", location.href, "click", "fall", 1);
         isRunningFall = true;
         fall_animation.restart();
         setTimeout(() => {
