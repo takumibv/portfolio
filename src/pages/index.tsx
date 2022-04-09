@@ -1,60 +1,12 @@
-import type { NextPage } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import React, { ReactElement } from "react";
+import Footer from "../components/Footer";
+import Layout from "../components/Layout";
+import { NextPageWithLayout } from "./_app";
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = (props) => {
   return (
     <>
-      {/* <div id="loading" className="l-loading">
-        <p className="headline">Loading...</p>
-      </div> */}
-      <div className="l-header">
-        <div className="container">
-          <div className="l-header__inner">
-            <div className="l-header__logo">
-              <Link href="/">
-                <a>
-                  <Image src="/images/icon.png" alt="" layout="fill" />
-                </a>
-              </Link>
-            </div>
-            <div className="l-header__burger">
-              <a href="#" className="l-header__burger-button js-toggle-nav">
-                <span></span>
-                <span></span>
-                <span></span>
-              </a>
-            </div>
-            <ul className="l-header__nav">
-              <li className="u-sp l-header__nav-item l-header__nav-item--active">
-                <a href="./index.html">HOME</a>
-              </li>
-              <li className="u-pc l-header__nav-item js-nav-about l-header__nav-item--active">
-                <a href="#about" className="js-scroll">
-                  ABOUT
-                </a>
-              </li>
-              <li className="l-header__nav-item">
-                <Link href="./works">
-                  <a>WORKS</a>
-                </Link>
-              </li>
-              <li className="l-header__nav-item">
-                <Link href="https://qiita.com/takumibv">
-                  <a target="_blank" rel="noreferrer">
-                    BLOG
-                  </a>
-                </Link>
-              </li>
-              <li className="l-header__nav-item">
-                <Link href="./contact">
-                  <a>CONTACT</a>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      {/* Hero */}
       <div className="hero">
         <div className="hero__bg js-rellax" data-rellax-speed="-5"></div>
         <h1 className="hero__main-title saying js-text-animation">
@@ -65,12 +17,14 @@ const Home: NextPage = () => {
           『心の底から満足する唯一の方法は、素晴らしいと信じる仕事をすること。』
         </p>
       </div>
+
+      {/* About */}
       <main id="about" className="l-main">
         <a className="l-main__scroll-down js-scroll" href="#about">
           {/* <Image src="/images/scroll_green.png" alt="" layout="fill" /> */}
         </a>
         <section className="section">
-          <div className="container container--sm u-mx-auto">
+          <div className="container container--sm mx-auto">
             <div className="profile">
               <div className="profile__icon js-icon-animation">
                 {/* <Image src="/images/profile.JPG" alt="" layout="fill" /> */}
@@ -130,7 +84,7 @@ const Home: NextPage = () => {
             『一つのことを、一生やり続けられると確信する日がくる』
           </h3>
         </section>
-        <div className="container u-mx-auto u-bg-white">
+        <div className="container mx-auto bg-white">
           <div className="l-top">
             <div className="l-top__left">
               <div className="l-top__left-sticky">
@@ -190,9 +144,9 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className="l-top__right">
-              <section id="works" className="section u-pb-0">
+              <section id="works" className="section pb-0">
                 <h3 className="section__title">WORKS</h3>
-                <a href="./works.html" className="section__title-link">
+                <a href="/works" className="section__title-link">
                   すべて見る
                 </a>
                 <div className="row">
@@ -239,7 +193,7 @@ const Home: NextPage = () => {
                   </div>
                 </div>
               </section>
-              <section id="skills" className="section u-pb-0">
+              <section id="skills" className="section pb-0">
                 <h3 className="section__title">SKILLS</h3>
                 <div className="skills">
                   <div className="skill-item">
@@ -343,11 +297,11 @@ const Home: NextPage = () => {
                   </div>
                 </div>
               </section>
-              <section id="interest" className="section u-pb-0">
+              <section id="interest" className="section pb-0">
                 <h3 className="section__title">INTEREST</h3>
-                <div className="u-mt-32">
+                <div className="mt-8">
                   <h4 className="sub-headline">フロントエンド開発 with デザイナー</h4>
-                  <p className="u-mt-16 text">
+                  <p className="mt-4 text">
                     デザイナーと共にユーザの本質的な要求を見出し、
                     <br />
                     フロントエンジニアとして、技術的側面から表現可能な方法で解決策を考えることができるような人材を目指しています。
@@ -355,9 +309,9 @@ const Home: NextPage = () => {
                     UIデザイナーとフロントエンジニアの両方の立場に立つことで、初めて分かる価値を見いだしていきたいです。
                   </p>
                 </div>
-                <div className="u-mt-32">
+                <div className="mt-8">
                   <h4 className="sub-headline">UI/UX エンジニア</h4>
-                  <p className="u-mt-16 text">
+                  <p className="mt-4 text">
                     大学で学んだ認知心理学の知見や、プログラミングの経験を活かして、UI/UX
                     エンジニアの力を発揮できます。
                     <br />
@@ -366,7 +320,7 @@ const Home: NextPage = () => {
                   </p>
                 </div>
               </section>
-              <section id="career" className="section u-pb-0">
+              <section id="career" className="section pb-0">
                 <h3 className="section__title">CAREER</h3>
                 <div className="career">
                   <div className="career-item">
@@ -379,12 +333,12 @@ const Home: NextPage = () => {
                         <br />
                         <br />
                         【主な業務】
-                        <ul className="u-list-disc u-pl-24">
-                          <li className="u-mt-8">業務システムのフロントエンド開発</li>
-                          <li className="u-mt-8">
-                            UIデザインのプロトタイプ実装・ユーザーテストの実施
+                        <ul className="list-disc pl-6">
+                          <li className="mt-2">業務システムのフロントエンド開発</li>
+                          <li className="mt-2">
+                            UIデザインのプロトタイプ実装・ユーザーテストの実施
                           </li>
-                          <li className="u-mt-8">デザインシステムの構築</li>
+                          <li className="mt-2">デザインシステムの構築</li>
                         </ul>
                       </div>
                     </div>
@@ -476,7 +430,8 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
-      <div className="sns-links u-sp">
+
+      <div className="sns-links tablet:hidden">
         <a
           target="_blank"
           href="https://twitter.com/takumi_bv"
@@ -505,22 +460,15 @@ const Home: NextPage = () => {
           {/* <Image src="/images/icon-mail.png" alt="" layout="fill" /> */}
         </a>
       </div>
-      <footer className="l-footer">
-        <div
-          className="l-footer__bg js-rellax"
-          data-rellax-speed="-3"
-          data-rellax-percentage="0.5"
-        ></div>
-        <div className="container u-mx-auto clearfix">
-          <div className="l-footer__left">
-            {/* <Image src="/images/icon_text.png" alt="" layout="fill" /> */}
-          </div>
-          <div className="l-footer__right">
-            <p className="text u-text-center">Takumi, All Right Reserved.</p>
-          </div>
-        </div>
-      </footer>
     </>
+  );
+};
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <Layout title="takumibv" hasProfile={false}>
+      {page}
+    </Layout>
   );
 };
 
