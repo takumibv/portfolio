@@ -1,0 +1,91 @@
+
+.profile {
+  position: relative;
+  padding-top: 136px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 150px;
+    background: linear-gradient(145deg, #f0f0f0, #fff);
+    box-shadow:  6px 6px 8px #ddd,
+                -6px -6px 8px #f4f4f4;
+    top: 50px;
+    left: calc(50% - 10px);
+  }
+}
+
+.profile__icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  left: calc(50% - 60px);
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+
+  img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.profile__name {
+  text-align: center;
+  font-family: $font-eng;
+  font-weight: 100;
+  font-size: 32px;
+  color: #333;
+}
+
+.profile__text {
+  line-height: 2;
+}
+
+.profile__pop-area {
+  position: relative;
+}
+
+.profile__pop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 16px;
+  background: $color-base;
+  padding: 16px;
+  border-radius: 8px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 16px solid $color-base;
+    top: -16px;
+    left: calc(50% - 16px);
+  }
+}
+
+.sns-links {
+  margin: 16px auto 24px;
+  display: flex;
+  justify-content: space-between;
+  width: 230px;
+
+  @include breakpoint-pc () {
+    width: 172px;
+  }
+}
+
+.sns-links-item {
+  &:hover {
+    opacity: 0.8;
+  }
+}

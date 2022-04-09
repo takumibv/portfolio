@@ -1,0 +1,31 @@
+.break {
+  position: relative;
+  overflow: hidden;
+
+  @include breakpoint-sp() {
+    &.section {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+}
+
+.break__bg {
+  position: absolute;
+  top: -200px;
+  bottom: -200px;
+  left: 0;
+  right: 0;
+  background-image: url("/images/bg-base.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.break__text {
+  color: #fff;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 400;
+}

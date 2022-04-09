@@ -1,0 +1,20 @@
+
+.section {
+  padding: 80px 0;
+}
+
+.section__title {
+  @extend .headline;
+
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.section__title-link {
+  display: inline-block;
+  font-family: $font-jp;
+  font-weight: 300;
+  font-size: 13px;
+  color: $color-text-link;
+  margin-left: 16px;
+}

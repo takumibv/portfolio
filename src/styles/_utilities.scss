@@ -1,0 +1,111 @@
+/**
+* =======
+* Utility
+* =======
+**/
+
+.u-mx-auto {
+  margin: 0 auto;
+}
+
+.u-pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.u-pt-24 {
+  padding-top: 24px !important;
+}
+
+.u-py-16 {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+.u-py-40 {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+.u-pl-24 {
+  padding-left: 24px !important;
+}
+
+.u-mb-8 {
+  margin-bottom: 8px !important;
+}
+
+.u-mt-8 {
+  margin-top: 8px !important;
+}
+
+.u-mt-16 {
+  margin-top: 16px !important;
+}
+
+.u-mt-32 {
+  margin-top: 32px !important;
+}
+
+.u-mb-40 {
+  margin-bottom: 40px !important;
+}
+
+.u-d-none {
+  display: none !important;
+}
+
+.u-d-inline {
+  display: inline !important;
+}
+
+.u-w-full {
+  width: 100% !important;
+}
+
+.u-bg-white {
+  background: #fff;
+}
+
+.u-bg-base {
+  background: $color-base;
+}
+
+.u-pc {
+  @include breakpoint-sp () {
+      display: none;
+  }
+}
+
+.u-sp {
+  @include breakpoint-pc () {
+      display: none;
+  }
+}
+
+.u-z-index-1 {
+  z-index: 1;
+}
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+
+.u-font-size-0 {
+  font-size: 0 !important;
+}
+
+.u-text-left {
+  text-align: left !important;
+}
+
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-color-gray {
+  color: #999 !important;
+}
+
+.u-list-disc {
+  list-style-type: disc;
+}

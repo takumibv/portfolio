@@ -1,0 +1,18 @@
+@mixin breakpoint-pc () {
+  @media (min-width: $breakpoint-sp + 1px) {
+    @content;
+  }
+}
+@mixin breakpoint-sp () {
+  @media (max-width: $breakpoint-sp) {
+    @content;
+  }
+}
+
+@mixin clearfix () {
+  &::after {
+      clear: both;
+      content: '';
+      display: block;
+  }
+}
