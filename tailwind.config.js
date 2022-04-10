@@ -8,7 +8,7 @@ module.exports = {
     },
     screens: {
       sp: "320px",
-      tablet: "680px",
+      tablet: "960px",
       desktop: "1280px",
     },
   },

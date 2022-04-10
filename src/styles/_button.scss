@@ -1,4 +1,3 @@
-
 .button {
   position: relative;
   box-sizing: border-box;
@@ -24,7 +23,7 @@
     text-decoration: none;
   }
 
-  @include breakpoint-sp () {
+  @include breakpoint-sp() {
     width: 100%;
     max-width: 200px;
     margin: auto;
@@ -32,7 +31,7 @@
   }
 
   &:hover {
-    background: darken($color-primary, 10)
+    background: darken($color-primary, 10);
   }
 }
 
@@ -43,7 +42,7 @@
   position: relative;
   font-size: 15px;
 
-  @include breakpoint-sp () {
+  @include breakpoint-sp() {
     text-decoration: underline;
   }
 
@@ -55,7 +54,7 @@
     width: 13px;
     height: 13px;
     transform: rotate(-90deg);
-    background-image: url(/assets/images/icon-arrow-down.svg);
+    background-image: url("/images/icon-arrow-down.svg");
     background-size: contain;
     background-repeat: no-repeat;
   }

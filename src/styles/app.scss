@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 @import "./variables";
 @import "./mixin";
@@ -26,4 +25,4 @@
 @import "./section";
 @import "./work";
 
-@import "./utilities";
+@tailwind utilities;

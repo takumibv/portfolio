@@ -1,6 +1,10 @@
 import React, { ReactElement } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import Footer from "../components/Footer";
 import Layout from "../components/Layout";
+import Profile from "../components/Profile";
+import SnsLinks from "../components/SnsLinks";
 import { NextPageWithLayout } from "./_app";
 
 const Home: NextPageWithLayout = (props) => {
@@ -21,57 +25,26 @@ const Home: NextPageWithLayout = (props) => {
       {/* About */}
       <main id="about" className="l-main">
         <a className="l-main__scroll-down js-scroll" href="#about">
-          {/* <Image src="/images/scroll_green.png" alt="" layout="fill" /> */}
+          <Image src="/images/scroll_green.png" alt="" width={46} height={60} />
         </a>
         <section className="section">
           <div className="container container--sm mx-auto">
-            <div className="profile">
-              <div className="profile__icon js-icon-animation">
-                {/* <Image src="/images/profile.JPG" alt="" layout="fill" /> */}
-              </div>
-              <h2 className="profile__name">Takumibv</h2>
-              <div className="sns-links">
-                <a
-                  target="_blank"
-                  href="https://twitter.com/takumi_bv"
-                  className="sns-links-item"
-                  rel="noreferrer"
-                >
-                  {/* <Image src="/images/icon-twitter.png" alt="" layout="fill" /> */}
-                </a>
-                <a
-                  target="_blank"
-                  href="https://github.com/takumibv"
-                  className="sns-links-item"
-                  rel="noreferrer"
-                >
-                  {/* <Image src="/images/icon-github.png" alt="" layout="fill" /> */}
-                </a>
-                <a
-                  target="_blank"
-                  href="https://qiita.com/takumibv"
-                  className="sns-links-item"
-                  rel="noreferrer"
-                >
-                  {/* <Image src="/images/icon-qiita.png" alt="" layout="fill" /> */}
-                </a>
-                <a href="./contact.html" className="sns-links-item">
-                  {/* <Image src="/images/icon-mail.png" alt="" layout="fill" /> */}
-                </a>
-              </div>
-              <p className="profile__text text">
-                東京在住のフロントエンドエンジニア。UIデザイン修行中。
-                コードを書くのが大好き、どのように設計し実装するかを考えることが楽しいタイプです。
-                <br />
-                東京工業大学院を卒業。
-                <br />
-                授業でJavaやC言語を学びプログラミングに興味を持ち、独学でJavaScrptやUIデザインの勉強を始めました。主にWebエンジニアとして、インターン・バイトでプログラミングスキルを身につけました。
-                <br />
-                研究室では「眼球運動を用いた使い心地の定量評価」というテーマで研究を行いました。
-                <br />
-                <a href="./contact.html">お問い合わせはこちら</a>からお願いします。
-              </p>
-            </div>
+            <Profile />
+            <p className="profile__text text">
+              東京在住のフロントエンドエンジニア。UIデザイン修行中。
+              コードを書くのが大好き、どのように設計し実装するかを考えることが楽しいタイプです。
+              <br />
+              東京工業大学院を卒業。
+              <br />
+              授業でJavaやC言語を学びプログラミングに興味を持ち、独学でJavaScrptやUIデザインの勉強を始めました。主にWebエンジニアとして、インターン・バイトでプログラミングスキルを身につけました。
+              <br />
+              研究室では「眼球運動を用いた使い心地の定量評価」というテーマで研究を行いました。
+              <br />
+              <Link href="./contact">
+                <a>お問い合わせはこちら</a>
+              </Link>
+              からお願いします。
+            </p>
           </div>
         </section>
         <section className="section break">
@@ -88,58 +61,21 @@ const Home: NextPageWithLayout = (props) => {
           <div className="l-top">
             <div className="l-top__left">
               <div className="l-top__left-sticky">
-                <div className="profile">
-                  <div className="profile__icon js-icon-animation">
-                    {/* <Image src="/images/profile.JPG" alt="" layout="fill" /> */}
-                  </div>
-                  <p className="profile__name">Takumibv</p>
-                  <div className="sns-links">
-                    <a
-                      target="_blank"
-                      href="https://twitter.com/takumi_bv"
-                      className="sns-links-item"
-                      rel="noreferrer"
-                    >
-                      {/* <Image src="/images/icon-twitter.png" alt="" layout="fill" /> */}
-                    </a>
-                    <a
-                      target="_blank"
-                      href="https://github.com/takumibv"
-                      className="sns-links-item"
-                      rel="noreferrer"
-                    >
-                      {/* <Image src="/images/icon-github.png" alt="" layout="fill" /> */}
-                    </a>
-                    <a
-                      target="_blank"
-                      href="https://qiita.com/takumibv"
-                      className="sns-links-item"
-                      rel="noreferrer"
-                    >
-                      {/* <Image src="/images/icon-qiita.png" alt="" layout="fill" /> */}
-                    </a>
-                    <a href="./contact.html" className="sns-links-item">
-                      {/* <Image src="/images/icon-mail.png" alt="" layout="fill" /> */}
-                    </a>
-                  </div>
-                  <div className="profile__pop-area">
-                    <p className="profile__pop text js-profile__pop" data-target="#works">
-                      Webのフロントエンド開発やChromeの拡張機能の開発がメインでした！
-                    </p>
-                    <p className="profile__pop text js-profile__pop" data-target="#skills">
-                      強みはReactとCSS。
-                      <br />
-                      Adobeのデザインツールも使用経験あり。デザインは勉強中。
-                    </p>
-                    <p className="profile__pop text js-profile__pop" data-target="#interest">
-                      フロントエンドエンジニア×デザイナー
-                      <br />
-                      としての人材を目指しています！
-                    </p>
-                    {/* <!-- <p className="profile__pop text js-profile__pop" data-target="#career">
-                  career 一言で要約したコメントがここに入ります。スクロールすると表示エリアによってコメントが切り替わります。
-                </p> --> */}
-                  </div>
+                <Profile />
+                <div className="profile__pop-area">
+                  <p className="profile__pop text js-profile__pop" data-target="#works">
+                    Webのフロントエンド開発やChromeの拡張機能の開発がメインでした！
+                  </p>
+                  <p className="profile__pop text js-profile__pop" data-target="#skills">
+                    強みはReactとCSS。
+                    <br />
+                    Adobeのデザインツールも使用経験あり。デザインは勉強中。
+                  </p>
+                  <p className="profile__pop text js-profile__pop" data-target="#interest">
+                    フロントエンドエンジニア×デザイナー
+                    <br />
+                    としての人材を目指しています！
+                  </p>
                 </div>
               </div>
             </div>
@@ -150,27 +86,41 @@ const Home: NextPageWithLayout = (props) => {
                   すべて見る
                 </a>
                 <div className="row">
-                  <div className="six columns">
+                  <div className="six columns text-center">
                     <a
                       href="https://chrome.google.com/webstore/detail/memo-anywhere/fjfoncfdjhdefjhknbaphionnognbnpl?utm_source=chrome-ntp-icon"
                       target="_blank"
                       className="work-item"
                       rel="noreferrer"
                     >
-                      {/* <Image src="/images/work_memo.png" alt="" layout="fill" /> */}
+                      <Image
+                        className="w-full"
+                        src="/images/work_memo.png"
+                        alt=""
+                        width={308}
+                        height={192}
+                        layout="raw"
+                      />
                       <div className="work-item__overlay">
                         <p className="work-item__overlay-name">どこでもメモ</p>
                       </div>
                     </a>
                   </div>
-                  <div className="six columns">
+                  <div className="six columns text-center">
                     <a
                       href="https://chrome.google.com/webstore/detail/titech-portal-login/gakchdgcpjbchncgbflfkajcfpnbhohi?utm_source=chrome-ntp-icon"
                       target="_blank"
                       className="work-item"
                       rel="noreferrer"
                     >
-                      {/* <Image src="/images/work_titech.png" alt="" layout="fill" /> */}
+                      <Image
+                        className="w-full"
+                        src="/images/work_titech.png"
+                        alt=""
+                        width={308}
+                        height={192}
+                        layout="raw"
+                      />
                       <div className="work-item__overlay">
                         <p className="work-item__overlay-name">Titech Portal Login</p>
                       </div>
@@ -178,14 +128,21 @@ const Home: NextPageWithLayout = (props) => {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="six columns">
+                  <div className="six columns text-center">
                     <a
                       href="https://social-dog.net/"
                       className="work-item"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      {/* <Image src="/images/work_autoscale.png" alt="" layout="fill" /> */}
+                      <Image
+                        className="w-full"
+                        src="/images/work_autoscale.png"
+                        alt=""
+                        width={308}
+                        height={192}
+                        layout="raw"
+                      />
                       <div className="work-item__overlay">
                         <p className="work-item__overlay-name">SocialDog</p>
                       </div>
@@ -204,7 +161,13 @@ const Home: NextPageWithLayout = (props) => {
                       ></div>
                     </div>
                     <div className="skill-item__icon">
-                      {/* <Image src="/images/skill-react.png" alt="" layout="fill" /> */}
+                      <Image
+                        src="/images/skill-react.png"
+                        alt=""
+                        layout="raw"
+                        width="70"
+                        height="70"
+                      />
                     </div>
                   </div>
                   <div className="skill-item">
@@ -215,7 +178,13 @@ const Home: NextPageWithLayout = (props) => {
                       ></div>
                     </div>
                     <div className="skill-item__icon">
-                      {/* <Image src="/images/skill-vue.png" alt="" layout="fill" /> */}
+                      <Image
+                        src="/images/skill-vue.png"
+                        alt=""
+                        layout="raw"
+                        width="70"
+                        height="70"
+                      />
                     </div>
                   </div>
                   <div className="skill-item">
@@ -226,7 +195,13 @@ const Home: NextPageWithLayout = (props) => {
                       ></div>
                     </div>
                     <div className="skill-item__icon">
-                      {/* <Image src="/images/skill-js.png" alt="" layout="fill" /> */}
+                      <Image
+                        src="/images/skill-js.png"
+                        alt=""
+                        layout="raw"
+                        width="70"
+                        height="70"
+                      />
                     </div>
                   </div>
                   <div className="skill-item">
@@ -237,7 +212,13 @@ const Home: NextPageWithLayout = (props) => {
                       ></div>
                     </div>
                     <div className="skill-item__icon">
-                      {/* <Image src="/images/skill-html.png" alt="" layout="fill" /> */}
+                      <Image
+                        src="/images/skill-html.png"
+                        alt=""
+                        layout="raw"
+                        width="70"
+                        height="70"
+                      />
                     </div>
                   </div>
                   <div className="skill-item">
@@ -248,7 +229,13 @@ const Home: NextPageWithLayout = (props) => {
                       ></div>
                     </div>
                     <div className="skill-item__icon">
-                      {/* <Image src="/images/skill-css.png" alt="" layout="fill" /> */}
+                      <Image
+                        src="/images/skill-css.png"
+                        alt=""
+                        layout="raw"
+                        width="70"
+                        height="70"
+                      />
                     </div>
                   </div>
                   <div className="skill-item">
@@ -259,7 +246,13 @@ const Home: NextPageWithLayout = (props) => {
                       ></div>
                     </div>
                     <div className="skill-item__icon">
-                      {/* <Image src="/images/skill-java.png" alt="" layout="fill" /> */}
+                      <Image
+                        src="/images/skill-java.png"
+                        alt=""
+                        layout="raw"
+                        width="70"
+                        height="70"
+                      />
                     </div>
                   </div>
                   <div className="skill-item">
@@ -270,7 +263,13 @@ const Home: NextPageWithLayout = (props) => {
                       ></div>
                     </div>
                     <div className="skill-item__icon">
-                      {/* <Image src="/images/skill-php.png" alt="" layout="fill" /> */}
+                      <Image
+                        src="/images/skill-php.png"
+                        alt=""
+                        layout="raw"
+                        width="70"
+                        height="70"
+                      />
                     </div>
                   </div>
                   <div className="skill-item skill-item--orange">
@@ -281,7 +280,13 @@ const Home: NextPageWithLayout = (props) => {
                       ></div>
                     </div>
                     <div className="skill-item__icon">
-                      {/* <Image src="/images/skill-ps.png" alt="" layout="fill" /> */}
+                      <Image
+                        src="/images/skill-ps.png"
+                        alt=""
+                        layout="raw"
+                        width="70"
+                        height="70"
+                      />
                     </div>
                   </div>
                   <div className="skill-item skill-item--orange">
@@ -292,7 +297,13 @@ const Home: NextPageWithLayout = (props) => {
                       ></div>
                     </div>
                     <div className="skill-item__icon">
-                      {/* <Image src="/images/skill-ai.png" alt="" layout="fill" /> */}
+                      <Image
+                        src="/images/skill-ai.png"
+                        alt=""
+                        layout="raw"
+                        width="70"
+                        height="70"
+                      />
                     </div>
                   </div>
                 </div>
@@ -420,7 +431,7 @@ const Home: NextPageWithLayout = (props) => {
                       >
                         <span className="career-item__collapse-text">過去の経歴を見る</span>
                         <span className="career-item__expand-text">経歴を閉じる</span>
-                        {/* <Image src="/images/icon-arrow-down.svg" alt="" layout="fill" /> */}
+                        <Image src="/images/icon-arrow-down.svg" alt="" width="13" height="8" />
                       </a>
                     </div>
                   </div>
@@ -431,35 +442,7 @@ const Home: NextPageWithLayout = (props) => {
         </div>
       </main>
 
-      <div className="sns-links tablet:hidden">
-        <a
-          target="_blank"
-          href="https://twitter.com/takumi_bv"
-          className="sns-links-item"
-          rel="noreferrer"
-        >
-          {/* <Image src="/images/icon-twitter.png" alt="" layout="fill" /> */}
-        </a>
-        <a
-          target="_blank"
-          href="https://github.com/takumibv"
-          className="sns-links-item"
-          rel="noreferrer"
-        >
-          {/* <Image src="/images/icon-github.png" alt="" layout="fill" /> */}
-        </a>
-        <a
-          target="_blank"
-          href="https://qiita.com/takumibv"
-          className="sns-links-item"
-          rel="noreferrer"
-        >
-          {/* <Image src="/images/icon-qiita.png/" alt="" layout="fill" /> */}
-        </a>
-        <a href="./contact.html" className="sns-links-item">
-          {/* <Image src="/images/icon-mail.png" alt="" layout="fill" /> */}
-        </a>
-      </div>
+      <SnsLinks className="tablet:hidden" />
     </>
   );
 };

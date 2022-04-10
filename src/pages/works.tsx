@@ -278,43 +278,6 @@ const Works: NextPageWithLayout = () => {
           </div>
         </section>
       </main>
-      <div className="container container--sm mx-auto pt-6 overflow-hidden">
-        <div className="profile">
-          <div className="profile__icon js-icon-animation">
-            <img src="/images/profile.JPG" alt="" />
-          </div>
-          <p className="profile__name">Takumibv</p>
-          <div className="sns-links">
-            <a
-              target="_blank"
-              href="https://twitter.com/takumi_bv"
-              className="sns-links-item"
-              rel="noreferrer"
-            >
-              <img src="/images/icon-twitter.png" alt="" />
-            </a>
-            <a
-              target="_blank"
-              href="https://github.com/takumibv"
-              className="sns-links-item"
-              rel="noreferrer"
-            >
-              <img src="/images/icon-github.png" alt="" />
-            </a>
-            <a
-              target="_blank"
-              href="https://qiita.com/takumibv"
-              className="sns-links-item"
-              rel="noreferrer"
-            >
-              <img src="/images/icon-qiita.png" alt="" />
-            </a>
-            <a href="./contact.html" className="sns-links-item">
-              <img src="/images/icon-mail.png" alt="" />
-            </a>
-          </div>
-        </div>
-      </div>
     </>
   );
 };

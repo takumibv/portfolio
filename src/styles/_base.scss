@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-html{
+html {
   font-size: 62.5%;
 }
 
@@ -15,8 +15,9 @@ body {
 
 a {
   color: $color-text-link;
+  text-decoration: underline;
 
-  @include breakpoint-pc () {
+  @include breakpoint-pc() {
     text-decoration: none;
   }
 
