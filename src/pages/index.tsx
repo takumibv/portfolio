@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import Profile from "../components/Profile";
 import SnsLinks from "../components/SnsLinks";
 import { NextPageWithLayout } from "./_app";
+import Skills from "../components/Skills";
 
 const Home: NextPageWithLayout = (props) => {
   return (
@@ -40,7 +41,7 @@ const Home: NextPageWithLayout = (props) => {
               <br />
               研究室では「眼球運動を用いた使い心地の定量評価」というテーマで研究を行いました。
               <br />
-              <Link href="./contact">
+              <Link href="/contact">
                 <a>お問い合わせはこちら</a>
               </Link>
               からお願いします。
@@ -82,231 +83,68 @@ const Home: NextPageWithLayout = (props) => {
             <div className="l-top__right">
               <section id="works" className="section pb-0">
                 <h3 className="section__title">WORKS</h3>
-                <a href="/works" className="section__title-link">
-                  すべて見る
-                </a>
+                <Link href="/works">
+                  <a className="section__title-link">すべて見る</a>
+                </Link>
                 <div className="row">
                   <div className="six columns text-center">
-                    <a
-                      href="https://chrome.google.com/webstore/detail/memo-anywhere/fjfoncfdjhdefjhknbaphionnognbnpl?utm_source=chrome-ntp-icon"
-                      target="_blank"
-                      className="work-item"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        className="w-full"
-                        src="/images/work_memo.png"
-                        alt=""
-                        width={308}
-                        height={192}
-                        layout="raw"
-                      />
-                      <div className="work-item__overlay">
-                        <p className="work-item__overlay-name">どこでもメモ</p>
-                      </div>
-                    </a>
+                    <Link href="https://chrome.google.com/webstore/detail/memo-anywhere/fjfoncfdjhdefjhknbaphionnognbnpl?utm_source=chrome-ntp-icon">
+                      <a target="_blank" className="work-item" rel="noreferrer">
+                        <Image
+                          className="w-full"
+                          src="/images/work_memo.png"
+                          alt=""
+                          width={308}
+                          height={192}
+                          layout="raw"
+                        />
+                        <div className="work-item__overlay">
+                          <p className="work-item__overlay-name">どこでもメモ</p>
+                        </div>
+                      </a>
+                    </Link>
                   </div>
                   <div className="six columns text-center">
-                    <a
-                      href="https://chrome.google.com/webstore/detail/titech-portal-login/gakchdgcpjbchncgbflfkajcfpnbhohi?utm_source=chrome-ntp-icon"
-                      target="_blank"
-                      className="work-item"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        className="w-full"
-                        src="/images/work_titech.png"
-                        alt=""
-                        width={308}
-                        height={192}
-                        layout="raw"
-                      />
-                      <div className="work-item__overlay">
-                        <p className="work-item__overlay-name">Titech Portal Login</p>
-                      </div>
-                    </a>
+                    <Link href="https://chrome.google.com/webstore/detail/titech-portal-login/gakchdgcpjbchncgbflfkajcfpnbhohi?utm_source=chrome-ntp-icon">
+                      <a target="_blank" className="work-item" rel="noreferrer">
+                        <Image
+                          className="w-full"
+                          src="/images/work_titech.png"
+                          alt=""
+                          width={308}
+                          height={192}
+                          layout="raw"
+                        />
+                        <div className="work-item__overlay">
+                          <p className="work-item__overlay-name">Titech Portal Login</p>
+                        </div>
+                      </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="row">
                   <div className="six columns text-center">
-                    <a
-                      href="https://social-dog.net/"
-                      className="work-item"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Image
-                        className="w-full"
-                        src="/images/work_autoscale.png"
-                        alt=""
-                        width={308}
-                        height={192}
-                        layout="raw"
-                      />
-                      <div className="work-item__overlay">
-                        <p className="work-item__overlay-name">SocialDog</p>
-                      </div>
-                    </a>
+                    <Link href="https://social-dog.net/">
+                      <a className="work-item" target="_blank" rel="noreferrer">
+                        <Image
+                          className="w-full"
+                          src="/images/work_autoscale.png"
+                          alt=""
+                          width={308}
+                          height={192}
+                          layout="raw"
+                        />
+                        <div className="work-item__overlay">
+                          <p className="work-item__overlay-name">SocialDog</p>
+                        </div>
+                      </a>
+                    </Link>
                   </div>
                 </div>
               </section>
               <section id="skills" className="section pb-0">
                 <h3 className="section__title">SKILLS</h3>
-                <div className="skills">
-                  <div className="skill-item">
-                    <div className="skill-item__graph">
-                      <div
-                        className="skill-item__graph-indicator js-graph-indicator"
-                        // style="height: 80%"
-                      ></div>
-                    </div>
-                    <div className="skill-item__icon">
-                      <Image
-                        src="/images/skill-react.png"
-                        alt=""
-                        layout="raw"
-                        width="70"
-                        height="70"
-                      />
-                    </div>
-                  </div>
-                  <div className="skill-item">
-                    <div className="skill-item__graph">
-                      <div
-                        className="skill-item__graph-indicator js-graph-indicator"
-                        // style="height: 75%"
-                      ></div>
-                    </div>
-                    <div className="skill-item__icon">
-                      <Image
-                        src="/images/skill-vue.png"
-                        alt=""
-                        layout="raw"
-                        width="70"
-                        height="70"
-                      />
-                    </div>
-                  </div>
-                  <div className="skill-item">
-                    <div className="skill-item__graph">
-                      <div
-                        className="skill-item__graph-indicator js-graph-indicator"
-                        // style="height: 78%"
-                      ></div>
-                    </div>
-                    <div className="skill-item__icon">
-                      <Image
-                        src="/images/skill-js.png"
-                        alt=""
-                        layout="raw"
-                        width="70"
-                        height="70"
-                      />
-                    </div>
-                  </div>
-                  <div className="skill-item">
-                    <div className="skill-item__graph">
-                      <div
-                        className="skill-item__graph-indicator js-graph-indicator"
-                        // style="height: 75%"
-                      ></div>
-                    </div>
-                    <div className="skill-item__icon">
-                      <Image
-                        src="/images/skill-html.png"
-                        alt=""
-                        layout="raw"
-                        width="70"
-                        height="70"
-                      />
-                    </div>
-                  </div>
-                  <div className="skill-item">
-                    <div className="skill-item__graph">
-                      <div
-                        className="skill-item__graph-indicator js-graph-indicator"
-                        // style="height: 85%"
-                      ></div>
-                    </div>
-                    <div className="skill-item__icon">
-                      <Image
-                        src="/images/skill-css.png"
-                        alt=""
-                        layout="raw"
-                        width="70"
-                        height="70"
-                      />
-                    </div>
-                  </div>
-                  <div className="skill-item">
-                    <div className="skill-item__graph">
-                      <div
-                        className="skill-item__graph-indicator js-graph-indicator"
-                        // style="height: 65%"
-                      ></div>
-                    </div>
-                    <div className="skill-item__icon">
-                      <Image
-                        src="/images/skill-java.png"
-                        alt=""
-                        layout="raw"
-                        width="70"
-                        height="70"
-                      />
-                    </div>
-                  </div>
-                  <div className="skill-item">
-                    <div className="skill-item__graph">
-                      <div
-                        className="skill-item__graph-indicator js-graph-indicator"
-                        // style="height: 50%"
-                      ></div>
-                    </div>
-                    <div className="skill-item__icon">
-                      <Image
-                        src="/images/skill-php.png"
-                        alt=""
-                        layout="raw"
-                        width="70"
-                        height="70"
-                      />
-                    </div>
-                  </div>
-                  <div className="skill-item skill-item--orange">
-                    <div className="skill-item__graph">
-                      <div
-                        className="skill-item__graph-indicator js-graph-indicator"
-                        // style="height: 45%"
-                      ></div>
-                    </div>
-                    <div className="skill-item__icon">
-                      <Image
-                        src="/images/skill-ps.png"
-                        alt=""
-                        layout="raw"
-                        width="70"
-                        height="70"
-                      />
-                    </div>
-                  </div>
-                  <div className="skill-item skill-item--orange">
-                    <div className="skill-item__graph">
-                      <div
-                        className="skill-item__graph-indicator js-graph-indicator"
-                        // style="height: 70%"
-                      ></div>
-                    </div>
-                    <div className="skill-item__icon">
-                      <Image
-                        src="/images/skill-ai.png"
-                        alt=""
-                        layout="raw"
-                        width="70"
-                        height="70"
-                      />
-                    </div>
-                  </div>
-                </div>
+                <Skills />
               </section>
               <section id="interest" className="section pb-0">
                 <h3 className="section__title">INTEREST</h3>
