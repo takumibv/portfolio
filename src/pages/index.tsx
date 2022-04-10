@@ -1,19 +1,22 @@
 import React, { ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "../components/Footer";
 import Layout from "../components/Layout";
 import Profile from "../components/Profile";
 import SnsLinks from "../components/SnsLinks";
 import { NextPageWithLayout } from "./_app";
 import Skills from "../components/Skills";
+import useParallax from "../hooks/useParallax";
 
 const Home: NextPageWithLayout = (props) => {
+  const { ref: heroRef } = useParallax({ isTop: true, speed: 0.5 });
+  const { ref: footerRef } = useParallax();
+
   return (
     <>
       {/* Hero */}
       <div className="hero">
-        <div className="hero__bg js-rellax" data-rellax-speed="-5"></div>
+        <div className="hero__bg js-rellax" data-rellax-speed="-5" ref={heroRef}></div>
         <h1 className="hero__main-title saying js-text-animation">
           “the only way to be truly satisfied is to do what you believe is great work.”
         </h1>
@@ -53,6 +56,7 @@ const Home: NextPageWithLayout = (props) => {
             className="break__bg js-rellax"
             data-rellax-speed="-3"
             data-rellax-percentage="0.5"
+            ref={footerRef}
           ></div>
           <h3 className="sub-headline break__text">
             『一つのことを、一生やり続けられると確信する日がくる』

@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import SnsLinks from "./SnsLinks";
 import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 // アイコン角丸のアニメーション
 // iconのborder-radius群

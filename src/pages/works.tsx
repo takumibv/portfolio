@@ -1,9 +1,4 @@
-import type { NextPage } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { ReactElement } from "react";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import Layout from "../components/Layout";
 import { NextPageWithLayout } from "./_app";
 

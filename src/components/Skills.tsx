@@ -3,11 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import SnsLinks from "./SnsLinks";
 import { gsap } from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
-
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(ScrollToPlugin);
 
 const Skills: React.FC = () => {
   const skillRef = useRef(null);
