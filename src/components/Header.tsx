@@ -3,10 +3,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 
 const Header = () => {
   const router = useRouter();
   const [isAbout, setIsAbout] = useState(false);
+  const [isOpenNav, setIsOpenNav] = useState(false);
+  const { props: scrollProps } = useScrollAnimation();
   const { asPath, pathname, events } = router;
 
   useEffect(() => {
@@ -14,6 +17,7 @@ const Header = () => {
 
     const handleUrlChange = (url: string) => {
       setIsAbout(url === "/#about");
+      setIsOpenNav(false);
     };
 
     events.on("hashChangeStart", handleUrlChange);
@@ -36,8 +40,15 @@ const Header = () => {
               </a>
             </Link>
           </div>
-          <div className="l-header__burger">
-            <a href="#" className="l-header__burger-button js-toggle-nav">
+          <div className={classNames("l-header__burger", isOpenNav && "l-header__burger--open")}>
+            <a
+              href="#"
+              className="l-header__burger-button"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpenNav(!isOpenNav);
+              }}
+            >
               <span></span>
               <span></span>
               <span></span>
@@ -60,9 +71,10 @@ const Header = () => {
                 isAbout && "l-header__nav-item--active"
               )}
             >
-              <Link href="/#about">
-                <a className="js-scroll">ABOUT</a>
-              </Link>
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+              <a href="/#about" {...scrollProps}>
+                ABOUT
+              </a>
             </li>
             <li
               className={classNames(

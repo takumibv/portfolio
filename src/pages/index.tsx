@@ -7,10 +7,12 @@ import SnsLinks from "../components/SnsLinks";
 import { NextPageWithLayout } from "./_app";
 import Skills from "../components/Skills";
 import useParallax from "../hooks/useParallax";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 
 const Home: NextPageWithLayout = (props) => {
   const { ref: heroRef } = useParallax({ isTop: true, speed: 0.5 });
   const { ref: footerRef } = useParallax();
+  const { props: scrollProps } = useScrollAnimation();
 
   return (
     <>
@@ -28,7 +30,7 @@ const Home: NextPageWithLayout = (props) => {
 
       {/* About */}
       <main id="about" className="l-main">
-        <a className="l-main__scroll-down js-scroll" href="#about">
+        <a className="l-main__scroll-down" href="#about" {...scrollProps}>
           <Image src="/images/scroll_green.png" alt="" width={46} height={60} />
         </a>
         <section className="section">
@@ -100,7 +102,6 @@ const Home: NextPageWithLayout = (props) => {
                           alt=""
                           width={308}
                           height={192}
-                          layout="raw"
                         />
                         <div className="work-item__overlay">
                           <p className="work-item__overlay-name">どこでもメモ</p>
@@ -117,7 +118,6 @@ const Home: NextPageWithLayout = (props) => {
                           alt=""
                           width={308}
                           height={192}
-                          layout="raw"
                         />
                         <div className="work-item__overlay">
                           <p className="work-item__overlay-name">Titech Portal Login</p>
@@ -136,7 +136,6 @@ const Home: NextPageWithLayout = (props) => {
                           alt=""
                           width={308}
                           height={192}
-                          layout="raw"
                         />
                         <div className="work-item__overlay">
                           <p className="work-item__overlay-name">SocialDog</p>
