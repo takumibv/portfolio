@@ -20,12 +20,18 @@ const Header = () => {
       setIsOpenNav(false);
     };
 
+    const handleResize = () => {
+      setIsOpenNav(false);
+    };
+
     events.on("hashChangeStart", handleUrlChange);
     events.on("routeChangeStart", handleUrlChange);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       events.off("hashChangeStart", handleUrlChange);
       events.off("routeChangeStart", handleUrlChange);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -54,56 +60,59 @@ const Header = () => {
               <span></span>
             </a>
           </div>
-          <ul className="l-header__nav">
-            <li
-              className={classNames(
-                "tablet:hidden l-header__nav-item",
-                pathname === "/" && "l-header__nav-item--active"
-              )}
-            >
-              <Link href="/">
-                <a>HOME</a>
-              </Link>
-            </li>
-            <li
-              className={classNames(
-                "hidden tablet:block l-header__nav-item js-nav-about",
-                isAbout && "l-header__nav-item--active"
-              )}
-            >
-              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-              <a href="/#about" {...scrollProps}>
-                ABOUT
-              </a>
-            </li>
-            <li
-              className={classNames(
-                "l-header__nav-item",
-                pathname === "/works" && "l-header__nav-item--active"
-              )}
-            >
-              <Link href="/works">
-                <a>WORKS</a>
-              </Link>
-            </li>
-            <li className={classNames("l-header__nav-item")}>
-              <Link href="https://qiita.com/takumibv">
-                <a target="_blank" rel="noreferrer">
-                  BLOG
+          <div className="l-header__nav">
+            <div className="l-header__nav-overlay" onClick={() => setIsOpenNav(false)}></div>
+            <ul>
+              <li
+                className={classNames(
+                  "tablet:hidden l-header__nav-item",
+                  pathname === "/" && "l-header__nav-item--active"
+                )}
+              >
+                <Link href="/">
+                  <a>HOME</a>
+                </Link>
+              </li>
+              <li
+                className={classNames(
+                  "hidden tablet:block l-header__nav-item js-nav-about",
+                  isAbout && "l-header__nav-item--active"
+                )}
+              >
+                {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                <a href="/#about" {...scrollProps}>
+                  ABOUT
                 </a>
-              </Link>
-            </li>
-            <li
-              className={classNames(
-                "l-header__nav-item",
-                pathname === "/contact" && "l-header__nav-item--active"
-              )}
-            >
-              <Link href="/contact">
-                <a>CONTACT</a>
-              </Link>
-            </li>
-          </ul>
+              </li>
+              <li
+                className={classNames(
+                  "l-header__nav-item",
+                  pathname === "/works" && "l-header__nav-item--active"
+                )}
+              >
+                <Link href="/works">
+                  <a>WORKS</a>
+                </Link>
+              </li>
+              <li className={classNames("l-header__nav-item")}>
+                <Link href="https://qiita.com/takumibv">
+                  <a target="_blank" rel="noreferrer">
+                    BLOG
+                  </a>
+                </Link>
+              </li>
+              <li
+                className={classNames(
+                  "l-header__nav-item",
+                  pathname === "/contact" && "l-header__nav-item--active"
+                )}
+              >
+                <Link href="/contact">
+                  <a>CONTACT</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

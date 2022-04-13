@@ -11,7 +11,7 @@ import useScrollAnimation from "../hooks/useScrollAnimation";
 
 const Home: NextPageWithLayout = (props) => {
   const { ref: heroRef } = useParallax({ isTop: true, speed: 0.5 });
-  const { ref: footerRef } = useParallax();
+  const { ref: breakRef } = useParallax();
   const { props: scrollProps } = useScrollAnimation();
 
   return (
@@ -58,7 +58,7 @@ const Home: NextPageWithLayout = (props) => {
             className="break__bg js-rellax"
             data-rellax-speed="-3"
             data-rellax-percentage="0.5"
-            ref={footerRef}
+            ref={breakRef}
           ></div>
           <h3 className="sub-headline break__text">
             『一つのことを、一生やり続けられると確信する日がくる』

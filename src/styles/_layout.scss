@@ -86,25 +86,39 @@
 }
 
 .l-header__nav {
-  @include breakpoint-pc() {
-    display: flex;
-    position: relative;
+  @include breakpoint-sp() {
+    position: fixed;
   }
 
-  @include breakpoint-sp() {
-    background: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 80px 16px 0;
-    pointer-events: none;
-    transform: scaleY(0);
-    transform-origin: top;
-    opacity: 0;
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  ul {
+    @include breakpoint-pc() {
+      display: flex;
+      position: relative;
+      height: 100%;
+    }
+
+    @include breakpoint-sp() {
+      background: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 80px 16px 16px;
+      box-shadow: 0 0 8px #888;
+      pointer-events: none;
+      transform: scaleY(0);
+      transform-origin: top;
+      opacity: 0;
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    }
   }
+}
+
+.l-header__navarea {
+}
+
+.l-header__nav-overlay {
+  display: none;
 }
 
 .l-header__nav-item {
@@ -209,9 +223,19 @@
   }
 
   + .l-header__nav {
-    pointer-events: initial;
-    transform: scaleY(1);
-    opacity: 1;
+    .l-header__nav-overlay {
+      display: block;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+    }
+    ul {
+      pointer-events: initial;
+      transform: scaleY(1);
+      opacity: 1;
+    }
   }
 }
 
@@ -282,7 +306,7 @@
 
 .l-footer__bg {
   position: absolute;
-  top: -200px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;

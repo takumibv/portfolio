@@ -26,7 +26,9 @@ const useScrollAnimation = (option?: ParallaxProps) => {
       if (href.match(/^https?:\/\//g)) {
         const { pathname, hash } = new URL(href);
         target = hash;
-        pathname !== router.pathname && router.replace(href);
+
+        // 違う画面であれば遷移する
+        pathname !== router.pathname && router.push(href);
       }
 
       const q = gsap.utils.selector(document);
