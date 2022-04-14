@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ReactElement } from "react";
 import Layout from "../components/Layout";
 import { NextPageWithLayout } from "./_app";
@@ -14,11 +15,19 @@ const Works: NextPageWithLayout = () => {
             <div className="row py-10">
               <div className="five columns">
                 <a
+                  className="inline-block w-full"
                   href="https://chrome.google.com/webstore/detail/memo-anywhere/fjfoncfdjhdefjhknbaphionnognbnpl?utm_source=chrome-ntp-icon"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img className="w-full" src="/images/work_memo.png" alt="" />
+                  <Image
+                    className="w-full"
+                    src="/images/work_memo.png"
+                    alt=""
+                    layout="responsive"
+                    width={308}
+                    height={192}
+                  />
                 </a>
               </div>
               <div className="six columns offset-by-one">
@@ -77,11 +86,19 @@ const Works: NextPageWithLayout = () => {
                 </div>
                 <div className="five columns offset-by-one">
                   <a
+                    className="inline-block w-full"
                     href="https://chrome.google.com/webstore/detail/titech-portal-login/gakchdgcpjbchncgbflfkajcfpnbhohi?utm_source=chrome-ntp-icon"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img className="w-full" src="/images/work_titech.png" alt="" />
+                    <Image
+                      className="w-full"
+                      src="/images/work_titech.png"
+                      alt=""
+                      layout="responsive"
+                      width={308}
+                      height={192}
+                    />
                   </a>
                 </div>
                 <div className="six columns tablet:hidden">
@@ -114,8 +131,20 @@ const Works: NextPageWithLayout = () => {
           <div className="container mx-auto">
             <div className="row py-10">
               <div className="five columns">
-                <a href="https://social-dog.net/" target="_blank" rel="noreferrer">
-                  <img className="w-full" src="/images/work_autoscale.png" alt="" />
+                <a
+                  className="inline-block w-full"
+                  href="https://social-dog.net/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    className="w-full"
+                    src="/images/work_autoscale.png"
+                    alt=""
+                    layout="responsive"
+                    width={308}
+                    height={192}
+                  />
                 </a>
               </div>
               <div className="six columns offset-by-one">
@@ -174,8 +203,20 @@ const Works: NextPageWithLayout = () => {
                   </div>
                 </div>
                 <div className="five columns offset-by-one">
-                  <a href="https://github.com/takumibv/RunMusic" target="_blank" rel="noreferrer">
-                    <img className="w-full" src="/images/work_runmusic.jpg" alt="" />
+                  <a
+                    className="inline-block w-full"
+                    href="https://github.com/takumibv/RunMusic"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Image
+                      className="w-full"
+                      src="/images/work_runmusic.jpg"
+                      alt=""
+                      layout="responsive"
+                      width={308}
+                      height={192}
+                    />
                   </a>
                 </div>
                 <div className="six columns tablet:hidden">
@@ -212,7 +253,14 @@ const Works: NextPageWithLayout = () => {
           <div className="container mx-auto">
             <div className="row py-10">
               <div className="five columns">
-                <img className="w-full" src="/images/work_groupshare.png" alt="" />
+                <Image
+                  className="w-full"
+                  src="/images/work_groupshare.png"
+                  alt=""
+                  layout="responsive"
+                  width={308}
+                  height={192}
+                />
               </div>
               <div className="six columns offset-by-one">
                 <div className="mt-4">
@@ -251,7 +299,14 @@ const Works: NextPageWithLayout = () => {
                   </div>
                 </div>
                 <div className="five columns offset-by-one">
-                  <img className="w-full" src="/images/work_evetan.jpg" alt="" />
+                  <Image
+                    className="w-full"
+                    src="/images/work_evetan.jpg"
+                    alt=""
+                    layout="responsive"
+                    width={308}
+                    height={192}
+                  />
                 </div>
                 <div className="six columns tablet:hidden">
                   <div className="mt-4">

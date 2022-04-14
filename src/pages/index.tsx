@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../components/Layout";
@@ -8,18 +8,84 @@ import { NextPageWithLayout } from "./_app";
 import Skills from "../components/Skills";
 import useParallax from "../hooks/useParallax";
 import useScrollAnimation from "../hooks/useScrollAnimation";
-import { IconChevronDown } from "@tabler/icons";
+import Career from "../components/Career";
+import { gsap } from "gsap";
 
 const Home: NextPageWithLayout = (props) => {
   const { ref: heroRef } = useParallax({ isTop: true, speed: 0.5 });
   const { ref: breakRef } = useParallax();
   const { props: scrollProps } = useScrollAnimation();
 
+  const mainRef = useRef(null);
+
+  const popupArray = [
+    {
+      message: <>Webのフロントエンド開発やChromeの拡張機能の開発がメインでした！</>,
+    },
+    {
+      message: (
+        <>
+          強みはReactとCSS。
+          <br />
+          Adobeのデザインツールも使用経験あり。デザインは勉強中。
+        </>
+      ),
+    },
+    {
+      message: (
+        <>
+          フロントエンドエンジニア×デザイナー
+          <br />
+          としての人材を目指しています！
+        </>
+      ),
+    },
+  ];
+
+  const sectionRefs = useRef(popupArray.map(() => React.createRef<HTMLDivElement>()));
+  const popupRefs = useRef(popupArray.map(() => React.createRef<HTMLDivElement>()));
+
+  useEffect(() => {
+    const animations = popupArray.map((_, i) => {
+      const target = popupRefs.current[i].current;
+      const trigger = sectionRefs.current[i].current;
+
+      return gsap.fromTo(
+        target,
+        {
+          display: "none",
+          y: 50,
+          opacity: 0,
+        },
+        {
+          display: "block",
+          y: 0,
+          opacity: 1,
+          duration: 0.3,
+          scrollTrigger: {
+            // markers: true, // マーカーを表示するか（開発用）
+            trigger, // この要素と交差するとイベントが発火
+            start: "top 50%", // ウィンドウのどの位置を発火の基準点にするか
+            end: "bottom 50%", // ウィンドウのどの位置をイベントの終了点にするか
+            toggleActions: "restart reverse restart reverse", // スクロールイベントで発火するアニメーションの種
+          },
+        }
+      );
+    });
+
+    return () => {
+      animations.forEach((animation) => {
+        animation.scrollTrigger?.kill();
+        animation.kill();
+      });
+    };
+  }, []);
+
   return (
-    <>
+    <div ref={mainRef}>
       {/* Hero */}
       <div className="hero">
-        <div className="hero__bg js-rellax" data-rellax-speed="-5" ref={heroRef}></div>
+        <div className="hero__bg" ref={heroRef}></div>
         <h1 className="hero__main-title saying js-text-animation">
           “the only way to be truly satisfied is to do what you believe is great work.”
         </h1>
@@ -55,12 +121,7 @@ const Home: NextPageWithLayout = (props) => {
           </div>
         </section>
         <section className="section break">
-          <div
-            className="break__bg js-rellax"
-            data-rellax-speed="-3"
-            data-rellax-percentage="0.5"
-            ref={breakRef}
-          ></div>
+          <div className="break__bg" ref={breakRef}></div>
           <h3 className="sub-headline break__text">
             『一つのことを、一生やり続けられると確信する日がくる』
           </h3>
@@ -71,24 +132,16 @@ const Home: NextPageWithLayout = (props) => {
               <div className="l-top__left-sticky">
                 <Profile />
                 <div className="profile__pop-area">
-                  <p className="profile__pop text js-profile__pop" data-target="#works">
-                    Webのフロントエンド開発やChromeの拡張機能の開発がメインでした！
-                  </p>
-                  <p className="profile__pop text js-profile__pop" data-target="#skills">
-                    強みはReactとCSS。
-                    <br />
-                    Adobeのデザインツールも使用経験あり。デザインは勉強中。
-                  </p>
-                  <p className="profile__pop text js-profile__pop" data-target="#interest">
-                    フロントエンドエンジニア×デザイナー
-                    <br />
-                    としての人材を目指しています！
-                  </p>
+                  {popupArray.map(({ message }, i) => (
+                    <p key={i} className="profile__pop text" ref={popupRefs.current[i]}>
+                      {message}
+                    </p>
+                  ))}
                 </div>
               </div>
             </div>
             <div className="l-top__right">
-              <section id="works" className="section pb-0">
+              <section id="works" className="section pb-0" ref={sectionRefs.current[0]}>
                 <h3 className="section__title">WORKS</h3>
                 <Link href="/works">
                   <a className="section__title-link">すべて見る</a>
@@ -146,11 +199,11 @@ const Home: NextPageWithLayout = (props) => {
                   </div>
                 </div>
               </section>
-              <section id="skills" className="section pb-0">
+              <section id="skills" className="section pb-0" ref={sectionRefs.current[1]}>
                 <h3 className="section__title">SKILLS</h3>
                 <Skills />
               </section>
-              <section id="interest" className="section pb-0">
+              <section id="interest" className="section pb-0" ref={sectionRefs.current[2]}>
                 <h3 className="section__title">INTEREST</h3>
                 <div className="mt-8">
                   <h4 className="sub-headline">フロントエンド開発 with デザイナー</h4>
@@ -175,109 +228,7 @@ const Home: NextPageWithLayout = (props) => {
               </section>
               <section id="career" className="section pb-0">
                 <h3 className="section__title">CAREER</h3>
-                <div className="career">
-                  <div className="career-item">
-                    <div className="career-item__left"></div>
-                    <div className="career-item__right">
-                      <div className="career-item__title sub-headline">ソフトバンク株式会社</div>
-                      <div className="career-item__period text">2019/04 -</div>
-                      <div className="career-item__text text">
-                        業務システムのデザインを行う部署に所属しています。
-                        <br />
-                        <br />
-                        【主な業務】
-                        <ul className="list-disc pl-6">
-                          <li className="mt-2">業務システムのフロントエンド開発</li>
-                          <li className="mt-2">
-                            UIデザインのプロトタイプ実装・ユーザーテストの実施
-                          </li>
-                          <li className="mt-2">デザインシステムの構築</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="career-item">
-                    <div className="career-item__left"></div>
-                    <div className="career-item__right">
-                      <div className="career-item__title sub-headline">東京工業大学</div>
-                      <div className="career-item__period text">2013/04 - 2019/03</div>
-                      <div className="career-item__text text">
-                        情報工学科に所属。
-                        <br />
-                        大学院の研究では、視線の情報を解析し、画面上のマウスなどのポインター操作をしている際の、使い心地や操作感を推定する研究を行いました。
-                        <br />
-                        <br />
-                        学会発表「個人番号カードを用いた病院の初診受付において必要な基本情報取得システムの提案」電子情報通信学会総合大会ポスターセッション2017年3月
-                      </div>
-                    </div>
-                  </div>
-                  <div className="career-item">
-                    <div className="career-item__left"></div>
-                    <div className="career-item__right">
-                      <div className="career-item__title sub-headline">株式会社 AutoScale</div>
-                      <div className="career-item__period text">2018/01 - 2019/03</div>
-                      <div className="career-item__text text">
-                        インターンシップ(フロントエンドエンジニア)
-                        <br />
-                        ReactによるWebフロント開発、React Nativeによるアプリ開発を行いました。
-                        サーバーサイドやサーバー構築など、柔軟に対応しました。
-                      </div>
-                    </div>
-                  </div>
-                  <div id="career-collapse" className="career-collapse">
-                    <div className="career">
-                      <div className="career-item">
-                        <div className="career-item__left"></div>
-                        <div className="career-item__right">
-                          <div className="career-item__title sub-headline">
-                            株式会社エメットクリエーション
-                          </div>
-                          <div className="career-item__period text">2016/12 - 2018/02</div>
-                          <div className="career-item__text text">
-                            インターンシップ
-                            <br />
-                            動画キュレーションアプリの管理画面やAPIの機能設計・実装に関する業務を行いました。
-                            <br />
-                            BigQueryを用いたデータの可視化やデータ分析に携わりました。
-                          </div>
-                        </div>
-                      </div>
-                      <div className="career-item">
-                        <div className="career-item__left"></div>
-                        <div className="career-item__right">
-                          <div className="career-item__title sub-headline">freee株式会社</div>
-                          <div className="career-item__period text">2016/12 - 2018/02</div>
-                          <div className="career-item__text text">
-                            インターンシップ
-                            <br />
-                            人事システムの機能追加に関する要件定義から実装までの業務を行いました。
-                          </div>
-                        </div>
-                      </div>
-                      <div className="career-item">
-                        <div className="career-item__left"></div>
-                        <div className="career-item__right">
-                          <div className="career-item__title sub-headline">誕生</div>
-                          <div className="career-item__period text">1994</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="career-item career-item--expand">
-                    <div className="career-item__left"></div>
-                    <div className="career-item__right">
-                      <a
-                        href="#"
-                        className="career-item__expand-link js-toggle-career-collapse"
-                        data-target="#career-collapse"
-                      >
-                        <span className="career-item__collapse-text">過去の経歴を見る</span>
-                        <span className="career-item__expand-text">経歴を閉じる</span>
-                        <IconChevronDown className="inline-block" size={20} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <Career />
               </section>
             </div>
           </div>
@@ -285,7 +236,7 @@ const Home: NextPageWithLayout = (props) => {
       </main>
 
       <SnsLinks className="tablet:hidden" />
-    </>
+    </div>
   );
 };
 

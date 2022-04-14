@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import Footer from "../components/Footer";
 import Layout from "../components/Layout";
 import { NextPageWithLayout } from "./_app";
 
@@ -16,7 +15,7 @@ const Contact: NextPageWithLayout = () => {
               <h3 className="section__title">CONTACT</h3>
             </div>
             <div className="container mx-auto">
-              <div className="row u-py-4">
+              <div className="row py-4">
                 <div className="four columns">
                   <h4 className="sub-headline mb-2">お名前</h4>
                   <input
@@ -29,7 +28,7 @@ const Contact: NextPageWithLayout = () => {
                   />
                 </div>
               </div>
-              <div className="row u-py-4">
+              <div className="row py-4">
                 <div className="four columns">
                   <h4 className="sub-headline mb-2">メールアドレス</h4>
                   <input
@@ -42,7 +41,7 @@ const Contact: NextPageWithLayout = () => {
                   />
                 </div>
               </div>
-              <div className="row u-py-4">
+              <div className="row py-4">
                 <div className="twelve columns">
                   <h4 className="sub-headline mb-2">お問い合わせ内容</h4>
                   <textarea
@@ -55,7 +54,7 @@ const Contact: NextPageWithLayout = () => {
                   ></textarea>
                 </div>
               </div>
-              <div className="u-py-4">
+              <div className="py-4">
                 <input className="button" type="submit" value="送信" />
               </div>
             </div>

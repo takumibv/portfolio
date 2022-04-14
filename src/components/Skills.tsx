@@ -1,7 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import SnsLinks from "./SnsLinks";
 import { gsap } from "gsap";
 
 const Skills: React.FC = () => {
@@ -20,7 +18,6 @@ const Skills: React.FC = () => {
         // markers: true, // マーカーを表示するか（開発用）
         trigger: skillRef.current, // この要素と交差するとイベントが発火
         start: "top 75%", // ウィンドウのどの位置を発火の基準点にするか
-        // end: "bottom top", // ウィンドウのどの位置をイベントの終了点にするか
         toggleActions: "restart none none reverse", // スクロールイベントで発火するアニメーションの種
       },
     });
