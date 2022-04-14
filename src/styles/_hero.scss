@@ -20,6 +20,10 @@
   background-size: cover;
   background-position: center;
   z-index: -1;
+
+  @media (prefers-color-scheme: dark) {
+    background-image: url("/images/bg-hero-dark.jpg");
+  }
 }
 
 .hero__main-title,

@@ -1,9 +1,8 @@
-
 .skills {
   display: flex;
   flex-wrap: wrap;
 
-  @include breakpoint-pc () {
+  @include breakpoint-pc() {
     justify-content: space-between;
     flex-wrap: nowrap;
   }
@@ -12,14 +11,15 @@
 .skill-item {
   width: 25%;
 
-  @include breakpoint-pc () {
+  @include breakpoint-pc() {
     width: unset;
   }
 }
 
 .skill-item--orange {
   .skill-item__graph-indicator {
-    background: $color-secondary-weak;
+    background: #fac3be;
+    background: var(--color-secondary-weak);
   }
 }
 
@@ -30,7 +30,7 @@
   width: 8px;
   margin: auto;
 
-  @include breakpoint-pc () {
+  @include breakpoint-pc() {
     display: block;
   }
 }
@@ -39,7 +39,8 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: $color-primary;
+  background: #72ad8c;
+  background: var(--color-primary);
   transform-origin: bottom;
   transform: scaleY(0);
 }

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { ReactChildren, ReactNode } from "react";
+import React, { ReactChildren, ReactNode, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -8,6 +8,18 @@ const Layout: React.FC<{ title: string; hasProfile?: boolean; children?: ReactNo
   hasProfile,
   children,
 }) => {
+  useEffect(() => {
+    console.log(
+      "(prefers-color-scheme: dark)::",
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    );
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
   return (
     <>
       <Head>

@@ -1,6 +1,4 @@
-
 .career {
-
 }
 
 .career-item {
@@ -18,7 +16,7 @@
     top: 0;
     bottom: 0;
     background: linear-gradient(rgba(255, 255, 255, 0) 0%, #fff 100%);
-
+    background: linear-gradient(rgba(255, 255, 255, 0) 0%, var(--color-white) 100%);
   }
 }
 
@@ -26,7 +24,7 @@
   display: none;
   position: relative;
 
-  @include breakpoint-pc () {
+  @include breakpoint-pc() {
     display: block;
     width: 64px;
   }
@@ -39,14 +37,16 @@
     bottom: 0;
     left: 26px;
     width: 2px;
-    background: $color-primary-weak;
+    background: #e1f5e9;
+    background: var(--color-primary-weak);
   }
 
   // 丸
   &::after {
     content: "";
     position: absolute;
-    background: $color-primary-weak;
+    background: #e1f5e9;
+    background: var(--color-primary-weak);
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -69,8 +69,9 @@
   float: right;
   margin-top: 4px;
   color: #aaa;
+  color: var(--color-text-secondary-weak);
 
-  @include breakpoint-pc () {
+  @include breakpoint-pc() {
     display: inline-block;
     float: none;
     margin-top: 0;

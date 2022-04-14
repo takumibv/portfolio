@@ -1,12 +1,49 @@
+:root {
+  --color-white: #fff;
+  --color-base: #f5f5f5;
+  --color-primary: #72ad8c;
+  --color-primary-weak: #e1f5e9;
+  --color-secondary: #ad6761;
+  --color-secondary-weak: #fac3be;
+  --color-text-black: #555;
+  --color-text-black-dark: #333;
+  --color-text-secondary: #707070;
+  --color-text-secondary-weak: #aaa;
+  --color-text-link: #7299ad;
+  --color-shadow: #888;
+
+  // シャドウ
+  --shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-white: #181818;
+    --color-base: #333;
+    --color-primary: #72ad8c;
+    --color-primary-weak: #446853;
+    --color-secondary: #ad6761;
+    --color-secondary-weak: #ba8580;
+    --color-text-black: #ccc;
+    --color-text-black-dark: #fff;
+    --color-text-secondary: #aaa;
+    --color-text-secondary-weak: #999;
+    --color-text-link: #6cc4f0;
+    --color-shadow: #000;
+
+    --shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+  }
+}
 
 // カラー
-$color-base: #F5F5F5;
-$color-primary: #72AD8C;
-$color-primary-weak: #e1f5e9;
-$color-secondary: #AD6761;
-$color-secondary-weak: #FAC3BE;
-$color-text-black: #555;
-$color-text-link: #7299AD;
+// var(--color-white: var(--color-white));
+// var(--color-base: var(--color-base));
+// var(--color-primary: var(--color-primary));
+// var(--color-primary-weak: var(--color-primary-weak));
+// var(--color-secondary: var(--color-secondary));
+// var(--color-secondary-weak: var(--color-secondary-weak));
+// var(--color-text-black: var(--color-text-black));
+// var(--color-text-link: var(--color-text-link));
 
 // タイポグラフィ
 $font-saying: athelas, serif;
@@ -18,9 +55,6 @@ $container-width-pc: 960px;
 $container-width-sp: 320px;
 
 $breakpoint-sp: $container-width-pc;
-
-// シャドウ
-$shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
 
 // アニメーション
 $transition-base: 0.2s ease-out;

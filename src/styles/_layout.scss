@@ -25,6 +25,7 @@
 **/
 .l-loading {
   background: #fff;
+  background: var(--color-white);
   position: fixed;
   top: 0;
   right: 0;
@@ -53,7 +54,9 @@
   left: 0;
   right: 0;
   background: #fff;
-  box-shadow: $shadow;
+  background: var(--color-white);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow);
   display: flex;
   justify-content: center;
   z-index: 99;
@@ -99,12 +102,14 @@
 
     @include breakpoint-sp() {
       background: #fff;
+      background: var(--color-white);
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       padding: 80px 16px 16px;
       box-shadow: 0 0 8px #888;
+      box-shadow: 0 0 8px var(--color-shadow);
       pointer-events: none;
       transform: scaleY(0);
       transform-origin: top;
@@ -124,7 +129,8 @@
 .l-header__nav-item {
   a {
     position: relative;
-    color: $color-text-black;
+    color: #555;
+    color: var(--color-text-black);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -150,13 +156,15 @@
       left: 0;
       right: 0;
       height: 2px;
-      background: $color-primary;
+      background: #72ad8c;
+      background: var(--color-primary);
       transform: scaleX(0);
       transition: transform $transition-base;
     }
 
     &:hover {
-      background: $color-base;
+      background: #f5f5f5;
+      background: var(--color-base);
     }
   }
 }
@@ -190,6 +198,7 @@
     width: 24px;
     height: 1px;
     background: #555;
+    background: var(--color-text-black);
     left: 4px;
     transition: transform $transition-base;
 
@@ -315,6 +324,10 @@
   background-size: cover;
   background-position: center;
   z-index: -1;
+
+  @media (prefers-color-scheme: dark) {
+    background-image: url("/images/bg-hero-dark.jpg");
+  }
 }
 
 .l-footer__left {

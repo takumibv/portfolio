@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      base: "#F5F5F5",
+      base: "#f5f5f5",
+      "base-dark": "#333",
       grey: "#999",
     },
     screens: {

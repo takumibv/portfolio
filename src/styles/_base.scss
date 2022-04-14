@@ -11,10 +11,14 @@ body {
   font-weight: 400;
   font-style: normal;
   color: #555;
+  color: var(--color-text-black);
+  background: #fff;
+  background: var(--color-white);
 }
 
 a {
-  color: $color-text-link;
+  color: #7299ad;
+  color: var(--color-text-link);
   text-decoration: underline;
 
   @include breakpoint-pc() {

@@ -57,7 +57,7 @@ const Works: NextPageWithLayout = () => {
               </div>
             </div>
           </div>
-          <div className="bg-base">
+          <div className="bg-base dark:bg-base-dark">
             <div className="container mx-auto">
               <div className="row py-10">
                 <div className="six columns hidden tablet:block">
@@ -171,7 +171,7 @@ const Works: NextPageWithLayout = () => {
               </div>
             </div>
           </div>
-          <div className="bg-base">
+          <div className="bg-base dark:bg-base-dark">
             <div className="container mx-auto">
               <div className="row py-10">
                 <div className="six columns hidden tablet:block">
@@ -280,7 +280,7 @@ const Works: NextPageWithLayout = () => {
               </div>
             </div>
           </div>
-          <div className="bg-base">
+          <div className="bg-base dark:bg-base-dark">
             <div className="container mx-auto">
               <div className="row py-10">
                 <div className="six columns hidden tablet:block">
