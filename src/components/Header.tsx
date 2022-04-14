@@ -42,7 +42,7 @@ const Header = () => {
           <div className="l-header__logo">
             <Link href="/">
               <a>
-                <Image src="/images/icon.png" alt="" width={32} height={32} />
+                <Image src="/images/logo.svg" alt="" width={32} height={32} />
               </a>
             </Link>
           </div>

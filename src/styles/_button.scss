@@ -46,18 +46,18 @@
     text-decoration: underline;
   }
 
-  &::after {
-    position: absolute;
-    content: "";
-    right: -24px;
-    top: 2px;
-    width: 13px;
-    height: 13px;
-    transform: rotate(-90deg);
-    background-image: url("/images/icon-arrow-down.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
+  // &::after {
+  //   position: absolute;
+  //   content: "";
+  //   right: -24px;
+  //   top: 2px;
+  //   width: 13px;
+  //   height: 13px;
+  //   transform: rotate(-90deg);
+  //   background-image: url("/images/icon-arrow-down.svg");
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  // }
 
   &:hover {
     text-decoration: none;

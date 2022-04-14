@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
+import { IconBrandTwitter, IconBrandGithub, IconNotes, IconMail } from "@tabler/icons";
 
 const SnsLinks: React.FC<{ className?: string; showContact?: boolean }> = ({
   className,
@@ -11,23 +11,23 @@ const SnsLinks: React.FC<{ className?: string; showContact?: boolean }> = ({
     <div className={classNames("sns-links", className)}>
       <Link href="https://twitter.com/takumi_bv">
         <a target="_blank" className="sns-links-item" rel="noreferrer">
-          <Image src="/images/icon-twitter.png" alt="" width={32} height={32} />
+          <IconBrandTwitter size={28} stroke={0.8} color="#72AD8C" />
         </a>
       </Link>
       <Link href="https://github.com/takumibv">
         <a target="_blank" className="sns-links-item" rel="noreferrer">
-          <Image src="/images/icon-github.png" alt="" width={32} height={32} />
+          <IconBrandGithub size={28} stroke={0.8} color="#72AD8C" />
         </a>
       </Link>
       <Link href="https://qiita.com/takumibv">
         <a target="_blank" className="sns-links-item" rel="noreferrer">
-          <Image src="/images/icon-qiita.png" alt="" width={32} height={32} />
+          <IconNotes size={28} stroke={0.8} color="#72AD8C" />
         </a>
       </Link>
       {showContact && (
         <Link href="/contact">
           <a className="sns-links-item">
-            <Image src="/images/icon-mail.png" alt="" width={32} height={32} />
+            <IconMail size={28} stroke={0.8} color="#72AD8C" />
           </a>
         </Link>
       )}

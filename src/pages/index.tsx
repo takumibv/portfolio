@@ -8,6 +8,7 @@ import { NextPageWithLayout } from "./_app";
 import Skills from "../components/Skills";
 import useParallax from "../hooks/useParallax";
 import useScrollAnimation from "../hooks/useScrollAnimation";
+import { IconChevronDown } from "@tabler/icons";
 
 const Home: NextPageWithLayout = (props) => {
   const { ref: heroRef } = useParallax({ isTop: true, speed: 0.5 });
@@ -31,7 +32,7 @@ const Home: NextPageWithLayout = (props) => {
       {/* About */}
       <main id="about" className="l-main">
         <a className="l-main__scroll-down" href="#about" {...scrollProps}>
-          <Image src="/images/scroll_green.png" alt="" width={46} height={60} />
+          <Image src="/images/scroll.svg" alt="" width={46} height={60} />
         </a>
         <section className="section">
           <div className="container container--sm mx-auto">
@@ -272,7 +273,7 @@ const Home: NextPageWithLayout = (props) => {
                       >
                         <span className="career-item__collapse-text">過去の経歴を見る</span>
                         <span className="career-item__expand-text">経歴を閉じる</span>
-                        <Image src="/images/icon-arrow-down.svg" alt="" width="13" height="8" />
+                        <IconChevronDown className="inline-block" size={20} />
                       </a>
                     </div>
                   </div>

@@ -20,7 +20,7 @@ const Footer: React.FC<{ hasProfile?: boolean }> = ({ hasProfile = true }) => {
         ></div>
         <div className="container mx-auto clearfix">
           <div className="l-footer__left">
-            <Image src="/images/icon_text.png" alt="" width={60} height={60} />
+            <Image src="/images/logo_text.svg" alt="" width={60} height={60} />
           </div>
           <div className="l-footer__right">
             <p className="text text-center">Takumi, All Right Reserved.</p>
