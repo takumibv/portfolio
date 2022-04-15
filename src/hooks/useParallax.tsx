@@ -36,7 +36,7 @@ const useParallax = (option?: ParallaxProps) => {
         start: isTop ? "top top" : "top bottom",
         end: isBottom ? "top top" : "bottom top",
         scrub: true,
-        markers: true,
+        // markers: true,
       },
     });
     animation.fromTo(
