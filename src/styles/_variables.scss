@@ -16,23 +16,21 @@
   --shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-white: #181818;
-    --color-base: #333;
-    --color-primary: #72ad8c;
-    --color-primary-weak: #446853;
-    --color-secondary: #ad6761;
-    --color-secondary-weak: #ba8580;
-    --color-text-black: #ccc;
-    --color-text-black-dark: #fff;
-    --color-text-secondary: #aaa;
-    --color-text-secondary-weak: #999;
-    --color-text-link: #6cc4f0;
-    --color-shadow: #000;
+.dark {
+  --color-white: #181818;
+  --color-base: #333;
+  --color-primary: #72ad8c;
+  --color-primary-weak: #446853;
+  --color-secondary: #ad6761;
+  --color-secondary-weak: #ba8580;
+  --color-text-black: #ccc;
+  --color-text-black-dark: #fff;
+  --color-text-secondary: #aaa;
+  --color-text-secondary-weak: #999;
+  --color-text-link: #6cc4f0;
+  --color-shadow: #000;
 
-    --shadow: 0px 0px 6px rgba(0, 0, 0, 1);
-  }
+  --shadow: 0px 0px 6px rgba(0, 0, 0, 1);
 }
 
 // カラー

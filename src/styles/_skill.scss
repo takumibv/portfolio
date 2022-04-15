@@ -1,6 +1,7 @@
 .skills {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   @include breakpoint-pc() {
     justify-content: space-between;
@@ -10,9 +11,13 @@
 
 .skill-item {
   width: 25%;
+  min-width: 100px;
+  margin: 24px 16px;
 
   @include breakpoint-pc() {
     width: unset;
+    min-width: unset;
+    margin: 0;
   }
 }
 
@@ -46,5 +51,23 @@
 }
 
 .skill-item__icon {
-  margin-top: 8px;
+  margin: 8px 0 0;
+
+  position: relative;
+  overflow: visible;
+
+  img {
+    margin: auto;
+  }
+}
+
+.skill-item__circle-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include breakpoint-pc() {
+    display: none;
+  }
 }

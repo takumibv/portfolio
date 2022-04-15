@@ -9,6 +9,12 @@
   }
 }
 
+@mixin darkmode() {
+  .dark & {
+    @content;
+  }
+}
+
 @mixin clearfix() {
   &::after {
     clear: both;

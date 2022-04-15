@@ -5,9 +5,12 @@ import { ReactElement, ReactNode } from "react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+// import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+// import DrawSVGPlugin from "gsap/dist/DrawSVGPlugin";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
+// gsap.registerPlugin(DrawSVGPlugin);
 
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;

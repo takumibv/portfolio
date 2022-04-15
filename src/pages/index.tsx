@@ -1,6 +1,7 @@
 import React, { ReactElement, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import Profile from "../components/Profile";
 import SnsLinks from "../components/SnsLinks";
@@ -15,8 +16,8 @@ const Home: NextPageWithLayout = (props) => {
   const { ref: heroRef } = useParallax({ isTop: true, speed: 0.5 });
   const { ref: breakRef } = useParallax();
   const { props: scrollProps } = useScrollAnimation();
-
   const mainRef = useRef(null);
+  const router = useRouter();
 
   const popupArray = [
     {

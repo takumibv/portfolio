@@ -22,7 +22,7 @@
   background-position: center;
   z-index: -1;
 
-  @media (prefers-color-scheme: dark) {
+  @include darkmode() {
     background-image: url("/images/bg-base-dark.jpg");
   }
 }
@@ -34,7 +34,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  @media (prefers-color-scheme: dark) {
+  @include darkmode() {
     color: var(--color-text-secondary);
   }
 }

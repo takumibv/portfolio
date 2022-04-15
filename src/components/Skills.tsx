@@ -1,8 +1,20 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
+import SkillItem from "./SkillItem";
 
 const Skills: React.FC = () => {
+  const skillItems = [
+    { skillScore: 90, src: "/images/skill-react.png", isOrange: false },
+    { skillScore: 75, src: "/images/skill-vue.png", isOrange: false },
+    { skillScore: 75, src: "/images/skill-js.png", isOrange: false },
+    { skillScore: 75, src: "/images/skill-html.png", isOrange: false },
+    { skillScore: 90, src: "/images/skill-css.png", isOrange: false },
+    { skillScore: 60, src: "/images/skill-java.png", isOrange: false },
+    { skillScore: 50, src: "/images/skill-php.png", isOrange: false },
+    { skillScore: 50, src: "/images/skill-ps.png", isOrange: true },
+    { skillScore: 75, src: "/images/skill-ai.png", isOrange: true },
+  ];
   const skillRef = useRef(null);
   const q = gsap.utils.selector(skillRef);
 
@@ -30,105 +42,15 @@ const Skills: React.FC = () => {
 
   return (
     <div className="skills" ref={skillRef}>
-      <div className="skill-item">
-        <div className="skill-item__graph">
-          <div
-            className="skill-item__graph-indicator js-graph-indicator"
-            style={{ height: "80%" }}
-          ></div>
-        </div>
-        <div className="skill-item__icon">
-          <Image src="/images/skill-react.png" alt="" layout="raw" width="70" height="70" />
-        </div>
-      </div>
-      <div className="skill-item">
-        <div className="skill-item__graph">
-          <div
-            className="skill-item__graph-indicator js-graph-indicator"
-            style={{ height: "75%" }}
-          ></div>
-        </div>
-        <div className="skill-item__icon">
-          <Image src="/images/skill-vue.png" alt="" layout="raw" width="70" height="70" />
-        </div>
-      </div>
-      <div className="skill-item">
-        <div className="skill-item__graph">
-          <div
-            className="skill-item__graph-indicator js-graph-indicator"
-            style={{ height: "78%" }}
-          ></div>
-        </div>
-        <div className="skill-item__icon">
-          <Image src="/images/skill-js.png" alt="" layout="raw" width="70" height="70" />
-        </div>
-      </div>
-      <div className="skill-item">
-        <div className="skill-item__graph">
-          <div
-            className="skill-item__graph-indicator js-graph-indicator"
-            style={{ height: "75%" }}
-          ></div>
-        </div>
-        <div className="skill-item__icon">
-          <Image src="/images/skill-html.png" alt="" layout="raw" width="70" height="70" />
-        </div>
-      </div>
-      <div className="skill-item">
-        <div className="skill-item__graph">
-          <div
-            className="skill-item__graph-indicator js-graph-indicator"
-            style={{ height: "85%" }}
-          ></div>
-        </div>
-        <div className="skill-item__icon">
-          <Image src="/images/skill-css.png" alt="" layout="raw" width="70" height="70" />
-        </div>
-      </div>
-      <div className="skill-item">
-        <div className="skill-item__graph">
-          <div
-            className="skill-item__graph-indicator js-graph-indicator"
-            style={{ height: "65%" }}
-          ></div>
-        </div>
-        <div className="skill-item__icon">
-          <Image src="/images/skill-java.png" alt="" layout="raw" width="70" height="70" />
-        </div>
-      </div>
-      <div className="skill-item">
-        <div className="skill-item__graph">
-          <div
-            className="skill-item__graph-indicator js-graph-indicator"
-            style={{ height: "50%" }}
-          ></div>
-        </div>
-        <div className="skill-item__icon">
-          <Image src="/images/skill-php.png" alt="" layout="raw" width="70" height="70" />
-        </div>
-      </div>
-      <div className="skill-item skill-item--orange">
-        <div className="skill-item__graph">
-          <div
-            className="skill-item__graph-indicator js-graph-indicator"
-            style={{ height: "45%" }}
-          ></div>
-        </div>
-        <div className="skill-item__icon">
-          <Image src="/images/skill-ps.png" alt="" layout="raw" width="70" height="70" />
-        </div>
-      </div>
-      <div className="skill-item skill-item--orange">
-        <div className="skill-item__graph">
-          <div
-            className="skill-item__graph-indicator js-graph-indicator"
-            style={{ height: "70%" }}
-          ></div>
-        </div>
-        <div className="skill-item__icon">
-          <Image src="/images/skill-ai.png" alt="" layout="raw" width="70" height="70" />
-        </div>
-      </div>
+      {skillItems.map(({ skillScore, src, isOrange }) => (
+        <SkillItem
+          key={src}
+          src={src}
+          skillScore={skillScore}
+          isOrange={isOrange}
+          triggerRef={skillRef}
+        />
+      ))}
     </div>
   );
 };

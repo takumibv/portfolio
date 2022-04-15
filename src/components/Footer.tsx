@@ -12,12 +12,7 @@ const Footer: React.FC<{ hasProfile?: boolean }> = ({ hasProfile = true }) => {
         {hasProfile && <Profile />}
       </div>
       <footer className="l-footer">
-        <div
-          className="l-footer__bg js-rellax"
-          data-rellax-speed="-3"
-          data-rellax-percentage="0.5"
-          ref={ref}
-        ></div>
+        <div className="l-footer__bg" ref={ref}></div>
         <div className="container mx-auto clearfix">
           <div className="l-footer__left">
             <Image src="/images/logo_text.svg" alt="" width={60} height={60} />

@@ -13,7 +13,7 @@
     top: 50px;
     left: calc(50% - 10px);
 
-    @media (prefers-color-scheme: dark) {
+    @include darkmode() {
       background: linear-gradient(145deg, #333, #000);
       box-shadow: 6px 6px 8px #333, -6px -6px 8px #000;
     }
