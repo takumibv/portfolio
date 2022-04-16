@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -42,7 +41,7 @@ const Header = () => {
           <div className="l-header__logo">
             <Link href="/">
               <a>
-                <Image src="/images/logo.svg" alt="" width={32} height={32} />
+                <img src="/images/logo.svg" alt="" width={32} height={32} />
               </a>
             </Link>
           </div>

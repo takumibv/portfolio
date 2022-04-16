@@ -1,6 +1,4 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import SnsLinks from "./SnsLinks";
 import { gsap } from "gsap";
 
@@ -170,7 +168,7 @@ const Profile: React.FC<{ showContact?: boolean }> = ({ showContact }) => {
   return (
     <div className="profile">
       <div className="profile__icon js-icon-animation" ref={iconRef}>
-        <Image src="/images/profile.JPG" alt="" layout="fill" />
+        <img src="/images/profile.JPG" alt="" />
       </div>
       <p className="profile__name">Takumibv</p>
       <SnsLinks showContact={showContact} />

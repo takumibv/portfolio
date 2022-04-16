@@ -1,5 +1,4 @@
 import React, { ReactElement, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
@@ -99,7 +98,7 @@ const Home: NextPageWithLayout = (props) => {
       {/* About */}
       <main id="about" className="l-main">
         <a className="l-main__scroll-down" href="#about" {...scrollProps}>
-          <Image src="/images/scroll.svg" alt="" width={46} height={60} />
+          <img src="/images/scroll.svg" alt="" width={46} height={60} />
         </a>
         <section className="section">
           <div className="container container--sm mx-auto">
@@ -151,7 +150,7 @@ const Home: NextPageWithLayout = (props) => {
                   <div className="six columns text-center">
                     <Link href="https://chrome.google.com/webstore/detail/memo-anywhere/fjfoncfdjhdefjhknbaphionnognbnpl?utm_source=chrome-ntp-icon">
                       <a target="_blank" className="work-item" rel="noreferrer">
-                        <Image
+                        <img
                           className="w-full"
                           src="/images/work_memo.png"
                           alt=""
@@ -167,7 +166,7 @@ const Home: NextPageWithLayout = (props) => {
                   <div className="six columns text-center">
                     <Link href="https://chrome.google.com/webstore/detail/titech-portal-login/gakchdgcpjbchncgbflfkajcfpnbhohi?utm_source=chrome-ntp-icon">
                       <a target="_blank" className="work-item" rel="noreferrer">
-                        <Image
+                        <img
                           className="w-full"
                           src="/images/work_titech.png"
                           alt=""
@@ -185,7 +184,7 @@ const Home: NextPageWithLayout = (props) => {
                   <div className="six columns text-center">
                     <Link href="https://social-dog.net/">
                       <a className="work-item" target="_blank" rel="noreferrer">
-                        <Image
+                        <img
                           className="w-full"
                           src="/images/work_autoscale.png"
                           alt=""

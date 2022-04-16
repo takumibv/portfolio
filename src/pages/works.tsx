@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ReactElement } from "react";
 import Layout from "../components/Layout";
 import { NextPageWithLayout } from "./_app";
@@ -20,11 +19,10 @@ const Works: NextPageWithLayout = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Image
+                  <img
                     className="w-full"
                     src="/images/work_memo.png"
                     alt=""
-                    layout="responsive"
                     width={308}
                     height={192}
                   />
@@ -91,11 +89,10 @@ const Works: NextPageWithLayout = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <Image
+                    <img
                       className="w-full"
                       src="/images/work_titech.png"
                       alt=""
-                      layout="responsive"
                       width={308}
                       height={192}
                     />
@@ -137,11 +134,10 @@ const Works: NextPageWithLayout = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Image
+                  <img
                     className="w-full"
                     src="/images/work_autoscale.png"
                     alt=""
-                    layout="responsive"
                     width={308}
                     height={192}
                   />
@@ -209,11 +205,10 @@ const Works: NextPageWithLayout = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <Image
+                    <img
                       className="w-full"
                       src="/images/work_runmusic.jpg"
                       alt=""
-                      layout="responsive"
                       width={308}
                       height={192}
                     />
@@ -253,11 +248,10 @@ const Works: NextPageWithLayout = () => {
           <div className="container mx-auto">
             <div className="row py-10">
               <div className="five columns">
-                <Image
+                <img
                   className="w-full"
                   src="/images/work_groupshare.png"
                   alt=""
-                  layout="responsive"
                   width={308}
                   height={192}
                 />
@@ -299,11 +293,10 @@ const Works: NextPageWithLayout = () => {
                   </div>
                 </div>
                 <div className="five columns offset-by-one">
-                  <Image
+                  <img
                     className="w-full"
                     src="/images/work_evetan.jpg"
                     alt=""
-                    layout="responsive"
                     width={308}
                     height={192}
                   />

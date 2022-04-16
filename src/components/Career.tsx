@@ -1,7 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import SnsLinks from "./SnsLinks";
 import { gsap } from "gsap";
 import { IconChevronDown } from "@tabler/icons";
 import classNames from "classnames";

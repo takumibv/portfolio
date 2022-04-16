@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
 import classNames from "classnames";
 
@@ -60,7 +59,7 @@ const SkillItem: React.FC<{
         ></div>
       </div>
       <div className="skill-item__icon">
-        <Image src={src} alt="" layout="raw" width="70" height="70" />
+        <img src={src} alt="" width="70" height="70" />
         <svg
           viewBox="-4 -4 136 136"
           height="100"

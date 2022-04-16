@@ -6,6 +6,8 @@ const nextConfig = {
       layoutRaw: true,
     },
   },
+  basePath: process.env.GITHUB_ACTIONS ? "/portfolio_next" : "",
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
