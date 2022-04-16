@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+
+@import "./variables";
+@import "./mixin";
+@import "./reset";
+@import "./base";
+
+/**
+* Layout
+**/
+@import "./layout";
+
+/**
+* component
+**/
+@import "./headline";
+@import "./button";
+@import "./career";
+@import "./break";
+@import "./hero";
+@import "./input";
+@import "./profile";
+@import "./skill";
+@import "./section";
+@import "./work";
+
+@tailwind utilities;

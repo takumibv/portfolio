@@ -1,0 +1,40 @@
+.break {
+  position: relative;
+  overflow: hidden;
+
+  @include breakpoint-sp() {
+    &.section {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+}
+
+.break__bg {
+  position: absolute;
+  top: -50vh;
+  bottom: -50vh;
+  left: 0;
+  right: 0;
+  background-image: url("../../public/images/bg-base.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+
+  @include darkmode() {
+    background-image: url("../../public/images/bg-base-dark.jpg");
+  }
+}
+
+.break__text {
+  color: #fff;
+  color: var(--color-white);
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 400;
+
+  @include darkmode() {
+    color: var(--color-text-secondary);
+  }
+}

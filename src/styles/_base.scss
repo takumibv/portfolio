@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: source-han-sans-japanese, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #555;
+  color: var(--color-text-black);
+  background: #fff;
+  background: var(--color-white);
+}
+
+a {
+  color: #7299ad;
+  color: var(--color-text-link);
+  text-decoration: underline;
+
+  @include breakpoint-pc() {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.clearfix {
+  @include clearfix();
+}
