@@ -16,14 +16,14 @@
   bottom: -50vh;
   left: 0;
   right: 0;
-  background-image: url("/images/bg-base.jpg");
+  background-image: url("../../public/images/bg-base.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   z-index: -1;
 
   @include darkmode() {
-    background-image: url("/images/bg-base-dark.jpg");
+    background-image: url("../../public/images/bg-base-dark.jpg");
   }
 }
 

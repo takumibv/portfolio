@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import useScrollAnimation from "../hooks/useScrollAnimation";
+import { url } from "../utils/config";
 
 const Header = () => {
   const router = useRouter();
@@ -41,7 +42,7 @@ const Header = () => {
           <div className="l-header__logo">
             <Link href="/">
               <a>
-                <img src="/images/logo.svg" alt="" width={32} height={32} />
+                <img src={url("/images/logo.svg")} alt="" width={32} height={32} />
               </a>
             </Link>
           </div>

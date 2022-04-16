@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import classNames from "classnames";
+import { url } from "../utils/config";
 
 const SkillItem: React.FC<{
   src: string;
@@ -59,7 +60,7 @@ const SkillItem: React.FC<{
         ></div>
       </div>
       <div className="skill-item__icon">
-        <img src={src} alt="" width="70" height="70" />
+        <img src={url(src)} alt="" width="70" height="70" />
         <svg
           viewBox="-4 -4 136 136"
           height="100"

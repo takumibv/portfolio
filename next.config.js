@@ -1,3 +1,5 @@
+const urlPrefix = process.env.URL_PREFIX ? "/" + process.env.URL_PREFIX : "";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -6,7 +8,9 @@ const nextConfig = {
       layoutRaw: true,
     },
   },
-  basePath: process.env.GITHUB_ACTIONS ? "/portfolio" : "",
+  assetPrefix: urlPrefix,
+  basePath: urlPrefix,
+  publicRuntimeConfig: { urlPrefix },
   trailingSlash: true,
 };
 

@@ -10,6 +10,7 @@ import useParallax from "../hooks/useParallax";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 import Career from "../components/Career";
 import { gsap } from "gsap";
+import { url } from "../utils/config";
 
 const Home: NextPageWithLayout = (props) => {
   const { ref: heroRef } = useParallax({ isTop: true, speed: 0.5 });
@@ -98,7 +99,7 @@ const Home: NextPageWithLayout = (props) => {
       {/* About */}
       <main id="about" className="l-main">
         <a className="l-main__scroll-down" href="#about" {...scrollProps}>
-          <img src="/images/scroll.svg" alt="" width={46} height={60} />
+          <img src={url("/images/scroll.svg")} alt="" width={46} height={60} />
         </a>
         <section className="section">
           <div className="container container--sm mx-auto">
@@ -152,7 +153,7 @@ const Home: NextPageWithLayout = (props) => {
                       <a target="_blank" className="work-item" rel="noreferrer">
                         <img
                           className="w-full"
-                          src="/images/work_memo.png"
+                          src={url("/images/work_memo.png")}
                           alt=""
                           width={308}
                           height={192}
@@ -168,7 +169,7 @@ const Home: NextPageWithLayout = (props) => {
                       <a target="_blank" className="work-item" rel="noreferrer">
                         <img
                           className="w-full"
-                          src="/images/work_titech.png"
+                          src={url("/images/work_titech.png")}
                           alt=""
                           width={308}
                           height={192}
@@ -186,7 +187,7 @@ const Home: NextPageWithLayout = (props) => {
                       <a className="work-item" target="_blank" rel="noreferrer">
                         <img
                           className="w-full"
-                          src="/images/work_autoscale.png"
+                          src={url("/images/work_autoscale.png")}
                           alt=""
                           width={308}
                           height={192}

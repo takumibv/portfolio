@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import SkillItem from "./SkillItem";
+import { url } from "../utils/config";
 
 const Skills: React.FC = () => {
   const skillItems = [

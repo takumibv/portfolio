@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import SnsLinks from "./SnsLinks";
 import { gsap } from "gsap";
+import { url } from "../utils/config";
 
 // アイコン角丸のアニメーション
 // iconのborder-radius群
@@ -168,7 +169,7 @@ const Profile: React.FC<{ showContact?: boolean }> = ({ showContact }) => {
   return (
     <div className="profile">
       <div className="profile__icon js-icon-animation" ref={iconRef}>
-        <img src="/images/profile.JPG" alt="" />
+        <img src={url("/images/profile.JPG")} alt="" />
       </div>
       <p className="profile__name">Takumibv</p>
       <SnsLinks showContact={showContact} />

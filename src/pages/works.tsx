@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import Layout from "../components/Layout";
+import { url } from "../utils/config";
 import { NextPageWithLayout } from "./_app";
 
 const Works: NextPageWithLayout = () => {
@@ -21,7 +22,7 @@ const Works: NextPageWithLayout = () => {
                 >
                   <img
                     className="w-full"
-                    src="/images/work_memo.png"
+                    src={url("/images/work_memo.png")}
                     alt=""
                     width={308}
                     height={192}
@@ -91,7 +92,7 @@ const Works: NextPageWithLayout = () => {
                   >
                     <img
                       className="w-full"
-                      src="/images/work_titech.png"
+                      src={url("/images/work_titech.png")}
                       alt=""
                       width={308}
                       height={192}
@@ -136,7 +137,7 @@ const Works: NextPageWithLayout = () => {
                 >
                   <img
                     className="w-full"
-                    src="/images/work_autoscale.png"
+                    src={url("/images/work_autoscale.png")}
                     alt=""
                     width={308}
                     height={192}
@@ -207,7 +208,7 @@ const Works: NextPageWithLayout = () => {
                   >
                     <img
                       className="w-full"
-                      src="/images/work_runmusic.jpg"
+                      src={url("/images/work_runmusic.jpg")}
                       alt=""
                       width={308}
                       height={192}
@@ -250,7 +251,7 @@ const Works: NextPageWithLayout = () => {
               <div className="five columns">
                 <img
                   className="w-full"
-                  src="/images/work_groupshare.png"
+                  src={url("/images/work_groupshare.png")}
                   alt=""
                   width={308}
                   height={192}
@@ -295,7 +296,7 @@ const Works: NextPageWithLayout = () => {
                 <div className="five columns offset-by-one">
                   <img
                     className="w-full"
-                    src="/images/work_evetan.jpg"
+                    src={url("/images/work_evetan.jpg")}
                     alt=""
                     width={308}
                     height={192}
