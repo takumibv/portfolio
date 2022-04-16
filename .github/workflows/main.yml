@@ -23,6 +23,7 @@ jobs:
     env:
       NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
       NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
+      URL_PREFIX: ${{ secrets.URL_PREFIX }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
