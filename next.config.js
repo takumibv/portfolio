@@ -6,7 +6,7 @@ const nextConfig = {
       layoutRaw: true,
     },
   },
-  basePath: process.env.GITHUB_ACTIONS ? "/portfolio_next" : "",
+  basePath: process.env.GITHUB_ACTIONS ? "/portfolio" : "",
   trailingSlash: true,
 };
 
