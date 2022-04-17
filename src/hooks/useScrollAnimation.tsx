@@ -1,15 +1,8 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useRouter } from "next/router";
 
-type ParallaxProps = {
-  speed?: number;
-  isTop?: boolean;
-  isBottom?: boolean;
-};
-
-const useScrollAnimation = (option?: ParallaxProps) => {
+const useScrollAnimation = () => {
   const ref = useRef<HTMLAnchorElement>(null);
   const router = useRouter();
 
@@ -28,7 +21,7 @@ const useScrollAnimation = (option?: ParallaxProps) => {
         target = hash;
 
         // 違う画面であれば遷移する
-        pathname !== router.pathname && router.push(href);
+        pathname !== `${router.basePath}${router.pathname}` && router.push(href);
       }
 
       const q = gsap.utils.selector(document);

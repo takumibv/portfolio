@@ -17,7 +17,6 @@ const Home: NextPageWithLayout = (props) => {
   const { ref: breakRef } = useParallax();
   const { props: scrollProps } = useScrollAnimation();
   const mainRef = useRef(null);
-  const router = useRouter();
 
   const popupArray = [
     {

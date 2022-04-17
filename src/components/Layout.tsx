@@ -9,10 +9,6 @@ const Layout: React.FC<{ title: string; hasProfile?: boolean; children?: ReactNo
   children,
 }) => {
   useEffect(() => {
-    console.log(
-      "(prefers-color-scheme: dark)::",
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    );
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       document.documentElement.classList.add("dark");
     } else {
