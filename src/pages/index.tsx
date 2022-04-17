@@ -126,7 +126,7 @@ const Home: NextPageWithLayout = (props) => {
             『一つのことを、一生やり続けられると確信する日がくる』
           </h3>
         </section>
-        <div className="container mx-auto bg-white">
+        <div className="container mx-auto">
           <div className="l-top">
             <div className="l-top__left">
               <div className="l-top__left-sticky">

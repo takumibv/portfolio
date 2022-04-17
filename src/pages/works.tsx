@@ -7,7 +7,7 @@ const Works: NextPageWithLayout = () => {
   return (
     <>
       <main id="about" className="l-main l-main--child">
-        <section className="section">
+        <section className="section pb-0">
           <div className="container mx-auto">
             <h3 className="section__title">WORKS</h3>
           </div>

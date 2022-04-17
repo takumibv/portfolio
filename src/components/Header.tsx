@@ -4,8 +4,12 @@ import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import useScrollAnimation from "../hooks/useScrollAnimation";
 import { url } from "../utils/config";
+import { IconBrightnessDown, IconMoon } from "@tabler/icons";
 
-const Header = () => {
+const Header: React.FC<{ setIsDark: (isDark: boolean) => any; isDark: boolean }> = ({
+  setIsDark,
+  isDark,
+}) => {
   const router = useRouter();
   const [isAbout, setIsAbout] = useState(false);
   const [isOpenNav, setIsOpenNav] = useState(false);
@@ -110,6 +114,18 @@ const Header = () => {
                 <Link href="/contact">
                   <a>CONTACT</a>
                 </Link>
+              </li>
+              <li className={classNames("l-header__nav-item")}>
+                <a
+                  href="#"
+                  rel="noreferrer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsDark(!isDark);
+                  }}
+                >
+                  {isDark ? <IconBrightnessDown /> : <IconMoon className="text-grey" />}
+                </a>
               </li>
             </ul>
           </div>

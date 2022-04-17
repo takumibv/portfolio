@@ -21,6 +21,23 @@
 }
 
 /**
+* Page
+**/
+.l-page {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/**
 * Loading
 **/
 .l-loading {
@@ -137,7 +154,6 @@
     margin: 0 8px;
     padding: 0 16px;
     height: 100%;
-    min-width: 96px;
     text-decoration: none;
     font-family: $font-eng;
     font-size: 18px;
