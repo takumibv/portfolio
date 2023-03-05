@@ -46,6 +46,22 @@ const Career: React.FC = () => {
       <div className="career-item">
         <div className="career-item__left"></div>
         <div className="career-item__right">
+          <div className="career-item__title sub-headline">株式会社デジタルレシピ</div>
+          <div className="career-item__period text">2022/09 -</div>
+          <div className="career-item__text text">
+            フロントエンドエンジニア
+            <br />
+            <br />
+            【主な業務】
+            <ul className="list-disc pl-6">
+              <li className="mt-2">Catchyのフロントエンド開発</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="career-item">
+        <div className="career-item__left"></div>
+        <div className="career-item__right">
           <div className="career-item__title sub-headline">東京工業大学</div>
           <div className="career-item__period text">2013/04 - 2019/03</div>
           <div className="career-item__text text">
@@ -58,21 +74,21 @@ const Career: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="career-item">
-        <div className="career-item__left"></div>
-        <div className="career-item__right">
-          <div className="career-item__title sub-headline">株式会社 AutoScale</div>
-          <div className="career-item__period text">2018/01 - 2019/03</div>
-          <div className="career-item__text text">
-            インターンシップ(フロントエンドエンジニア)
-            <br />
-            ReactによるWebフロント開発、React Nativeによるアプリ開発を行いました。
-            サーバーサイドやサーバー構築など、柔軟に対応しました。
-          </div>
-        </div>
-      </div>
       <div ref={ref} className={classNames("career-collapse", isOpen && "career-collapse--open")}>
         <div className="career">
+          <div className="career-item">
+            <div className="career-item__left"></div>
+            <div className="career-item__right">
+              <div className="career-item__title sub-headline">株式会社 AutoScale</div>
+              <div className="career-item__period text">2018/01 - 2019/03</div>
+              <div className="career-item__text text">
+                インターンシップ(フロントエンドエンジニア)
+                <br />
+                ReactによるWebフロント開発、React Nativeによるアプリ開発を行いました。
+                サーバーサイドやサーバー構築など、柔軟に対応しました。
+              </div>
+            </div>
+          </div>
           <div className="career-item">
             <div className="career-item__left"></div>
             <div className="career-item__right">
