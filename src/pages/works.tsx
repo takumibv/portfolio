@@ -11,6 +11,80 @@ const Works: NextPageWithLayout = () => {
           <div className="container mx-auto">
             <h3 className="section__title">WORKS</h3>
           </div>
+          <div className="bg-base dark:bg-base-dark">
+            <div className="container mx-auto">
+              <div className="row py-10">
+                <div className="six columns hidden tablet:block">
+                  <div className="mt-4">
+                    <h4 className="sub-headline">ポートフォリオ</h4>
+                    <p className="mt-4 text text-grey">
+                      制作期間: 2022.04 - 2022.05
+                      <br />
+                      規模: 個人開発
+                      <br />
+                      担当: 企画、デザイン、実装
+                    </p>
+                    <p className="mt-4 text">
+                      コーディング練習のために作成したサービスサイト群です。
+                    </p>
+                    <p className="mt-4 text">
+                      使用技術
+                      <br/>・Next.js
+                      <br/>・Framer Motion: アニメーションライブラリ
+                      <br/>・headless UI
+                      <br/>・TailwindCSS: CSSフレームワーク
+                    </p>
+                    <a
+                      href="https://takumibv.github.io/sample-site-collection/"
+                      className="button-link mt-4"
+                      rel="noreferrer"
+                    >
+                      詳細
+                    </a>
+                  </div>
+                </div>
+                <div className="five columns offset-by-one">
+                  <a
+                    className="inline-block w-full"
+                    href="https://takumibv.github.io/sample-site-collection/"
+                    rel="noreferrer"
+                  >
+                    <img
+                      className="w-full"
+                      src={url("/images/sample_pet.png")}
+                      alt=""
+                      width={308}
+                      height={192}
+                    />
+                  </a>
+                </div>
+                <div className="six columns tablet:hidden">
+                  <div className="mt-4">
+                    <h4 className="sub-headline">Titech Portal Login</h4>
+                    <p className="mt-4 text text-grey">
+                      制作期間: 2015.04
+                      <br />
+                      規模: 個人開発
+                      <br />
+                      担当: 企画、デザイン、実装
+                    </p>
+                    <p className="mt-4 text">
+                      大学のポータルサイトに、自動でログインするChrome拡張機能です。
+                      ログインのたびに、学生証をいちいち取り出す手間が省けます。
+                    </p>
+                    <a
+                      href="https://chrome.google.com/webstore/detail/titech-portal-login/gakchdgcpjbchncgbflfkajcfpnbhohi?utm_source=chrome-ntp-icon"
+                      target="_blank"
+                      className="button-link mt-4"
+                      rel="noreferrer"
+                    >
+                      詳細
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="container mx-auto">
             <div className="row py-10">
               <div className="five columns">
