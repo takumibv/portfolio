@@ -11,9 +11,9 @@ import useScrollAnimation from "../hooks/useScrollAnimation";
 import Career from "../components/Career";
 import { gsap } from "gsap";
 import { url } from "../utils/config";
+import Hero from "../components/Hero";
 
 const Home: NextPageWithLayout = (props) => {
-  const { ref: heroRef } = useParallax({ isTop: true, speed: 0.5 });
   const { ref: breakRef } = useParallax();
   const { props: scrollProps } = useScrollAnimation();
   const mainRef = useRef(null);
@@ -84,16 +84,7 @@ const Home: NextPageWithLayout = (props) => {
   return (
     <div ref={mainRef}>
       {/* Hero */}
-      <div className="hero">
-        <div className="hero__bg" ref={heroRef}></div>
-        <h1 className="hero__main-title saying js-text-animation">
-          “the only way to be truly satisfied is to do what you believe is great work.”
-        </h1>
-        <h2 className="hero__main-name saying js-text-animation">Steve Jobs</h2>
-        <p className="hero__main-jp js-text-animation">
-          『心の底から満足する唯一の方法は、素晴らしいと信じる仕事をすること。』
-        </p>
-      </div>
+      <Hero />
 
       {/* About */}
       <main id="about" className="l-main">

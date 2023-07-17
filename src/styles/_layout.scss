@@ -270,9 +270,14 @@
 .l-main {
   position: relative;
   padding-bottom: 40px;
+  background: var(--color-white);
 
   @include breakpoint-pc() {
     padding-bottom: 160px;
+  }
+
+  @include darkmode() {
+
   }
 }
 
