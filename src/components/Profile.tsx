@@ -59,16 +59,16 @@ const Profile: React.FC<{ showContact?: boolean }> = ({ showContact }) => {
 
   // setAnimation
   useEffect(() => {
-    setIconAnimation(
-      gsap.to(iconRef.current, {
-        repeat: -1,
-        duration: 1.5,
-        repeatRefresh: true,
-        yoyo: true,
-        ease: "back.inOut(4)",
-        borderRadius: createBorderRadius,
-      })
-    );
+    // setIconAnimation(
+    //   gsap.to(iconRef.current, {
+    //     repeat: -1,
+    //     duration: 1.5,
+    //     repeatRefresh: true,
+    //     yoyo: true,
+    //     ease: "back.inOut(4)",
+    //     borderRadius: createBorderRadius,
+    //   })
+    // );
 
     setHoverAnimation(
       gsap.to(iconRef.current, {
