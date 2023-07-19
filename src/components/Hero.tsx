@@ -12,13 +12,9 @@ const Hero = () => {
   let bvGeometry: THREE.BufferGeometry<THREE.NormalBufferAttributes>;
   let bvMesh: THREE.Mesh;
 
-  let mixer: THREE.AnimationMixer;
-
   let clipMaterial: THREE.MeshPhongMaterial;
   let object: THREE.Group;
 
-  let result;
-  let wireframe;
   let boxBrush: THREE.Mesh;
 
   useEffect(() => {
@@ -40,9 +36,6 @@ const Hero = () => {
 
   let isInited = false;
   const initAnimation = () => {
-    // if (isInited) return;
-    // isInited = true;
-
     renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.current as HTMLCanvasElement,
       alpha: true,
@@ -53,7 +46,6 @@ const Hero = () => {
     camera.position.set(0, 50, 500);
 
     scene = new THREE.Scene();
-    // scene.background = new THREE.Color(0x333333);
 
     camera.lookAt(scene.position);
 
@@ -83,7 +75,6 @@ const Hero = () => {
       render();
     });
 
-    // evaluator.useGroups = true;
     object = new THREE.Group();
 
     clipMaterial = new THREE.MeshPhongMaterial({
@@ -96,7 +87,7 @@ const Hero = () => {
     for (let z = -2; z <= 2; ++z)
       for (let y = -2; y <= 2; ++y)
         for (let x = -2; x <= 2; ++x) {
-          const size = Math.random() * 10 + 5;
+          const size = Math.random() * 12 + 5;
 
           const mesh = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), clipMaterial);
           mesh.position.set(0, 0, 0);
@@ -126,9 +117,8 @@ const Hero = () => {
   const clock = new THREE.Clock();
 
   function animate() {
-    const elapsedTime = clock.getElapsedTime();
-
-    if (isVisible) {
+    if (window.scrollY <= window.innerHeight) {
+      const elapsedTime = clock.getElapsedTime();
       // シーンを回転
       scene.rotation.y = elapsedTime;
 
@@ -160,15 +150,8 @@ const Hero = () => {
     render();
   };
 
-  let isVisible = true;
   // スクロールイベント
   const handleScroll = () => {
-    if (window.scrollY > window.innerHeight) {
-      isVisible = false;
-    } else {
-      isVisible = true;
-    }
-
     requestAnimationFrame(animateByScroll);
   };
 
@@ -230,12 +213,12 @@ const Hero = () => {
       mesh.rotateY(0.05 * (randomSignArray.at(3 * i + 1) ?? 0));
       mesh.rotateZ(0.05 * (randomSignArray.at(3 * i + 2) ?? 0));
       mesh.position.set(
-        10 * (randomArray.at(3 * i) ?? 0) * Math.sqrt(scrollY) * (randomSignArray.at(3 * i) ?? 1),
+        15 * (randomArray.at(3 * i) ?? 0) * Math.sqrt(scrollY) * (randomSignArray.at(3 * i) ?? 1),
         10 *
           (randomArray.at(3 * i + 1) ?? 0) *
           Math.sqrt(scrollY) *
           (randomSignArray.at(3 * i + 1) ?? 1),
-        10 *
+        15 *
           (randomArray.at(3 * i + 2) ?? 0) *
           Math.sqrt(scrollY) *
           (randomSignArray.at(3 * i + 2) ?? 1)
