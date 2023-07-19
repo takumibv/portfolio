@@ -5,6 +5,7 @@ import { ReactElement, ReactNode } from "react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+import GoogleAnalytics from "../components/GoogleAnalytics";
 // import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 // import DrawSVGPlugin from "gsap/dist/DrawSVGPlugin";
 
@@ -24,7 +25,12 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page);
 
-  return getLayout(<Component {...pageProps} />);
+  return getLayout(
+    <>
+      <GoogleAnalytics />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;
