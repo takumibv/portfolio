@@ -59,7 +59,7 @@ const Hero = () => {
       side: THREE.DoubleSide,
     });
 
-    loader.load("../model/bv.obj", function (obj) {
+    loader.load(`${process.env.NEXT_PUBLIC_BASE_URL}/model/bv.obj`, function (obj) {
       if (isInited) return;
       isInited = true;
       const positions = combineBuffer(obj, "position");
