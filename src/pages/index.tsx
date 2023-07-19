@@ -14,7 +14,6 @@ import { url } from "../utils/config";
 import Hero from "../components/Hero";
 
 const Home: NextPageWithLayout = (props) => {
-  const { ref: breakRef } = useParallax();
   const { props: scrollProps } = useScrollAnimation();
   const mainRef = useRef(null);
 
@@ -112,7 +111,7 @@ const Home: NextPageWithLayout = (props) => {
           </div>
         </section>
         <section className="section break">
-          <div className="break__bg" ref={breakRef}></div>
+          <div className="break__bg"></div>
           <h3 className="sub-headline break__text">
             『一つのことを、一生やり続けられると確信する日がくる』
           </h3>
