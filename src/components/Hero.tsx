@@ -87,7 +87,7 @@ const Hero = () => {
     for (let z = -2; z <= 2; ++z)
       for (let y = -2; y <= 2; ++y)
         for (let x = -2; x <= 2; ++x) {
-          const size = Math.random() * 12 + 5;
+          const size = Math.random() * 13 + 4;
 
           const mesh = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), clipMaterial);
           mesh.position.set(0, 0, 0);
@@ -115,6 +115,14 @@ const Hero = () => {
   };
 
   const clock = new THREE.Clock();
+  const cubeCount = 5 * 5 * 5;
+  let randomArray = new Float32Array(cubeCount * 3);
+  let randomSignArray = new Float32Array(cubeCount * 3);
+
+  randomArray.forEach((_, i) => {
+    randomArray[i] = Math.random();
+    randomSignArray[i] = Math.random() > 0.5 ? 1 : -1;
+  });
 
   function animate() {
     if (window.scrollY <= window.innerHeight) {
@@ -129,6 +137,12 @@ const Hero = () => {
 
         bvMesh.scale.set(scale, scale, scale);
       }
+
+      object.children.forEach((mesh, i) => {
+        mesh.rotateX(0.025 * (randomSignArray.at(3 * i) ?? 0));
+        mesh.rotateY(0.025 * (randomSignArray.at(3 * i + 1) ?? 0));
+        mesh.rotateZ(0.025 * (randomSignArray.at(3 * i + 2) ?? 0));
+      });
 
       render();
     }
@@ -183,19 +197,6 @@ const Hero = () => {
     return new THREE.BufferAttribute(combined, 3);
   }
 
-  const cubeCount = 5 * 5 * 5;
-  let randomArray = new Float32Array(cubeCount * 3);
-  let randomSignArray = new Float32Array(cubeCount * 3);
-
-  randomArray.forEach((_, i) => {
-    randomArray[3 * i] = Math.random();
-    randomArray[3 * i + 1] = Math.random();
-    randomArray[3 * i + 2] = Math.random();
-    randomSignArray[3 * i] = Math.random() > 0.5 ? 1 : -1;
-    randomSignArray[3 * i + 1] = Math.random() > 0.5 ? 1 : -1;
-    randomSignArray[3 * i + 2] = Math.random() > 0.5 ? 1 : -1;
-  });
-
   function animateByScroll() {
     const scrollY = window.scrollY;
 
@@ -209,9 +210,6 @@ const Hero = () => {
     }
 
     object.children.forEach((mesh, i) => {
-      mesh.rotateX(0.05 * (randomSignArray.at(3 * i) ?? 0));
-      mesh.rotateY(0.05 * (randomSignArray.at(3 * i + 1) ?? 0));
-      mesh.rotateZ(0.05 * (randomSignArray.at(3 * i + 2) ?? 0));
       mesh.position.set(
         15 * (randomArray.at(3 * i) ?? 0) * Math.sqrt(scrollY) * (randomSignArray.at(3 * i) ?? 1),
         10 *
