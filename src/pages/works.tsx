@@ -11,6 +11,51 @@ const Works: NextPageWithLayout = () => {
           <div className="container mx-auto">
             <h3 className="section__title">WORKS</h3>
           </div>
+          <div className="container mx-auto">
+            <div className="row py-10">
+              <div className="five columns">
+                <a
+                  className="inline-block w-full"
+                  href="https://lp.ai-copywriter.jp/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    className="w-full"
+                    src={url("/images/work_catchy.png")}
+                    alt=""
+                    width={308}
+                    height={192}
+                  />
+                </a>
+              </div>
+              <div className="six columns offset-by-one">
+                <div className="mt-4">
+                  <h4 className="sub-headline">Catchy</h4>
+                  <p className="mt-4 text text-grey">
+                    期間: 2022.10 - 2023.07
+                    <br />
+                    規模: チーム開発
+                    <br />
+                    担当: 実装
+                  </p>
+                  <p className="mt-4 text">
+                    様々な用途に応じてAIが文章を生成してくれるWebサービスです。
+                    <br />
+                    副業としてチーム開発に参画し、サーバーサイドとフロントエンドの実装を担当しました。
+                  </p>
+                  <a
+                    href="https://lp.ai-copywriter.jp/"
+                    target="_blank"
+                    className="button-link mt-4"
+                    rel="noreferrer"
+                  >
+                    詳細
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="bg-base dark:bg-base-dark">
             <div className="container mx-auto">
               <div className="row py-10">
