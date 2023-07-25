@@ -31,8 +31,7 @@ const useScrollAnimation = () => {
       gsap
         .to(window, {
           scrollTo: target,
-          duration: 0.5,
-          ease: "power4.out",
+          duration: 1.3,
         })
         .eventCallback("onComplete", () => {
           router.replace(href);
