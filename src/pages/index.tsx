@@ -148,6 +148,11 @@ const Home: NextPageWithLayout = (props) => {
                           height={192}
                         />
                         <div className="work-item__overlay">
+                          <div className="work-item__tags">
+                            <span className="work-item__tag">JavaScript</span>
+                            <span className="work-item__tag">Chrome API</span>
+                            <span className="work-item__tag">Extension</span>
+                          </div>
                           <p className="work-item__overlay-name">どこでもメモ</p>
                         </div>
                       </a>
@@ -164,6 +169,11 @@ const Home: NextPageWithLayout = (props) => {
                           height={192}
                         />
                         <div className="work-item__overlay">
+                          <div className="work-item__tags">
+                            <span className="work-item__tag">JavaScript</span>
+                            <span className="work-item__tag">Chrome Extension</span>
+                            <span className="work-item__tag">Auto Login</span>
+                          </div>
                           <p className="work-item__overlay-name">Titech Portal Login</p>
                         </div>
                       </a>
@@ -182,6 +192,11 @@ const Home: NextPageWithLayout = (props) => {
                           height={192}
                         />
                         <div className="work-item__overlay">
+                          <div className="work-item__tags">
+                            <span className="work-item__tag">React Native</span>
+                            <span className="work-item__tag">TypeScript</span>
+                            <span className="work-item__tag">Mobile App</span>
+                          </div>
                           <p className="work-item__overlay-name">SocialDog</p>
                         </div>
                       </a>
