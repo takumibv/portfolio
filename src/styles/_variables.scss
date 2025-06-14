@@ -1,36 +1,46 @@
 :root {
   --color-white: #fff;
-  --color-base: #f5f5f5;
-  --color-primary: #72ad8c;
-  --color-primary-weak: #e1f5e9;
-  --color-secondary: #ad6761;
-  --color-secondary-weak: #fac3be;
-  --color-text-black: #555;
-  --color-text-black-dark: #333;
-  --color-text-secondary: #707070;
-  --color-text-secondary-weak: #aaa;
-  --color-text-link: #7299ad;
-  --color-shadow: #888;
+  --color-base: #f8fafc;
+  --color-primary: #00D4A3;
+  --color-primary-weak: #E6FFF9;
+  --color-secondary: #FF6B6B;
+  --color-secondary-weak: #FFE5E5;
+  --color-accent: #667eea;
+  --color-accent-weak: #E8ECFF;
+  --color-text-black: #2D3748;
+  --color-text-black-dark: #1A202C;
+  --color-text-secondary: #4A5568;
+  --color-text-secondary-weak: #A0AEC0;
+  --color-text-link: #3182CE;
+  --color-shadow: #718096;
+  --color-gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color-gradient-secondary: linear-gradient(135deg, #00D4A3 0%, #667eea 100%);
 
   // シャドウ
-  --shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  --shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0px 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .dark {
-  --color-white: #181818;
-  --color-base: #333;
-  --color-primary: #72ad8c;
-  --color-primary-weak: #446853;
-  --color-secondary: #ad6761;
-  --color-secondary-weak: #ba8580;
-  --color-text-black: #ccc;
-  --color-text-black-dark: #fff;
-  --color-text-secondary: #aaa;
-  --color-text-secondary-weak: #999;
-  --color-text-link: #6cc4f0;
+  --color-white: #1A202C;
+  --color-base: #2D3748;
+  --color-primary: #00D4A3;
+  --color-primary-weak: #1A4B42;
+  --color-secondary: #FF6B6B;
+  --color-secondary-weak: #8B2635;
+  --color-accent: #667eea;
+  --color-accent-weak: #3C366B;
+  --color-text-black: #E2E8F0;
+  --color-text-black-dark: #F7FAFC;
+  --color-text-secondary: #CBD5E0;
+  --color-text-secondary-weak: #718096;
+  --color-text-link: #63B3ED;
   --color-shadow: #000;
+  --color-gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color-gradient-secondary: linear-gradient(135deg, #00D4A3 0%, #667eea 100%);
 
-  --shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+  --shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0px 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 // カラー
