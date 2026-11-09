@@ -247,7 +247,7 @@ const Home: NextPageWithLayout = (props) => {
 
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
-    <Layout title="takumibv" hasProfile={false}>
+    <Layout hasProfile={false}>
       {page}
     </Layout>
   );
