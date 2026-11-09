@@ -260,13 +260,50 @@ const Hero = () => {
     });
     resize();
 
-    // 光はマウスに遅れて追従、マウスが無ければゆっくり漂う
+    // 光の位置
+    // - PC: マウスに遅れて追従、マウスが動くまではゆっくり漂う
+    // - SP（ホバー不可の端末）: スクロール量に応じて左上から右へ移動する
+    const isTouchDevice = window.matchMedia("(hover: none)").matches;
     const target = new THREE.Vector2(0.25, 0.7);
     let hasPointer = false;
     const handlePointer = (e: PointerEvent) => {
+      // タッチでのスクロール操作は光の位置に使わない
+      if (e.pointerType !== "mouse") return;
       hasPointer = true;
       target.set(e.clientX / window.innerWidth, 1 - e.clientY / window.innerHeight);
     };
+
+    // SP の傾き：最初に取れた姿勢を基準に、そこからの傾きで光をずらす
+    const tilt = new THREE.Vector2(0, 0);
+    let tiltBase: { beta: number; gamma: number } | null = null;
+    const handleOrientation = (e: DeviceOrientationEvent) => {
+      if (e.beta === null || e.gamma === null) return;
+      if (!tiltBase) tiltBase = { beta: e.beta, gamma: e.gamma };
+      const clamp = (v: number) => Math.max(-1, Math.min(1, v));
+      // ±30° でずれ量が最大になる
+      tilt.set(clamp((e.gamma - tiltBase.gamma) / 30), clamp(-(e.beta - tiltBase.beta) / 30));
+    };
+    // iOS はユーザー操作の中で許可を求める必要があるため、最初のタップで要求する
+    const requestOrientation = () => {
+      const DOE = window.DeviceOrientationEvent as unknown as {
+        requestPermission?: () => Promise<"granted" | "denied">;
+      };
+      if (typeof DOE?.requestPermission === "function") {
+        DOE.requestPermission()
+          .then((state) => {
+            if (state === "granted") window.addEventListener("deviceorientation", handleOrientation);
+          })
+          .catch(() => undefined);
+      }
+    };
+    if (isTouchDevice && "DeviceOrientationEvent" in window) {
+      const DOE = window.DeviceOrientationEvent as unknown as { requestPermission?: unknown };
+      if (typeof DOE.requestPermission === "function") {
+        window.addEventListener("touchend", requestOrientation, { once: true });
+      } else {
+        window.addEventListener("deviceorientation", handleOrientation);
+      }
+    }
 
     // Hero を透かして見せる領域（[data-hero-window]）が画面内にある間も描画を続ける
     let windowVisible = false;
@@ -283,10 +320,20 @@ const Hero = () => {
 
       const t = clock.getElapsedTime();
       uniforms.uTime.value = t;
-      if (!hasPointer) {
+      if (isTouchDevice) {
+        // 1 画面分のスクロールで左から右へ移動する。
+        // y は本文に隠されずに見えている上側の帯（uv.y: p..1）の中に収める。
+        // 名言の帯から透けて見える間も動き続けるよう、x は周期関数にしている
+        const p = window.scrollY / window.innerHeight;
+        const y = p <= 1 ? 0.65 + p * 0.25 : 0.5 + Math.sin(p * 1.5) * 0.2;
+        target.set(
+          0.5 + Math.sin(p * 2.4 - 1.0) * 0.32 + Math.sin(t * 0.5) * 0.015 + tilt.x * 0.25,
+          y + Math.cos(t * 0.4) * 0.015 + tilt.y * 0.15
+        );
+      } else if (!hasPointer) {
         target.set(0.5 + Math.sin(t * 0.35) * 0.35, 0.6 + Math.cos(t * 0.27) * 0.2);
       }
-      uniforms.uLight.value.lerp(target, 0.06);
+      uniforms.uLight.value.lerp(target, isTouchDevice ? 0.1 : 0.06);
       // スクロールするほどガラスが晴れる
       const progress = Math.min(window.scrollY / window.innerHeight, 1);
       uniforms.uClarity.value = progress;
@@ -307,6 +354,8 @@ const Hero = () => {
       disposed = true;
       cancelAnimationFrame(rafId);
       observer.disconnect();
+      window.removeEventListener("deviceorientation", handleOrientation);
+      window.removeEventListener("touchend", requestOrientation);
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", handlePointer);
       geometry.dispose();
