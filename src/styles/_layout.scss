@@ -269,8 +269,16 @@
 **/
 .l-main {
   position: relative;
-  padding-bottom: 40px;
+}
+
+// .break 以外の領域を白で塗る（.break は背面の Hero を透かす）
+.l-main__surface {
+  position: relative;
   background: var(--color-white);
+}
+
+.l-main__surface--last {
+  padding-bottom: 40px;
 
   @include breakpoint-pc() {
     padding-bottom: 160px;

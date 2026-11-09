@@ -90,7 +90,7 @@ const Home: NextPageWithLayout = (props) => {
         <a className="l-main__scroll-down" href="#about" {...scrollProps}>
           <img src={url("/images/scroll.svg")} alt="" width={46} height={60} />
         </a>
-        <section className="section">
+        <section className="section l-main__surface">
           <div className="container container--sm mx-auto">
             <Profile />
             <p className="profile__text text">
@@ -110,12 +110,14 @@ const Home: NextPageWithLayout = (props) => {
             </p>
           </div>
         </section>
-        <section className="section break">
-          <div className="break__bg"></div>
+        {/* 下地を透明にして、背面の Hero をすりガラス越しに見せる */}
+        <section className="section break" data-hero-window>
+          <div className="break__glass"></div>
           <h3 className="sub-headline break__text">
             『一つのことを、一生やり続けられると確信する日がくる』
           </h3>
         </section>
+        <div className="l-main__surface l-main__surface--last">
         <div className="container mx-auto">
           <div className="l-top">
             <div className="l-top__left">
@@ -237,6 +239,7 @@ const Home: NextPageWithLayout = (props) => {
               </section>
             </div>
           </div>
+        </div>
         </div>
       </main>
 
