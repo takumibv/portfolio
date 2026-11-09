@@ -7,10 +7,13 @@ module.exports = {
     extend: {},
     colors: {
       ...colors,
-      base: "#f5f5f5",
-      "base-dark": "#333",
-      grey: "#999",
-      dark: "#181818",
+      base: "#f8fafc",
+      "base-dark": "#2D3748",
+      grey: "#A0AEC0",
+      dark: "#1A202C",
+      primary: "#00D4A3",
+      secondary: "#FF6B6B",
+      accent: "#667eea",
     },
     screens: {
       sp: "320px",

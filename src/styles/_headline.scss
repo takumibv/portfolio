@@ -1,32 +1,48 @@
 .saying {
-  font-family: $font-saying;
+  font-family: $font-jp;
   font-weight: 400;
   font-style: normal;
-  color: #707070;
   color: var(--color-text-secondary);
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .headline {
-  font-family: $font-eng;
-  font-weight: 100;
-  font-size: 32px;
-  color: #333;
+  font-family: $font-headline;
+  font-weight: 700;
+  font-size: 48px;
   color: var(--color-text-black-dark);
+  letter-spacing: -0.02em;
+  background: var(--color-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  @include breakpoint-sp() {
+    font-size: 36px;
+  }
 }
 
 .sub-headline {
   font-family: $font-jp;
-  font-weight: 500;
-  font-size: 16px;
-  color: #333;
+  font-weight: 600;
+  font-size: 20px;
   color: var(--color-text-black-dark);
+  letter-spacing: -0.01em;
+  
+  @include breakpoint-sp() {
+    font-size: 18px;
+  }
 }
 
 .text {
   font-family: $font-jp;
-  font-weight: 300;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #707070;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
   color: var(--color-text-secondary);
+  
+  @include breakpoint-sp() {
+    font-size: 14px;
+  }
 }
