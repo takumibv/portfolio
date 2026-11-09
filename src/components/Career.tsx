@@ -30,7 +30,20 @@ const Career: React.FC = () => {
         <div className="career-item__right">
           <div className="career-item__title sub-headline">株式会社 Gaji-Labo</div>
           <div className="career-item__period text">2025/01 -</div>
-          <div className="career-item__text text">ソフトウェアエンジニア</div>
+          <div className="career-item__text text">
+            ソフトウェアエンジニア
+            <br />
+            <br />
+            【主な業務】
+            <ul className="list-disc pl-6">
+              <li className="mt-2">フロントエンドを中心とした開発業務</li>
+            </ul>
+            <br />
+            【使用技術】
+            <ul className="list-disc pl-6">
+              <li className="mt-2">Next.js, React Router v8, TypeScript</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div className="career-item">
