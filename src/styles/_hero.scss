@@ -13,3 +13,61 @@
   }
 }
 
+
+.hero__title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #f4fbf5;
+  pointer-events: none;
+  will-change: opacity, transform;
+  // ガラスの向こうの光に馴染むよう、柔らかく発光させる
+  text-shadow: 0 0 24px rgba(10, 30, 15, 0.45), 0 0 2px rgba(10, 30, 15, 0.3);
+}
+
+.hero__eyebrow,
+.hero__role {
+  font-family: $font-headline;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  // 末尾の字間ぶん左にずれるのを打ち消す
+  padding-left: 0.4em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.hero__eyebrow {
+  font-size: 12px;
+  margin-bottom: 16px;
+
+  @include breakpoint-pc() {
+    font-size: 14px;
+  }
+}
+
+.hero__name {
+  font-family: $font-headline;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+
+  @include breakpoint-pc() {
+    font-size: 120px;
+  }
+}
+
+.hero__role {
+  font-size: 11px;
+  margin-top: 24px;
+  letter-spacing: 0.3em;
+  padding-left: 0.3em;
+
+  @include breakpoint-pc() {
+    font-size: 14px;
+  }
+}

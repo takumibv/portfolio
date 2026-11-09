@@ -12,8 +12,7 @@ const Skills: React.FC = () => {
     { skillScore: 90, src: "/images/skill-css.png", isOrange: false },
     { skillScore: 60, src: "/images/skill-java.png", isOrange: false },
     { skillScore: 50, src: "/images/skill-php.png", isOrange: false },
-    { skillScore: 50, src: "/images/skill-ps.png", isOrange: true },
-    { skillScore: 75, src: "/images/skill-ai.png", isOrange: true },
+    { skillScore: 75, src: "/images/skill-figma.svg", isOrange: true },
   ];
   const skillRef = useRef(null);
   const q = gsap.utils.selector(skillRef);

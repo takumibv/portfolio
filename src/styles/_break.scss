@@ -1,42 +1,46 @@
 .break {
   position: relative;
   overflow: hidden;
+  // 背面に固定された Hero を透かして見せる
+  background: transparent;
+
+  &.section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 
   @include breakpoint-sp() {
     &.section {
-      padding-left: 8px;
-      padding-right: 8px;
+      padding: 80px 8px;
     }
   }
 }
 
-.break__bg {
+// CSS で表現した型板ガラス（ぼかし + 白いかすみ + 網目）
+.break__glass {
   position: absolute;
-  top: -50vh;
-  bottom: -50vh;
-  left: 0;
-  right: 0;
-  background-image: url("../../public/images/bg-base.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  inset: 0;
   z-index: 0;
-
-  @include darkmode() {
-    background-image: url("../../public/images/bg-base-dark.jpg");
-  }
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
+  backdrop-filter: blur(10px) saturate(1.1);
+  background-color: rgba(214, 230, 218, 0.18);
+  background-image:
+    linear-gradient(rgba(10, 30, 15, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 30, 15, 0.22) 1px, transparent 1px);
+  background-size: 22px 22px;
+  // 上下の白い面との境目にガラスの縁のような光
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
 
 .break__text {
   position: relative;
-  color: #fff;
-  color: var(--color-white);
+  color: #f4fbf5;
   text-align: center;
   line-height: 1.5;
   font-weight: 400;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 24px rgba(10, 30, 15, 0.5);
   z-index: 1;
-
-  @include darkmode() {
-    color: var(--color-text-secondary);
-  }
 }

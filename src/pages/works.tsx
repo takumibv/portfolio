@@ -446,7 +446,7 @@ const Works: NextPageWithLayout = () => {
 };
 
 Works.getLayout = function getLayout(page: ReactElement) {
-  return <Layout title="works">{page}</Layout>;
+  return <Layout title="Works">{page}</Layout>;
 };
 
 export default Works;

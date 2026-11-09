@@ -66,7 +66,7 @@ const Contact: NextPageWithLayout = () => {
 };
 
 Contact.getLayout = function getLayout(page: ReactElement) {
-  return <Layout title="works">{page}</Layout>;
+  return <Layout title="Contact">{page}</Layout>;
 };
 
 export default Contact;
